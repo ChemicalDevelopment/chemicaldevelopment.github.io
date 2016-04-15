@@ -1,0 +1,108 @@
+<head>
+<title>PGS</title>
+
+<style>
+        h1 {
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h2 {
+            padding-left: 20px;
+            font-size: 20px;
+        }
+
+        p {
+            float: left;
+            padding-left: 30px;
+        }
+        util {
+            padding: 25px;
+        }
+
+    </style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+</head>
+
+
+<body>
+    <div>
+        <h1> About </h1>
+            <h2> Purpose </h2>
+                <p><b>P</b>rime <b>G</b>enerator <b>S</b>earch is a project written by Cade Brown (ChemicalDevelopment) whose main purpose is to find polynomials that generate primes for a specified length<br></p>
+        <br>
+        <br>
+        <br>
+        <h2> Findings </h2>
+                <p>Currently, the world record for most primes generated in a row is 80 (Hardy and Wright), which is the polynomial
+                 $(x - 40)^2  + (x - 40) + 41$. Only the first 40 are distinct, after that, the first 40 values are repeated.</p>
+                <p>The world record for most consecutive distinct primes in a row is held by Dress and Landreau (in 2002) and Gupta (2006). It is a 5th degree rational polynomial that generates 57 distinct primes in a row: $(n^5-133n^4+6729n^3-158379n^2+1720294n-6823316)/4$</p>
+    </div>
+</body>
+
+
+
+
+
+
+<!--<body>
+<div onclick="disp()">
+Output:
+<div>
+
+<p id="output"></p>
+
+</body>
+-->
+
+
+<script>
+function search(max) {
+    var a, b, c = 0;
+    for (a = 0; a < max; ++a) {
+        for (b = 0; b < max; ++b) {
+            for (c = 0; c < max; ++c) {
+                
+            }
+        }
+    }
+}
+
+//tests ax^2 + bx + c
+function test(a, b, c) {
+    var inarow = 0;
+    for (var x = 0; x < 101; ++x) {
+        if (isprime(a * x * x + b * x + c)) {
+            ++inarow;
+        }
+    }
+    if (inarow >= 20)  {
+        document.getElementById("output").innerHTML += a + "x^2 + " + b + "x + " + c + " is prime for " + inarow + "\n";
+    }
+}
+
+function isprime(a) {
+    var x;
+    for (x = 2; x < sqrt(a); ++x) {
+        if (a % x == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+function disp() {
+    document.getElementById('output').innerHTML += "hello world";
+}
+
+</script>
