@@ -1,2 +1,2 @@
 #Run script for PGS
-java -jar "/usr/local/PGS/PGSGUI-latest/PGSGUI.jar"
+java -jar "/usr/local/PGS/PGSGUI.jar"
