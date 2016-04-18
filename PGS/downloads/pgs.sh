@@ -1,3 +1,3 @@
 #Run script for PGS
-sudo java -jar /usr/local/PGS/PGSGUI.jar
+exec -a PGS java -jar /usr/local/PGS/PGSGUI.jar
 
