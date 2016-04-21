@@ -88,5 +88,11 @@ function drawBackgroundColor() {
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
+
+    document.getElementById('max').onkeydown = function(event) {
+    if (event.keyCode == 13) {
+        drawBackgroundColor();
+    }
+}
 </script>
 </html>
