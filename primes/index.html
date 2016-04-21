@@ -1,10 +1,17 @@
 <html>
+ <meta charset="UTF-8"> 
 <head>
 	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
     <div>
-      <input type="number" id="max">     
+      <h1> Prime Pages </h1>
+      <p>
+        This small script graphs the exact number of primes (pi(x) or π(x)), and a few approximations (x/ln(x), and logarithmic integral (Li(x)))
+      </p>
+    </div>
+    <div>
+      <input type="number" id="max" value="2000">     
        <input type="button" onclick="drawBackgroundColor()" value="Graph">
       </div>
 		<div id="chart_div"></div>
@@ -23,12 +30,12 @@ function drawBackgroundColor() {
       if (max_input != NaN) {
         max_x = max_input;
       } else {
-        max_x = 10000;
+        max_x = 1000;
       }
       buff = Math.ceil(max_x / 1000);
       data = new google.visualization.DataTable();
       data.addColumn('number', 'x');
-      data.addColumn('number', 'Primes');
+      data.addColumn('number', 'π(x)');
       data.addColumn('number', 'x/ln(x)');
       data.addColumn('number', 'Li(x)');
 
@@ -71,7 +78,7 @@ function drawBackgroundColor() {
           title: 'x'
         },
         vAxis: {
-          title: 'Primes'
+          title: ''
         },
         'width':1600,
   		  'height':900,
