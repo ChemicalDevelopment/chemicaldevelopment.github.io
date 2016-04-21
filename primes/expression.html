@@ -1,0 +1,129 @@
+<html>
+ <meta charset="UTF-8"> 
+<head>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	</head>
+	<body>
+      <h1> Prime Pages <a href="./index.html">Index</a></h1>
+    <div>
+      <p>
+        On this page: a simple graph showing the distrobution of primes in a user-supplied expression (using 'x')
+      </p>
+    </div>
+    <div id="sel">
+      Max x: <input type="number" id="max_x" value="1000">     
+      Max evaluation: <input type="number" id="max_y" value="1000000">    
+      <br> 
+      f(x)=<input type="text" id="exp_1" value="x * x + x + 41" size=100><br>
+      g(x)=<input type="text" id="exp_2" value="x * x - x + 41" size=100><br> 
+      h(x)=<input type="text" id="exp_3" value="x * x + 1" size=100><br>
+      <br>
+       <input type="button" onclick="drawBackgroundColor()" value="Graph">
+      </div>
+		<div id="chart_div"></div>
+	</body>
+<script>
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBackgroundColor);
+var max_x;
+var max_y;
+var options;
+var data;
+var buf = 100; //How many points to plot?
+
+function isprime(z) {
+  if (z == 0 || z == 1) {
+    return 0;
+  }
+  if (z == 2) {
+    return 1;
+  }
+  if (z % 2 == 0) {
+    return 0;
+  }
+  for (var c = 3; c < Math.sqrt(z); c += 2) { 
+    if (z % c == 0) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+function drawBackgroundColor() {
+      var expression1 = document.getElementById("exp_1").value;
+      var expression2 = document.getElementById("exp_2").value;
+      var expression3 = document.getElementById("exp_3").value;
+      max_x = document.getElementById("max_x").value;
+      max_y = document.getElementById("max_y").value;
+      data = new google.visualization.DataTable();
+      data.addColumn('number', 'x');
+      data.addColumn('number', 'prime count of f(x)');
+      data.addColumn('number', 'prime count of g(x)');
+      data.addColumn('number', 'prime count of h(x)');
+
+      var x;
+      var fx;
+      var gx;
+      var hx;
+      var df = 1;
+      var dg = 1;
+      var dh = 1;
+      var pf = 0;
+      var pg = 0;
+      var ph = 0;
+      for (x = 0; x < max_x; ++x) {
+        fx = eval(expression1);
+        gx = eval(expression2);
+        hx = eval(expression3);
+        if (fx > max_y) {
+          df = 0;
+        }
+        if (gx > max_y) {
+          dg = 0;
+        }
+        if (hx > max_y) {
+          dh = 0;
+        }
+        if (df == 1) {
+          if (isprime(fx) == 1) {
+            ++pf;
+          }
+        }
+        if (dg == 1) {
+          if (isprime(gx) == 1) {
+            ++pg;
+          }
+        }
+        if (dh == 1) {
+          if (isprime(hx) == 1) {
+            ++ph;
+          }
+        }
+        if (x % (Math.floor(max_x / buf)) == 0) {
+        data.addRow([x, pf, pg, ph]);
+      }
+      }
+
+      options = {
+        hAxis: {
+          title: 'x'
+        },
+        vAxis: {
+          title: 'primes'
+        },
+        'width':1600,
+  		  'height':900,
+        backgroundColor: '#f1f8e9'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    document.getElementById('sel').onkeydown = function(event) {
+    if (event.keyCode == 13) {
+        drawBackgroundColor();
+    }
+}
+</script>
+</html>
