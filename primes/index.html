@@ -3,16 +3,30 @@
 	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
+    <div>
+      <input type="number" id="max">     
+       <input type="button" onclick="drawBackgroundColor()" value="Graph">
+      </div>
 		<div id="chart_div"></div>
 	</body>
 <script>
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBackgroundColor);
-var max_x = 1000;
-var buff = Math.ceil(max_x / 1000);
+var max_x;
+var buff;
+var options;
+var data;
 
 function drawBackgroundColor() {
-      var data = new google.visualization.DataTable();
+      var max_input = document.getElementById("max").value;
+      /*window.alert(max_input);*/
+      if (max_input != NaN) {
+        max_x = max_input;
+      } else {
+        max_x = 10000;
+      }
+      buff = Math.ceil(max_x / 1000);
+      data = new google.visualization.DataTable();
       data.addColumn('number', 'x');
       data.addColumn('number', 'Primes');
       data.addColumn('number', 'x/ln(x)');
@@ -52,7 +66,7 @@ function drawBackgroundColor() {
       	}
       }
 
-      var options = {
+      options = {
         hAxis: {
           title: 'x'
         },
@@ -60,7 +74,7 @@ function drawBackgroundColor() {
           title: 'Primes'
         },
         'width':1600,
-  		'height':900,
+  		  'height':900,
         backgroundColor: '#f1f8e9'
       };
 
