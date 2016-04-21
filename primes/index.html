@@ -8,7 +8,7 @@
 <script>
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBackgroundColor);
-var max_x = 10000;
+var max_x = 1000;
 var buff = Math.ceil(max_x / 1000);
 
 function drawBackgroundColor() {
@@ -37,7 +37,7 @@ function drawBackgroundColor() {
       var curCount = 0;
       var j = 0;
       var li_x = 0; //logarithmic  integral function
-      var buf_int = 16000;
+      var buf_int = 5;
       for (i = 0; i < max_x; ++i) {
       	if (i >= 2) {
       		for (j = 0; j < buf_int; ++j) {
