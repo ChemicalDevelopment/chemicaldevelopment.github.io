@@ -11,12 +11,13 @@
       </p>
     </div>
     <div id="sel">
-      Max x: <input type="number" id="max_x" value="1000">     
-      Max evaluation: <input type="number" id="max_y" value="1000000">    
+      Max x: <input type="number" id="max_x" value="1000">
+      <br>  
+      Max evaluation: <input type="number" id="max_y" value="10000000">    
       <br> 
-      f(x)=<input type="text" id="exp_1" value="x * x + x + 41" size=100><br>
-      g(x)=<input type="text" id="exp_2" value="x * x - x + 41" size=100><br> 
-      h(x)=<input type="text" id="exp_3" value="x * x + 1" size=100><br>
+      f(x)=   <input type="text" id="exp_1" value="x" size=40><br>
+      g(x)=<input type="text" id="exp_2" value="x * x + x + 41" size=40><br> 
+      h(x)=<input type="text" id="exp_3" value="2 * x * x + 29" size=40><br>
       <br>
        <input type="button" onclick="drawBackgroundColor()" value="Graph">
       </div>
@@ -29,7 +30,7 @@ var max_x;
 var max_y;
 var options;
 var data;
-var buf = 100; //How many points to plot?
+var buf = 1000; //How many points to plot?
 
 function isprime(z) {
   if (z == 0 || z == 1) {
@@ -50,6 +51,10 @@ function isprime(z) {
 }
 
 function drawBackgroundColor() {
+      var interval = Math.ceil(max_x / buf);
+      if (interval <= 1 || interval == NaN || !interval) {
+        interval = 1;
+      }
       var expression1 = document.getElementById("exp_1").value;
       var expression2 = document.getElementById("exp_2").value;
       var expression3 = document.getElementById("exp_3").value;
@@ -71,7 +76,7 @@ function drawBackgroundColor() {
       var pf = 0;
       var pg = 0;
       var ph = 0;
-      for (x = 0; x < max_x; ++x) {
+      for (x = 0; x <= max_x; ++x) {
         fx = eval(expression1);
         gx = eval(expression2);
         hx = eval(expression3);
@@ -99,21 +104,23 @@ function drawBackgroundColor() {
             ++ph;
           }
         }
-        if (x % (Math.floor(max_x / buf)) == 0) {
+        if (x % interval == 0) {
         data.addRow([x, pf, pg, ph]);
       }
       }
 
       options = {
+        'chartArea': {'width': '90%', 'height': '80%'},
+        'legend': {'position': 'top'},
         hAxis: {
           title: 'x'
         },
         vAxis: {
           title: 'primes'
         },
-        'width':1600,
-  		  'height':650,
-        backgroundColor: '#f1f8e9'
+        'width':1910,
+  		  'height':610,
+        backgroundColor: '#fff'
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
