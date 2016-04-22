@@ -13,11 +13,11 @@
     <div id="sel">
       Max x: <input type="number" id="max_x" value="1000">
       <br>  
-      Max evaluation: <input type="number" id="max_y" value="10000000">    
-      <br> 
+      <!--Max evaluation: <input type="number" id="max_y" value="10000000">    
+      <br>--> 
       f(x)=   <input type="text" id="exp_1" value="x" size=40><br>
       g(x)=<input type="text" id="exp_2" value="x * x + x + 41" size=40><br> 
-      h(x)=<input type="text" id="exp_3" value="2 * x * x + 29" size=40><br>
+      <!--h(x)=<input type="text" id="exp_3" value="2 * x * x + 29" size=40><br>-->
       <br>
        <input type="button" onclick="drawBackgroundColor()" value="Graph">
       </div>
@@ -30,7 +30,7 @@ var max_x;
 var max_y;
 var options;
 var data;
-var buf = 1000; //How many points to plot?
+var buf = 100; //How many points to plot?
 
 function isprime(z) {
   if (z == 0 || z == 1) {
@@ -57,38 +57,38 @@ function drawBackgroundColor() {
       }
       var expression1 = document.getElementById("exp_1").value;
       var expression2 = document.getElementById("exp_2").value;
-      var expression3 = document.getElementById("exp_3").value;
+      //var expression3 = document.getElementById("exp_3").value;
       max_x = document.getElementById("max_x").value;
-      max_y = document.getElementById("max_y").value;
+      //max_y = document.getElementById("max_y").value;
       data = new google.visualization.DataTable();
       data.addColumn('number', 'x');
       data.addColumn('number', 'prime count of f(x)');
       data.addColumn('number', 'prime count of g(x)');
-      data.addColumn('number', 'prime count of h(x)');
+      //data.addColumn('number', 'prime count of h(x)');
 
       var x;
       var fx;
       var gx;
-      var hx;
+      //var hx;
       var df = 1;
       var dg = 1;
-      var dh = 1;
+      //var dh = 1;
       var pf = 0;
       var pg = 0;
-      var ph = 0;
+      //var ph = 0;
       for (x = 0; x <= max_x; ++x) {
         fx = eval(expression1);
         gx = eval(expression2);
-        hx = eval(expression3);
+        //hx = eval(expression3);
         if (fx > max_y) {
           df = 0;
         }
         if (gx > max_y) {
           dg = 0;
         }
-        if (hx > max_y) {
+        /*if (hx > max_y) {
           dh = 0;
-        }
+        }*/
         if (df == 1) {
           if (isprime(fx) == 1) {
             ++pf;
@@ -99,14 +99,15 @@ function drawBackgroundColor() {
             ++pg;
           }
         }
-        if (dh == 1) {
+        /*if (dh == 1) {
           if (isprime(hx) == 1) {
             ++ph;
           }
-        }
+        }*/
         if (x % interval == 0) {
-        data.addRow([x, pf, pg, ph]);
-      }
+          //data.addRow([x, pf, pg, ph]);
+          data.addRow([x, pf, pg]);
+        }
       }
 
       options = {

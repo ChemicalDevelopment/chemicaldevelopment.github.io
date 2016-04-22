@@ -1,0 +1,108 @@
+<html>
+ <meta charset="UTF-8"> 
+<head>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	</head>
+	<body>
+      <h1> Prime Pages <a href="./index.html">Index</a></h1>
+    <div>
+      <p>
+        On this page: graph a function!
+      </p>
+    </div>
+    <div id="sel">
+      Min x: <input type="number" id="min_x" value="-2">
+      Max x: <input type="number" id="max_x" value="4">
+      <br>  
+      Min y: <input type="number" id="min_y" value="-10">
+      Max y: <input type="number" id="max_y" value="20">
+      <br>  
+
+      f(x)=   <input type="text" id="exp_1" value="x * x * x - 2 * x * x - 4 * x" size=40><br>
+      g(x)=<input type="text" id="exp_2" value="Math.pow(Math.log(x), 2)" size=40><br> 
+      <!--h(x)=<input type="text" id="exp_3" value="10" size=40><br>-->
+      <br>
+       <input type="button" onclick="drawBackgroundColor()" value="Graph">
+      </div>
+		<div id="chart_div"></div>
+	</body>
+<script>
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBackgroundColor);
+var options;
+var data;
+var buf = 200; //How many points to plot?
+
+
+function drawBackgroundColor() {
+      var expression1 = document.getElementById("exp_1").value;
+      var expression2 = document.getElementById("exp_2").value;
+      //var expression3 = document.getElementById("exp_3").value;
+      var min_x = Number(document.getElementById("min_x").value);
+      var max_x = Number(document.getElementById("max_x").value);
+      var min_y = Number(document.getElementById("min_y").value);
+      var max_y = Number(document.getElementById("max_y").value);
+
+      var interval = (max_x - min_x) / buf;
+
+      data = new google.visualization.DataTable();
+      data.addColumn('number', 'x');
+      data.addColumn('number', 'f(x)');
+      data.addColumn('number', 'g(x)');
+      //data.addColumn('number', 'h(x)');
+
+      var x;
+      var fx;
+      //var gx;
+      //var hx;
+      for (x = min_x; x <= max_x + interval; x += interval) {
+        fx = eval(expression1);
+        gx = eval(expression2);
+        //hx = eval(expression3);
+        if (fx > max_y) {
+          fx = max_y;
+        }
+        if (gx > max_y) {
+          gx = max_y;
+        }
+        /*if (hx > max_y) {
+          hx = max_y;
+        }*/
+        if (fx < min_y) {
+          fx = min_y;
+        }
+        if (gx < min_y) {
+          gx = min_y;
+        }
+        /*if (hx < min_y) {
+          hx = min_y;
+        }
+        data.addRow([x, fx, gx, hx]);*/
+        data.addRow([x, fx, gx]);
+      }
+
+      options = {
+        'legend': {'position': 'top'},
+        hAxis: {
+          title: 'x'
+        },
+        vAxis: {
+          title: 'y'
+        },
+  		  'height':620,
+        backgroundColor: '#fff'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    document.getElementById('sel').onchange = function(event) {
+        drawBackgroundColor();      
+}
+
+document.getElementById('sel').onkeypress = function(event) {
+        drawBackgroundColor();      
+}
+</script>
+</html>
