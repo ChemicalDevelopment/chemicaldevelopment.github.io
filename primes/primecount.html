@@ -28,7 +28,7 @@ function drawBackgroundColor() {
       var max_input = document.getElementById("max").value;
       /*window.alert(max_input);*/
       if (max_input != NaN) {
-        max_x = max_input;
+          max_x = max_input;
       } else {
         max_x = 1000;
       }
@@ -59,7 +59,7 @@ function drawBackgroundColor() {
       var j = 0;
       var li_x = 0; //logarithmic  integral function
       var buf_int = 2   ;
-      for (i = 0; i < max_x; ++i) {
+      for (i = 0; i <= max_x; ++i) {
       	if (i >= 2) {
       		for (j = 0; j < buf_int; ++j) {
       			li_x += (1 / Math.log(i + j / buf_int)) / buf_int;
@@ -74,16 +74,14 @@ function drawBackgroundColor() {
       }
 
       options = {
-        'chartArea': {'width': '90%', 'height': '80%'},
-        'legend': {'position': 'bottom'},
+        'legend': {'position': 'top'},
         hAxis: {
           title: 'x'
         },
         vAxis: {
           title: 'value'
         },
-        'width':1910,
-  		  'height':810,
+  		  'height':800,
         backgroundColor: '#fff'
       };
 
