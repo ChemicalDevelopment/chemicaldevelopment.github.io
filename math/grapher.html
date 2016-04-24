@@ -5,7 +5,7 @@
 	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
-      <h1> Prime Pages <a href="./index.html">Index</a></h1>
+      <h1> Math Pages <a href="./index.html">Index</a></h1>
     <div>
       <p>
         On this page: graph a function!
@@ -32,7 +32,7 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBackgroundColor);
 var options;
 var data;
-var buf = 500; //How many points to plot?
+var buf = 200; //How many points to plot?
 var pi = 3.14159265358979323846;
 
 /*
@@ -156,38 +156,39 @@ function drawBackgroundColor() {
         fx = eval(expression1);
         gx = eval(expression2);
         //hx = eval(expression3);
-        if (fx > max_y) {
+        /*if (fx > max_y) {
           fx = max_y;
         }
         if (gx > max_y) {
           gx = max_y;
         }
-        /*if (hx > max_y) {
-          hx = max_y;
-        }*/
         if (fx < min_y) {
           fx = min_y;
         }
         if (gx < min_y) {
           gx = min_y;
-        }
-        /*if (hx < min_y) {
-          hx = min_y;
-        }
-        data.addRow([x, fx, gx, hx]);*/
+        }*/
         data.addRow([x, fx, gx]);
       }
 
       options = {
         'legend': {'position': 'top'},
         hAxis: {
-          title: 'x'
+          title: 'x',
+          viewWindow:{
+                max:max_x,
+                min:min_x
+              },
         },
         vAxis: {
-          title: 'y'
+          title: 'y',
+          viewWindow:{
+                max:max_y,
+                min:min_y
+              }
         },
   		  'height':620,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
