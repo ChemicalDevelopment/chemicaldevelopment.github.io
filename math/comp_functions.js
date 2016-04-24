@@ -11,61 +11,11 @@ Riemann zeta function. Sum of the recipricols to some power x
 
 */
 function zeta(x) {
-  var sum = 1;
+  var sum = [1, 0];
   for (var i = 2; i < 1000; ++i) {
-    sum += Math.pow(i, -x);
+    sum += pow(i, -x);
   }
   return sum;
-}
-
-/*
-
-Euler's gamma function. gamma(x) = (x-1)!
-
-*/
-function gamma(x) {
-  return Math.exp(x * Math.log(x) - x - (Math.log(x  / (2 * pi))) / 2 + 1 / (12 * x) - 1 / (360 * x * x * x) + 1 / (1260 * x * x * x * x * x));
-}
-
-
-/*
-
-Floor function
-
-*/
-function floor(x) {
-  return Math.floor(x);
-}
-
-
-/*
-
-Greatest common denominator
-
-*/
-function gcd(a, b) {
-   if ( ! b) {
-        return a;
-    }
-    return gcd(b, a % b);
-}
-
-/*
-
-e^x
-
-*/
-function exp(x) {
-  return Math.exp(x);
-}
-
-/*
-
-a^b
-
-*/
-function pow(a, b) {
-  return Math.pow(a, b);
 }
 
 
@@ -75,30 +25,10 @@ sqrt(x) ^ 2 = x
 
 */
 function sqrt(x) {
-  return Math.sqrt(x);
-}
-
-
-/*
-
-Log of x
-
-*/
-function log(x) {
-  return Math.log(x); 
-}
-
-/*
-
-factorial of floor(x)
-
-*/
-function fac(x) {
-  var pr = 1;
-  for (var i = 1; i <= x; ++i) {
-    pr *= i;
+  var g = scale(x, 1 / 2);
+  for (var i = 0; i < 8; ++i) {
+    g = div(add(mul(g, g), x), scale(g, 2));
   }
-  return pr;
 }
 
 /*
@@ -107,14 +37,14 @@ Product function.
 
 */
 function prod_p1(x) {
-  var p = 1;
+  var p = [1, 0];
   var x_i = x;
   for (var i = 1; i < 1000; ++i) {
-    if (x_i >= 10000000000) {
+    if (norm(x_i) >= 10000000000) {
       break;
     }
-    p *= (x_i) / (x_i - 1);
-    x_i *= x;
+    p = mul(p, div(x_i, sub(x_i, 1)));
+    x_i = mul(x_i, x);
   }
   return p;
 }

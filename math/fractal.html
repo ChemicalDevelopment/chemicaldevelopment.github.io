@@ -18,19 +18,24 @@
       Max y: <input type="number" id="max_y" value="2.5" step="0.00000001"><br><br>
       Max iterations: <input type="text" id="it" value="12" step="1" size=11><br><br>
       Escape Radius: <input type="text" id="esc" value="2" step=".01" size=11><br><br>
-      f(x)=<input type="text" id="func" value="add(mul(x, x), c)" size=38><br><br>
+      f(x)=<input type="text" id="func" value="add(sqr(x), c)" size=38><br><br>
       <br>
        <input type="button" onclick="graph()" value="Graph">
+        <div id="loading" style="clear: both; float: bottom">
+        </div>
       </div>
 		  <div style="float: right; padding-right: 10%">
       <canvas id="pic" width="800" height="800" style="border:1px solid #000000;"></canvas> 
     </div>
-    <div id="loading">
+    <div style="float: right; padding-right: 10%">
+      <div id="results">
+        <br><br>
+        <br><br>
+        </div>
+        <div>
+        <a id="download">Download Image</a>
+      </div>
     </div>
-    <br>
-    <div id="results" style="clear: both">
-    </div>
-
 	</body>
 <script>
 var pi = 3.14159265358979323846;
@@ -79,10 +84,14 @@ function draw() {
   var end = new Date().getTime();
   var time = (end - start) / 1000;
   var pixels = 800 * 800;
-  document.getElementById("results").innerHTML = "Seconds: " + time + "<br>";
-  document.getElementById("results").innerHTML += "MPixels/seconds: " + pixels / (1000000 * time);
+  document.getElementById("results").innerHTML = "Time: " + time.toFixed(2) + "<br>";
+  document.getElementById("results").innerHTML += "MPx/s: " + (pixels / (1000000 * time)).toFixed(2) + "<br><br><br>";
   document.getElementById("loading").innerHTML = "Done!";
+}
 
+function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
 }
 
 //Returns complex number based on picture coordinates
@@ -95,6 +104,10 @@ function picToComp(x, y) {
   var im_z = (800 - y) * (max_y - min_y) / 800 + min_y;
   return [re_z, im_z];
 }
+
+document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'pic', 'fractal.png');
+}, false);
 
 
 </script>

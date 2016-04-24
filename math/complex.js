@@ -40,6 +40,11 @@ function mul(a, b) {
   return [a[0] * b[0] - a[1] * b[1], a[0] * b[1] + a[1] * b[0]];
 }
 
+//a * a
+function sqr(a) {
+  return [a[0] * a[0] - a[1] * a[1], 2 * a[0] * a[1]];
+}
+
 // a/b
 function div(a, b) {
   return mul(a, conj(b)).scale(1 / norm_sqr(b));
