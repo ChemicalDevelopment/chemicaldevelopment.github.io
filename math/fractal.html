@@ -2,7 +2,7 @@
  <meta charset="UTF-8"> 
 <head>
   <title>Fractal Plotter</title>
-	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script src="complex.js"></script> 
 	</head>
 	<body>
       <h1> Math Pages <a href="./index.html">Index</a></h1>
@@ -34,49 +34,6 @@
 	</body>
 <script>
 var pi = 3.14159265358979323846;
-
-/*
-
-Complex functions
-
-*/
-
-function conj(a) {
-  return [a[0], - a[1]];
-}
-
-function norm(a) {
-  return Math.sqrt(norm_sqr(a));
-}
-
-function norm_sqr(a) {
-  return a[0] * a[0] + a[1] * a[1];
-}
-
-//scales a by b
-function scale(a, b) {
-  return [a[0] * b, a[1] * b];
-}
-
-function add(a, b) {
-  return [a[0] + b[0], a[1] + b[1]];
-}
-
-function mul(a, b) {
-  return [a[0] * b[0] - a[1] * b[1], a[0] * b[1] + a[1] * b[0]];
-}
-
-function div(a, b) {
-  return mul(a, conj(b)).scale(1 / norm_sqr(a));
-}
-
-function exp(a) {
-  return scale([Math.cos(a[1]), Math.sin(a[1])], Math.exp(a[0]));
-}
-
-function log(a) {
-  return [Math.log(norm(a)), Math.atan(a[1] / a[0])];
-}
 
 //Replaces replaceAll
 function replaceAll(str, find, replace) {
