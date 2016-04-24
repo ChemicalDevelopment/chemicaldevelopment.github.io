@@ -24,7 +24,12 @@
       </div>
 		  <div style="float: right; padding-right: 10%">
       <canvas id="pic" width="800" height="800" style="border:1px solid #000000;"></canvas> 
-    </div>  
+    </div>
+    <div id="loading">
+    </div>
+    <br>
+    <div id="results" style="clear: both">
+    </div>
 
 	</body>
 <script>
@@ -78,14 +83,22 @@ function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
 
-
 function graph() {
+  document.getElementById("loading").innerHTML = "Please wait...";
+  setTimeout(draw,5);
+}
+
+
+function draw() {
+  var start = new Date().getTime();
   var pic = document.getElementById("pic").getContext("2d");
   var fx = document.getElementById("func").value;
   var esc_sqr = Number(document.getElementById("esc").value);
   esc_sqr *= esc_sqr;
   var max = Number(document.getElementById("it").value);
+  fx = replaceAll(fx, "exp", "pp_tmp");
   fx = replaceAll(fx, "x", "iter");
+  fx = replaceAll(fx, "pp_tmp", "exp");
   fx = replaceAll(fx, "c", "pic_z");
   pic.fillStyle = "#000000";
   pic.fillRect(0, 0, 800, 800);
@@ -106,6 +119,13 @@ function graph() {
       }
     }
   }
+  var end = new Date().getTime();
+  var time = (end - start) / 1000;
+  var pixels = 800 * 800;
+  document.getElementById("results").innerHTML = "Seconds: " + time + "<br>";
+  document.getElementById("results").innerHTML += "MPixels/seconds: " + pixels / (1000000 * time);
+  document.getElementById("loading").innerHTML = "Done!";
+
 }
 
 //Returns complex number based on picture coordinates
