@@ -14,14 +14,21 @@
     <div id="sel" style="float: left;">
       Center x: <input type="number" id="center_x" value="0" step="0.00000001"><br><br>
       Center y: <input type="number" id="center_y" value="0" step="0.00000001"><br><br>
-      Zoom: <input type="number" id="zoom" value=".2" step="0.00000001"><br><br>  
-      Max iterations: <input type="text" id="it" value="20" step="1" size=11><br><br>
+      Zoom: <input type="number" id="zoom" value="0.2" step="0.00000001"><br><br>  
+      Max iterations: <input type="text" id="it" value="12" step="1" size=11><br><br>
       Escape Radius: <input type="text" id="esc" value="2" step=".01" size=11><br><br>
       f(x)=<input type="text" id="func" value="add(sqr(x), c)" size=38><br><br>
       <br>
-       <input type="button" onclick="graph()" value="Graph">
-        <div id="loading" style="clear: both; float: bottom">
+       <input type="button" onclick="graph()" value="Graph"><br><br>
+               <div id="loading" style="clear: both; float: bottom">
         </div>
+        <br><br>
+        
+       Defaults:<br><br>
+       <input type="button" onclick="set_mandelbrot()" value="Mandelbrot">
+       <input type="button" onclick="set_mandelbrot_deep()" value="Deep Mandelbrot">
+       <input type="button" onclick="set_zeta()" value="Zeta Fractal">
+
       </div>
 		  <div style="float: right; padding-right: 10%">
       <canvas id="pic" width="800" height="800" style="border:1px solid #000000;"></canvas> 
@@ -43,6 +50,32 @@ var pi = 3.14159265358979323846;
 function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
+
+function set_mandelbrot() {
+    document.getElementById("center_x").value = 0;
+    document.getElementById("center_y").value = 0;
+    document.getElementById("zoom").value = .2;
+    document.getElementById("it").value = 12;
+    document.getElementById("func").value = "add(sqr(x), c)";
+}
+
+function set_mandelbrot_deep() {
+    document.getElementById("center_x").value = .2821;
+    document.getElementById("center_y").value = .01;
+    document.getElementById("zoom").value = 100;
+    document.getElementById("it").value = 200;
+    document.getElementById("func").value = "add(sqr(x), c)";
+}
+
+function set_zeta() {
+    document.getElementById("center_x").value = 0;
+    document.getElementById("center_y").value = 0;
+    document.getElementById("zoom").value = 1;
+    document.getElementById("it").value = 12;
+    document.getElementById("esc").value = 12;
+    document.getElementById("func").value = "add(zeta(x), c)";
+}
+
 
 function graph() {
   document.getElementById("loading").innerHTML = "Please wait...";
@@ -103,7 +136,6 @@ function downloadCanvas(link, canvasId, filename) {
 document.getElementById('download').addEventListener('click', function() {
     downloadCanvas(this, 'pic', 'fractal.png');
 }, false);
-
 
 </script>
 </html>

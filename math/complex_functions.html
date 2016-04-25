@@ -14,12 +14,18 @@
     <div id="sel" style="float: left;">
       Center x: <input type="text" id="center_x" value="0"><br><br>
       Center y: <input type="text" id="center_y" value="0"><br><br>
-      Zoom: <input type="text" id="zoom" value="1 / 5"><br><br>  
+      Zoom: <input type="text" id="zoom" value="1 / 10"><br><br>  
       f(x)=<input type="text" id="func" value="x" size=38><br><br>
       <br>
        <input type="button" onclick="graph()" value="Graph">
+       <br><br>
         <div id="loading" style="clear: both; float: bottom">
         </div>
+        <br><br>
+       Defaults:<br><br>
+       <input type="button" onclick="set_x()" value="x">
+       <input type="button" onclick="set_zeta()" value="Zeta Function">
+        
       </div>
 		  <div style="float: right; padding-right: 10%">
       <canvas id="pic" width="800" height="800" style="border:1px solid #000000;"></canvas> 
@@ -40,6 +46,20 @@ var pi = 3.14159265358979323846;
 //Replaces replaceAll
 function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
+}
+
+function set_zeta() {
+    document.getElementById("center_x").value = 0;
+    document.getElementById("center_y").value = 0;
+    document.getElementById("zoom").value = "1 / 10";
+    document.getElementById("func").value = "zeta(x)";
+}
+
+function set_x() {
+    document.getElementById("center_x").value = 0;
+    document.getElementById("center_y").value = 0;
+    document.getElementById("zoom").value = "1 / 10";
+    document.getElementById("func").value = "x";
 }
 
 function graph() {
@@ -107,6 +127,8 @@ function colorize(c, max_rad) {
 document.getElementById('download').addEventListener('click', function() {
     downloadCanvas(this, 'pic', 'fractal.png');
 }, false);
+
+
 
 
 </script>
