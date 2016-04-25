@@ -4,6 +4,14 @@ Complex functions
 
 */
 
+function re(a) {
+  return [a[0], 0];
+}
+
+function im(a) {
+  return [0, a[1]];
+}
+
 
 //Conjugate
 function conj(a) {
@@ -88,7 +96,7 @@ function zeta(x) {
     sum = add(sum, nth_t);
     sign *= -1;
   }
-  var co = sub(1, pow([2, 0], sub(1, x)));
+  var co = sub([1, 0], pow([2, 0], sub([1, 0], x)));
   return mul(co, sum);
 }
 
@@ -119,6 +127,18 @@ function sqrt(x) {
   for (var i = 0; i < 8; ++i) {
     g = div(add(mul(g, g), x), scale(g, 2));
   }
+}
+
+function sin(x) {
+  var sum = [0, 0];
+  var x_s = sqr(x);
+  var n_k = x;
+  for (var i = 1; i < 20; i += 2) {
+    sum = add(sum, n_k);
+    n_k = scale(n_k, -1 / ((i + 1) * (i + 2)));
+    n_k = mul(n_k, x_s);
+  }
+  return sum;
 }
 
 /*

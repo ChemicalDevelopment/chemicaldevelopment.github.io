@@ -5,6 +5,11 @@ Functions class. Implements basic functions as well as some lesser known ones
 */
 
 
+function sin(x) {
+  return Math.sin(x);
+}
+
+
 /*
 
 Riemann zeta function. Sum of the recipricols to some power x

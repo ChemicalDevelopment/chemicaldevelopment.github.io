@@ -16,7 +16,7 @@
       Max x: <input type="number" id="max_x" value="2" step="0.0001"><br><br>
       Min y: <input type="number" id="min_y" value="-2" step="0.0001">
       Max y: <input type="number" id="max_y" value="2" step="0.0001"><br><br>
-      f(x)=<input type="text" id="func" value="exp(x)" size=38><br><br>
+      f(x)=<input type="text" id="func" value="x" size=38><br><br>
       <br>
        <input type="button" onclick="graph()" value="Graph">
         <div id="loading" style="clear: both; float: bottom">
@@ -54,7 +54,8 @@ function draw() {
   var pic = document.getElementById("pic").getContext("2d");
   var fx = document.getElementById("func").value;
   fx = replaceAll(fx, "exp", "pp_tmp");
-  fx = replaceAll(fx, "pp_tmp", "exp");
+  fx = replaceAll(fx, "x", "pic_z")
+    fx = replaceAll(fx, "pp_tmp", "exp");
   pic.fillStyle = "#000000";
   pic.fillRect(0, 0, 800, 800);
   pic.fillStyle = "#FF0000";
@@ -69,8 +70,8 @@ function draw() {
   for (var x = 0; x < 800; ++x) {
     pic_z[1] = max_y;
     for (var y = 0; y < 800; ++y) {
-      var val = eval(fx);
-      pic.setFillStyle(colorize(fx));
+      pic.fillStyle = (colorize(eval(fx), 2));
+      pic.fillRect(x, y, 1, 1);
       pic_z[1] -= add_to_y;
     }
     pic_z[0] += add_to_x;
@@ -89,8 +90,20 @@ function downloadCanvas(link, canvasId, filename) {
 }
 
 //Colorizes a complex number
-function colorize(c) {
-
+function colorize(c, max_rad) {
+  var rad = norm(c);
+  var angle = Math.atan(c[1] / c[0]);
+  var o_m = 2 * angle; //-pi to +pi
+  var alpha = (rad / 4);
+  //Norm distro approach
+  /*var r = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m - pi), 2)));
+  var g = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m), 2)));
+  var b = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m + pi), 2)));*/
+  //Sinoid approach
+  var r = Math.floor(255 * (Math.sin(o_m + pi) + 1) / 2);
+  var g = Math.floor(255 * (Math.sin(o_m + pi / 3) + 1) / 2);
+  var b = Math.floor(255 * (Math.sin(o_m - pi / 3) + 1) / 2);
+  return "rgba(" + r + ", " + g + ", " + b + ", " + (alpha % 1) + ")";
 }
 
 //Returns complex number based on picture coordinates
