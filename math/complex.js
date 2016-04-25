@@ -65,12 +65,31 @@ function exp(a) {
 
 //ln(a)
 function log(a) {
-  return [Math.log(norm(a)), Math.atan(a[1] / a[0])];
+  var real = Math.log(norm(a)) / 2;
+  var imag = Math.atan2(a[1], a[0]);
+  return [real, imag];
 }
 
 //a^b
 function pow(a, b) {
-  return exp(mul(b, log(a)));
+  var lga = log(a);
+  var _e = mul(lga, b);
+  return exp(_e);
+}
+//a^b, b is an integer
+function pow_i(a, b) {
+    if (b == 0) {
+      return 1;
+    }
+    if (b == 1) {
+      return a;
+    }
+    if (b % 2 == 0) {
+      return pow_i(sqr(a), Math.floor(b / 2));
+    }
+    if (b % 2 == 1) {
+      return mul(a, pow_i(sqr(a), Math.floor((b - 1) / 2)));
+    }
 }
 
 
@@ -83,7 +102,7 @@ Functions class. Implements basic functions as well as some lesser known ones
 function dragon_geometric(x) {
   var sum = [0, 0];
   var sign = 1;
-  for (var i = 1; i < 12; ++i) {
+  for (var i = 1; i < 35; ++i) {
       sum = add(sum, scale(pow([i, 0], sub(x, [i, 0])), sign));
       sign = sign * -1;
   }

@@ -108,8 +108,15 @@ function downloadCanvas(link, canvasId, filename) {
 
 //Colorizes a complex number
 function colorize(c, max_rad) {
-  var rad = norm(c);
+  //var rad = norm(c);
   var angle = Math.atan(c[1] / c[0]);
+  if (c[0] == 0) {
+    if (c[1] > 0) {
+      angle = pi / 2;
+    } else {
+      angle = -pi / 2;
+    }
+  }
   var o_m = 2 * angle; //-pi to +pi
   var alpha = .9;
   //var alpha = (rad / 4);
