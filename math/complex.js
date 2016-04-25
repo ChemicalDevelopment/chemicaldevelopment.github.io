@@ -80,6 +80,16 @@ Functions class. Implements basic functions as well as some lesser known ones
 
 */
 
+function dragon_geometric(x) {
+  var sum = [0, 0];
+  var sign = 1;
+  for (var i = 1; i < 12; ++i) {
+      sum = add(sum, scale(pow([i, 0], sub(x, [i, 0])), sign));
+      sign = sign * -1;
+  }
+  return sum;
+}
+
 
 /*
 
@@ -116,7 +126,6 @@ function gamma(x) {
 }
 
 
-
 /*
 
 sqrt(x) ^ 2 = x
@@ -149,31 +158,15 @@ Product function.
 function prod_p1(x) {
   var p = [1, 0];
   var x_i = x;
-  for (var i = 1; i < 1000; ++i) {
-    if (norm(x_i) >= 10000000000) {
+  for (var i = 1; i < 200; ++i) {
+    if (norm_sqr(x_i) >= 1000000000000) {
       break;
     }
-    p = mul(p, div(x_i, sub(x_i, 1)));
+    p = mul(p, div(x_i, sub(x_i, [1, 0])));
     x_i = mul(x_i, x);
   }
   return p;
 }
-
-
-/*
-
-Dragon geometric.
-Custom function
-
-*/
-function dragon_geometric(x) {
-  var sum = 0;
-  for (var i = 1; i < 1000; ++i) {  
-    sum += pow(-1, i) * pow(i, x - i);
-  }
-  return sum;
-}
-
 
 /*
 

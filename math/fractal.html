@@ -12,10 +12,9 @@
       </p>
     </div>
     <div id="sel" style="float: left;">
-      Min x: <input type="number" id="min_x" value="-2" step="0.00000001">
-      Max x: <input type="number" id="max_x" value="2" step="0.00000001"><br><br>
-      Min y: <input type="number" id="min_y" value="-2" step="0.00000001">
-      Max y: <input type="number" id="max_y" value="2" step="0.00000001"><br><br>
+      Center x: <input type="number" id="center_x" value="0" step="0.00000001"><br><br>
+      Center y: <input type="number" id="center_y" value="0" step="0.00000001"><br><br>
+      Zoom: <input type="number" id="zoom" value=".2" step="0.00000001"><br><br>  
       Max iterations: <input type="text" id="it" value="20" step="1" size=11><br><br>
       Escape Radius: <input type="text" id="esc" value="2" step=".01" size=11><br><br>
       f(x)=<input type="text" id="func" value="add(sqr(x), c)" size=38><br><br>
@@ -65,15 +64,14 @@ function draw() {
   pic.fillStyle = "#000000";
   pic.fillRect(0, 0, 800, 800);
   pic.fillStyle = "#FF0000";
-  var min_x = Number(document.getElementById("min_x").value);
-  var max_x = Number(document.getElementById("max_x").value);
-  var min_y = Number(document.getElementById("min_y").value);
-  var max_y = Number(document.getElementById("max_y").value);
-  var pic_z = [min_x, max_y]
-  var add_to_x = (max_x - min_x) / 800;
-  var add_to_y = (max_y - min_y) / 800;
+  var center_x = Number(document.getElementById("center_x").value);
+  var center_y = Number(document.getElementById("center_y").value);
+  var zoom = Number(document.getElementById("zoom").value);
+  var pic_z = [center_x - 1 / (2 * zoom), center_y + 1 / (2 * zoom)];
+  var add_to_x = 1 / (800 * zoom);
+  var add_to_y = 1 / (800 * zoom);
   for (var x = 0; x < 800; ++x) {
-    pic_z[1] = max_y;
+    pic_z[1] = center_y + 1 / (2 * zoom);
     for (var y = 0; y < 800; ++y) {
       var iter = pic_z;
       for (var t = 0; t <= max; ++t) {
@@ -100,17 +98,6 @@ function draw() {
 function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
-}
-
-//Returns complex number based on picture coordinates
-function picToComp(x, y) {
-  var min_x = Number(document.getElementById("min_x").value);
-  var max_x = Number(document.getElementById("max_x").value);
-  var min_y = Number(document.getElementById("min_y").value);
-  var max_y = Number(document.getElementById("max_y").value);
-  var re_z = x * (max_x - min_x) / 800 + min_x;
-  var im_z = (800 - y) * (max_y - min_y) / 800 + min_y;
-  return [re_z, im_z];
 }
 
 document.getElementById('download').addEventListener('click', function() {
