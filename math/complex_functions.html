@@ -91,7 +91,8 @@ function colorize(c, max_rad) {
   var rad = norm(c);
   var angle = Math.atan(c[1] / c[0]);
   var o_m = 2 * angle; //-pi to +pi
-  var alpha = (rad / 4);
+  var alpha = .9;
+  //var alpha = (rad / 4);
   //Norm distro approach
   /*var r = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m - pi), 2)));
   var g = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m), 2)));

@@ -168,25 +168,41 @@ function prod_p1(x) {
   return p;
 }
 
-/*
+function prod_p2(x) {
+  var p = [1, 0];
+  var x_i = x;
+  for (var i = 1; i < 200; ++i) {
+    if (norm_sqr(x_i) >= 1000000000000) {
+      break;
+    }
+    p = mul(p, div(x_i, add(x_i, [1, 0])));
+    x_i = mul(x_i, x);
+  }
+  return p;
+}
 
-Returns 1 if prime
+function sum_i(func, range) {
+  var tot = [0, 0];
+  for (var i = range[0]; i <= range[1]; ++i) {
+    tot = add(tot, func([i, 0]));
+  }
+  return tot;
+}
 
-*/
-function isprime(z) {
-  if (z == 0 || z == 1) {
-    return 0;
+function integral_i(func, range) {
+  var sum = [0, 0];
+  for (var i = range[0]; i <= range[1]; i += .02) {
+    sum = add(sum, func([i, 0]));
   }
-  if (z == 2) {
-    return 1;
-  }
-  if (z % 2 == 0) {
-    return 0;
-  }
-  for (var c = 3; c < Math.sqrt(z); c += 2) { 
-    if (z % c == 0) {
-      return 0;
+  return scale(sum, .02);
+}
+
+function sum(func, range, irange) {
+  var sum = [0, 0];
+  for (var i = range[0]; i <= range[1]; ++i) {
+    for (var j = irange[0]; j <= irange[1]; ++j) {
+      sum = add(sum, func([i, j]));
     }
   }
-  return 1;
+  return sum;
 }
