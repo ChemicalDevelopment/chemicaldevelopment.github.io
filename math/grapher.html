@@ -33,7 +33,7 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBackgroundColor);
 var options;
 var data;
-var buf = 200; //How many points to plot?
+var buf = 1000; //How many points to plot?
 var pi = 3.14159265358979323846;
 
 function sin(x) {
@@ -62,8 +62,14 @@ function drawBackgroundColor() {
         return;
       }
       for (x = min_x; x <= max_x + interval; x += interval) {
-        fx = eval(expression1);
-        gx = eval(expression2);
+        try {
+          fx = eval(expression1);
+          gx = eval(expression2);
+        } catch (err) { continue; }
+        if (fx == NaN || fx >= max_y || fx <= min_y) {
+          fx = null;
+        }
+
         data.addRow([x, fx, gx]);
       }
 
@@ -97,5 +103,6 @@ document.getElementById('sel').onkeypress = function(event) {
          drawBackgroundColor();      
     }
 }
+window.onload = init_cheb();
 </script>
 </html>

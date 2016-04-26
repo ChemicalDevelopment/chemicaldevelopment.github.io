@@ -13,10 +13,27 @@ function im(a) {
 }
 
 
+function neg(a) {
+  return [-a[0], -a[1]];
+}
+
+
+// 1 / a
+function rec(a) {
+  return scale(conj(a), 1 / (a[0] * a[0] + a[1] * a[1]));
+}
+
 //Conjugate
 function conj(a) {
   return [a[0], - a[1]];
 }
+
+
+//Angle
+function ang(a) {
+  return Math.atan2(a[1], a[0]);
+}
+
 
 //Norm
 function norm(a) {
@@ -65,7 +82,7 @@ function exp(a) {
 
 //ln(a)
 function log(a) {
-  var real = Math.log(norm(a)) / 2;
+  var real = Math.log(norm(a));
   var imag = Math.atan2(a[1], a[0]);
   return [real, imag];
 }
@@ -115,21 +132,49 @@ function dragon_geometric(x) {
 Riemann zeta function. Sum of the recipricols to some power x
 
 */
-function zeta(x) {
-  var sign = -1;
-  var sum = [1, 0];
-  var nth_t = [1, 0];
-  var n_x = scale(x, -1);
-  for (var i = 2; i < 20; ++i) {
-    nth_t = scale(pow([i, 0], n_x), sign);
-    sum = add(sum, nth_t);
-    sign *= -1;
-  }
-  var co = sub([1, 0], pow([2, 0], sub([1, 0], x)));
-  return mul(co, sum);
+/*var cheb_term = [0.1, 20.1, 680.1, 9128.1, 64040.1, 269044.89999999, 734964.899999999999, 1390324.9, 1947380.9, 2209524.9, 2261953.699999];
+var cheb_n = 10;*/
+
+var cheb_term = [0.05, 40.05, 5360.05, 286256.05, 8131280.050000001, 142019689.65, 1663478889.65, 13835152489.65, 85039443049.65, 397779856489.6499, 1447929244777.65, 4175589993577.6494, 9690208463977.648, 18377853561961.65, 28996086459497.65, 38955256625462.445, 45982896863542.445, 49590669392182.445, 50861979711798.445, 51136857618742.445, 51164345409436.84];
+var cheb_n = 20;
+
+function init_cheb() {
+
 }
 
+
+function zeta(x) {
+  if (x[0] < 0) {
+    var ref_x = sub([1, 0], x);
+    var ze_ref = zeta(ref_x);
+    var c_xp = sin(scale(x, pi / 2));
+    var g_ref = gamma(ref_x);
+    var tpi_tx = pow([2 * pi , 0], x);
+    var a = mul(ze_ref, g_ref);
+    var b = mul(c_xp, tpi_tx);
+    return scale(mul(a, b), 1 / 2);
+  } 
+  var sum = [0, 0];
+  var sign = 1;
+  var _c = sub([1, 0], pow([2, 0], sub([1,0], x)));
+  for (var i = 0; i <= cheb_n - 1; ++i) {
+    var tmp = pow([i + 1, 0], x);
+    var scl = sign * (cheb_term[i] - cheb_term[cheb_n]);
+    var ot = div([1, 0], tmp);
+    sum = add(sum, scale(ot, scl));
+    sign *= -1;
+  }
+  sum = div(sum, _c);
+  sum = scale(sum, - 1 / cheb_term[cheb_n]);
+  return sum;
+}
+
+
 function gamma(x) {
+  if (x[0] < 4) {
+    var xp1 = add(x, [1, 0]);
+    return div(gamma(xp1), x);
+  }
   var lgx = log(x);
   var x_n2 = sqr(div([1, 0], x));
   var x_k_n1 = div([1, 0], x);
@@ -158,15 +203,12 @@ function sqrt(x) {
 }
 
 function sin(x) {
-  var sum = [0, 0];
-  var x_s = sqr(x);
-  var n_k = x;
-  for (var i = 1; i < 20; i += 2) {
-    sum = add(sum, n_k);
-    n_k = scale(n_k, -1 / ((i + 1) * (i + 2)));
-    n_k = mul(n_k, x_s);
-  }
-  return sum;
+  var e_ix = exp(mul(x, [0, 1]));
+  return div(sub(e_ix, rec(e_ix)), [0, 2]);
+}
+
+function cos(x) {
+  return sin(add(x, [pi / 2, 0]));
 }
 
 /*

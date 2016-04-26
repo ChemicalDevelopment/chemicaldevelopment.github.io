@@ -3,6 +3,16 @@
 <head>
   <title>Complex Function Plotter</title>
      <script src="complex.js"></script> 
+     <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 	</head>
 	<body>
       <h1> Math Pages <a href="./index.html">Index</a></h1>
@@ -15,7 +25,7 @@
       Center x: <input type="text" id="center_x" value="0"><br><br>
       Center y: <input type="text" id="center_y" value="0"><br><br>
       Zoom: <input type="text" id="zoom" value="1 / 10"><br><br>  
-      f(x)=<input type="text" id="func" value="x" size=38><br><br>
+      f(z)=<input type="text" id="func" value="z" size=38><br><br>
       <br>
        <input type="button" onclick="graph()" value="Graph">
        <br><br>
@@ -23,9 +33,14 @@
         </div>
         <br><br>
        Defaults:<br><br>
-       <input type="button" onclick="set_x()" value="x">
+       <input type="button" onclick="set_x()" value="z">
        <input type="button" onclick="set_zeta()" value="Zeta Function">
-        
+        <div> 
+          <br> Input a complex function, using z as a placeholder
+          <br> Set the center for the center of the picture, and the zoom is how zoomed in you are.
+          <br> You can think of the 'z' as x + iy for every x and y in the picture
+          <br>
+        </div>
       </div>
 		  <div style="float: right; padding-right: 10%">
       <canvas id="pic" width="800" height="800" style="border:1px solid #000000;"></canvas> 
@@ -40,6 +55,7 @@
       </div>
     </div>
 	</body>
+
 <script>
 var pi = 3.14159265358979323846;
 
@@ -52,14 +68,14 @@ function set_zeta() {
     document.getElementById("center_x").value = 0;
     document.getElementById("center_y").value = 0;
     document.getElementById("zoom").value = "1 / 10";
-    document.getElementById("func").value = "zeta(x)";
+    document.getElementById("func").value = "zeta(z)";
 }
 
 function set_x() {
     document.getElementById("center_x").value = 0;
     document.getElementById("center_y").value = 0;
     document.getElementById("zoom").value = "1 / 10";
-    document.getElementById("func").value = "x";
+    document.getElementById("func").value = "z";
 }
 
 function graph() {
@@ -73,8 +89,10 @@ function draw() {
   var pic = document.getElementById("pic").getContext("2d");
   var fx = document.getElementById("func").value;
   fx = replaceAll(fx, "exp", "pp_tmp");
-  fx = replaceAll(fx, "x", "pic_z")
-    fx = replaceAll(fx, "pp_tmp", "exp");
+  fx = replaceAll(fx, "zeta", "ttm");
+  fx = replaceAll(fx, "z", "pic_z")
+  fx = replaceAll(fx, "pp_tmp", "exp");
+  fx = replaceAll(fx, "ttm", "zeta");
   pic.fillStyle = "#000000";
   pic.fillRect(0, 0, 800, 800);
   pic.fillStyle = "#FF0000";
@@ -87,7 +105,7 @@ function draw() {
   for (var x = 0; x < 800; ++x) {
     pic_z[1] = center_y + 1 / (2 * zoom);
     for (var y = 0; y < 800; ++y) {
-      pic.fillStyle = (colorize(eval(fx), 2));
+      pic.fillStyle = (colorize(eval(fx)));
       pic.fillRect(x, y, 1, 1);
       pic_z[1] -= add_to_y;
     }
@@ -99,6 +117,28 @@ function draw() {
   document.getElementById("results").innerHTML = "Time: " + time.toFixed(2) + "<br>";
   document.getElementById("results").innerHTML += "MPx/s: " + (pixels / (1000000 * time)).toFixed(2) + "<br><br><br>";
   document.getElementById("loading").innerHTML = "Done!";
+  drawGrid();
+}
+
+function drawGrid() {
+  var pic = document.getElementById("pic").getContext("2d");
+  pic.fillStyle = "#000000";
+  pic.fillRect(400, 0, 1, 800);
+  pic.fillRect(0, 400, 800, 1);
+  pic.font="12px Lucida Console";
+  for (var i = 0; i < 7; ++i) {
+    if (i == 3) continue;
+    var x = 400;
+    var y = i * 800 / 6;
+    pic.fillText(get_y_from_pic(y).toFixed(2) + "i", x + 12, y + 4 );
+    pic.fillText(get_y_from_pic(y).toFixed(2), 800 - (y + 12), 800 - (x + 6));
+    pic.fillRect(x - 4, y - 1, 10, 2);
+    pic.fillRect(y - 1, x - 4, 2, 10);
+  }
+  pic.fillText(get_x_from_pic(400).toFixed(2) + " + " + get_y_from_pic(400).toFixed(2) + "i", 408, 392 );
+  pic.font="20px Lucida Console";
+  pic.fillText("f(z) = " + document.getElementById("func").value, 10, 25);
+
 }
 
 function downloadCanvas(link, canvasId, filename) {
@@ -107,36 +147,43 @@ function downloadCanvas(link, canvasId, filename) {
 }
 
 //Colorizes a complex number
-function colorize(c, max_rad) {
+function colorize(c) {
   //var rad = norm(c);
-  var angle = Math.atan(c[1] / c[0]);
-  if (c[0] == 0) {
-    if (c[1] > 0) {
-      angle = pi / 2;
-    } else {
-      angle = -pi / 2;
-    }
-  }
-  var o_m = 2 * angle; //-pi to +pi
-  var alpha = .9;
-  //var alpha = (rad / 4);
-  //Norm distro approach
-  /*var r = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m - pi), 2)));
-  var g = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m), 2)));
-  var b = Math.floor(255 * Math.exp(-Math.pow(2 * (o_m + pi), 2)));*/
-  //Sinoid approach
+  var angle = ang(c);
+  var o_m = angle; //-pi to +pi
+  var alpha = .75;
+  o_m += 2 * pi / 3;
+  //var alpha = pi * erf(norm(c) / 15) / 6 + .2;
   var r = Math.floor(255 * (Math.sin(o_m + pi) + 1) / 2);
   var g = Math.floor(255 * (Math.sin(o_m + pi / 3) + 1) / 2);
   var b = Math.floor(255 * (Math.sin(o_m - pi / 3) + 1) / 2);
-  return "rgba(" + r + ", " + g + ", " + b + ", " + (alpha % 1) + ")";
+  return "rgba(" + g + ", " + r + ", " + b + ", " + alpha + ")";
+}
+
+function get_x_from_pic(pic_x) {
+   var zoom = Number(eval(document.getElementById("zoom").value));
+   var center_x = Number(eval(document.getElementById("center_x").value));
+   return 2 * ((center_x + 2 * pic_x / (zoom * 800)) / 2 - 1 / (2 * zoom));
+}
+
+function get_y_from_pic(pic_y) {
+   var zoom = Number(eval(document.getElementById("zoom").value));
+   var center_y = Number(eval(document.getElementById("center_y").value));
+   var _sc_y = 800 - pic_y
+   return 2 * ((center_y + 2 * _sc_y / (zoom * 800)) / 2 - 1 / (2 * zoom));
+}
+
+
+function erf(x) {
+  var t = 1 / (1 + .471 * x);
+  return 1 - (.348 * t - .096 * t * t + .75 * t * t * t) * Math.exp(- x * x);
 }
 
 document.getElementById('download').addEventListener('click', function() {
     downloadCanvas(this, 'pic', 'fractal.png');
 }, false);
 
-
-
+window.onload = init_cheb;
 
 </script>
 </html>
