@@ -142,20 +142,28 @@ function drawGrid() {
   pic.fillStyle = "#000000";
   pic.fillRect(400, 0, 1, 800);
   pic.fillRect(0, 400, 800, 1);
-  pic.font="12px Lucida Console";
+  pic.font="12px Arial Black";
+  pic.strokeStyle = "white";
+  pic.lineWidth = 2;
   for (var i = 0; i < 7; ++i) {
     if (i == 3) continue;
     var x = 400;
     var y = i * 800 / 6;
-    pic.fillText(get_y_from_pic(y).toFixed(2) + "i", x + 12, y + 4 );
-    pic.fillText(get_x_from_pic(800 - y).toFixed(2), 800 - (y + 12), 800 - (x + 6));
+
+    draw_out(pic, get_y_from_pic(y).toFixed(2) + "i", x + 12, y + 4 );
+    draw_out(pic, get_x_from_pic(800 - y).toFixed(2), 800 - (y + 12), 800 - (x + 6));
     pic.fillRect(x - 4, y - 1, 10, 2);
     pic.fillRect(y - 1, x - 4, 2, 10);
   }
-  pic.fillText(get_x_from_pic(400).toFixed(2) + " + " + get_y_from_pic(400).toFixed(2) + "i", 408, 392 );
-  pic.font="20px Lucida Console";
-  pic.fillText("f(z) = " + document.getElementById("func").value, 10, 25);
+  draw_out(pic, get_x_from_pic(400).toFixed(2) + " + " + get_y_from_pic(400).toFixed(2) + "i", 408, 392)
+  pic.font="20px Arial Black";
+  draw_out(pic, "f(z) = " + document.getElementById("func").value, 10, 25);
 
+}
+
+function draw_out(pic, text, x, y) {
+  pic.strokeText(text, x, y);
+  pic.fillText(text, x, y);
 }
 
 function downloadCanvas(link, canvasId, filename) {
