@@ -190,18 +190,6 @@ function gamma(x) {
 }
 
 
-/*
-
-sqrt(x) ^ 2 = x
-
-*/
-function sqrt(x) {
-  var g = scale(x, 1 / 2);
-  for (var i = 0; i < 8; ++i) {
-    g = div(add(mul(g, g), x), scale(g, 2));
-  }
-}
-
 function sin(x) {
   var e_ix = exp(mul(x, [0, 1]));
   return div(sub(e_ix, rec(e_ix)), [0, 2]);

@@ -69,6 +69,9 @@ function drawBackgroundColor() {
         if (fx == NaN || fx >= max_y || fx <= min_y) {
           fx = null;
         }
+        if (gx == NaN || gx >= max_y || gx <= min_y) {
+          gx = null;
+        }
 
         data.addRow([x, fx, gx]);
       }

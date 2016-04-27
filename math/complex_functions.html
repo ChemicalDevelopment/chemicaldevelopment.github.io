@@ -43,21 +43,38 @@
         </div>
       </div>
 		  <div style="float: right; padding-right: 10%">
-      <canvas id="pic" width="800" height="800" style="border:1px solid #000000;"></canvas> 
+      <canvas id="pic" width="800" height="800" style="border:1px solid #000000;" onmousemove="myFunction(event)" onmouseout="clearCoor()"></canvas> 
     </div>
     <div style="float: right; padding-right: 2%">
       <div id="results">
         <br><br>
         <br><br>
         </div>
+        Coordinates:<p id="demo"></p>
+
         <div>
         <a id="download">Download Image</a>
       </div>
     </div>
 	</body>
 
+  <script>
+function myFunction(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var rect = document.getElementById("pic").getBoundingClientRect();
+    var coor = get_x_from_pic(x - rect.left).toFixed(4) + " + " + get_y_from_pic(y - rect.top).toFixed(4) + "i";
+    document.getElementById("demo").innerHTML = coor;
+}
+
+function clearCoor() {
+    document.getElementById("demo").innerHTML = "";
+}
+</script>
+
 <script>
 var pi = 3.14159265358979323846;
+
 
 //Replaces replaceAll
 function replaceAll(str, find, replace) {
@@ -151,7 +168,14 @@ function colorize(c) {
   //var rad = norm(c);
   var angle = ang(c);
   var o_m = angle; //-pi to +pi
-  var alpha = .75;
+  var _c_r = norm(c);
+  var alpha = _c_r * (.8) / (.5);
+  if (_c_r >= .5) {
+    alpha = .8;
+  }
+  if (_c_r <= .01) {
+    alpha = 0;
+  }
   o_m += 2 * pi / 3;
   //var alpha = pi * erf(norm(c) / 15) / 6 + .2;
   var r = Math.floor(255 * (Math.sin(o_m + pi) + 1) / 2);
