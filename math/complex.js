@@ -167,7 +167,7 @@ function zeta(x) {
   sum = div(sum, _c);
   sum = scale(sum, - 1 / cheb_term[cheb_n]);
   return sum;
-}
+} 
 
 
 function gamma(x) {

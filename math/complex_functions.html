@@ -148,7 +148,7 @@ function drawGrid() {
     var x = 400;
     var y = i * 800 / 6;
     pic.fillText(get_y_from_pic(y).toFixed(2) + "i", x + 12, y + 4 );
-    pic.fillText(get_y_from_pic(y).toFixed(2), 800 - (y + 12), 800 - (x + 6));
+    pic.fillText(get_x_from_pic(800 - y).toFixed(2), 800 - (y + 12), 800 - (x + 6));
     pic.fillRect(x - 4, y - 1, 10, 2);
     pic.fillRect(y - 1, x - 4, 2, 10);
   }
