@@ -20,11 +20,14 @@
       Max y: <input type="number" id="max_y" value="20">
       <br>  
 
-      f(x)=   <input type="text" id="exp_1" value="x * x * x - 2 * x * x - 4 * x" size=40><br>
-      g(x)=<input type="text" id="exp_2" value="Math.pow(Math.log(x), 2)" size=40><br> 
+      f(x)=   <input type="text" id="exp_1" value="gamma(x)" size=40><br>
+      g(x)=<input type="text" id="exp_2" value="pow(log(x), 2)" size=40><br> 
       <!--h(x)=<input type="text" id="exp_3" value="10" size=40><br>-->
       <br>
-       <input type="button" onclick="drawBackgroundColor()" value="Graph">
+       <input type="button" onclick="drawBackgroundColor()" value="Graph"><br>
+       There are a lot of functions to graph. Use "x" as the placeholder for the value, and you can type in an expression. Some defaults are there.<br>
+       We've include exp, log, pow, fac (integers), sin, cos, etc.<br>
+       But, we also have some more abstract functions, such as zeta, gamma, prod_p1, prod_p2, dragon_geometric, and a few more.
       </div>
 		<div id="chart_div"></div>
 	</body>
