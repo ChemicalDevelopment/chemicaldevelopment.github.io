@@ -167,7 +167,7 @@ function zeta(x) {
   sum = div(sum, _c);
   sum = scale(sum, - 1 / cheb_term[cheb_n]);
   return sum;
-} 
+}
 
 
 function gamma(x) {
@@ -199,6 +199,29 @@ function cos(x) {
   return sin(add(x, [pi / 2, 0]));
 }
 
+function tan(x) {
+  return div(sin(x), cos(x));
+}
+
+function sinh(x) {
+  var e_x = exp(x);
+  return scale(sub(e_x, rec(e_x)), 1 / 2);
+}
+
+function sinh(x) {
+  var e_x = exp(x);
+  return scale(sub(e_x, rec(e_x)), 1 / 2);
+}
+
+function cosh(x) {
+  var e_x = exp(x);
+  return scale(add(e_x, rec(e_x)), 1 / 2);
+}
+
+function tanh(x) {
+  return div(sinh(x), cosh(x));
+}
+
 /*
 
 Product function.
@@ -208,7 +231,7 @@ function prod_p1(x) {
   var p = [1, 0];
   var x_i = x;
   for (var i = 1; i < 200; ++i) {
-    if (norm_sqr(x_i) >= 1000000000000) {
+    if (norm_sqr(x_i) >= 1000000000) {
       break;
     }
     p = mul(p, div(x_i, sub(x_i, [1, 0])));
@@ -221,37 +244,11 @@ function prod_p2(x) {
   var p = [1, 0];
   var x_i = x;
   for (var i = 1; i < 200; ++i) {
-    if (norm_sqr(x_i) >= 1000000000000) {
+    if (norm_sqr(x_i) >= 1000000000) {
       break;
     }
     p = mul(p, div(x_i, add(x_i, [1, 0])));
     x_i = mul(x_i, x);
   }
   return p;
-}
-
-function sum_i(func, range) {
-  var tot = [0, 0];
-  for (var i = range[0]; i <= range[1]; ++i) {
-    tot = add(tot, func([i, 0]));
-  }
-  return tot;
-}
-
-function integral_i(func, range) {
-  var sum = [0, 0];
-  for (var i = range[0]; i <= range[1]; i += .02) {
-    sum = add(sum, func([i, 0]));
-  }
-  return scale(sum, .02);
-}
-
-function sum(func, range, irange) {
-  var sum = [0, 0];
-  for (var i = range[0]; i <= range[1]; ++i) {
-    for (var j = irange[0]; j <= irange[1]; ++j) {
-      sum = add(sum, func([i, j]));
-    }
-  }
-  return sum;
 }
