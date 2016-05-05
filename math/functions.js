@@ -202,3 +202,21 @@ function isprime(z) {
   }
   return 1;
 }
+
+function integral(f, lim) {
+  var sum = 0;
+  var x;
+  for (x = 0; x <= lim; x += .01) {
+    sum += .01 * eval(f);
+  }
+  return sum;
+}
+
+function integral_b(f, lim) {
+  var sum = 0;
+  var x;
+  for (x = lim[0]; x <= lim[1]; x += .01) {
+    sum += .01 * eval(f);
+  }
+  return sum;
+}
