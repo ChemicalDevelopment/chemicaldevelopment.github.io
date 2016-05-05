@@ -14,6 +14,14 @@ function sin(x) {
   return Math.sin(x);
 }
 
+function cos(x) {
+  return Math.cos(x);
+}
+
+function sqrt(x) {
+  return Math.sqrt(x);
+}
+
 
 /*
 
