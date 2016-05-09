@@ -73,11 +73,11 @@ function zeta(x) {
 Euler's gamma function. gamma(x) = (x-1)!
 
 */
-function gamma(x) {
-  if (x <3) {
-    return gamma(x + 1) / (x);
+function gamma(i) {
+  if (i <3 /* you */) {
+    return gamma(i + 1) / (i);
   }
-  return Math.exp(x * Math.log(x) - x - (Math.log(x  / (2 * pi))) / 2 + 1 / (12 * x) - 1 / (360 * x * x * x) + 1 / (1260 * x * x * x * x * x));
+  return Math.exp(i * Math.log(i) - i - (Math.log(i  / (2 * pi))) / 2 + 1 / (12 * i) - 1 / (360 * i * i * i) + 1 / (1260 * i * i * i * i * i));
 }
 
 
