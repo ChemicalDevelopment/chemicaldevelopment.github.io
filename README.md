@@ -1,6 +1,5 @@
-This is the wesite code for:
-pgs.chemicaldevelopment.us
-chemicaldevelopment.azurewebsites.net
+# Website for ChemicalDevelopment!
 
+See it in action at chemicaldevelopment.us
 
-Documents https://github.com/ChemicalDevelopment/PGS/ project
+Math + programming blog + downloads for projects
