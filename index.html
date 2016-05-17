@@ -1,57 +1,23 @@
-<head>
-    <title>Chemical Development</title>
-    <style>
-        h1 {
-            font-size: 26px;
-        }
+---
+layout: default
+---
 
-        h2 {
-            font-size: 18px;
-        }
+<div class="home">
 
-        p {
-            float: left;
-            margin: .3%;
-            padding: 0px;
-            size: 100%;
-        }
-        overview_panel {
-            padding: 25px;
-        }
+  <h1 class="page-heading">Posts</h1>
 
-    </style>
-</head>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<body>
-    <div class="overview_panel">
-    <h1>Us</h1>
-    <p>
-        Chemical Development is a software development group. Projects include:<br>
-         <div><ul><br><br>
-            <li>PGS (<a href="./PGS/PGS.html">Link</a>)</li>
-            <li>CloudCompute</li>
-            <li>CloudComputeBot</li>
-            <li>FractalRender</li>
-        </ul><br>
-        </div>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-    <h2>PGS</h2>
-    <p>
-        <b>P</b>rime <b>G</b>enerator <b>S</b>earch is a project that I wrote that looks for prime generating polynomials. It looks for polynomials, that when evaluated at integers, equate to a prime number.
-    </p>
-    <br>
-    <br>
-    <h2>Math Pages</h2>
-    <p>
-        We have some webpages about primes, graphs of primes, and other links for people to explore:
-        <a href="./math/index.html">Math Pages</a>
-    </p>
-
-    </div>
-
-<footer>
-<p>
-</footer>
-
-</body> 
+</div>
