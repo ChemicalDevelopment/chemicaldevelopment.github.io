@@ -7,13 +7,16 @@
 
 # Site settings
 title: Chemical Development
+personal_email: brown.cade@gmail.com
 email: info@chemicaldevelopment.us
 description: > # this means to ignore newlines until "baseurl:"
   Math U Programming
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://chemicaldevelopment.us" # the base hostname & protocol for your site
 twitter_username: dev_ceb
+twitter_bot_username: CloudComputeBot
 github_username:  CadeBrown 
+github_org_username:  ChemicalDevelopment
 
 # Build settings
 markdown: kramdown

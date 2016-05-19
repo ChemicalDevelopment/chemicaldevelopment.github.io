@@ -4,10 +4,9 @@
 
     <h2 class="footer-heading">{{ site.title }}</h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
+    <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          <li><a href="mailto:{{ site.personal_email }}">{{ site.personal_email }}</a></li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
@@ -19,22 +18,42 @@
             {% include icon-github.html username=site.github_username %}
           </li>
           {% endif %}
+          
+          {% if site.github_org_username %}
+          <li>
+            {% include icon-github.html username=site.github_org_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+          
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
 
           {% if site.twitter_username %}
           <li>
             {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
+          
+          {% if site.twitter_bot_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_bot_username %}
+          </li>
+          {% endif %}
         </ul>
       </div>
+      
+      <!--
 
-      <div class="footer-col footer-col-3">
+      <div class="footer-col footer-col-4">
         <p>{{ site.description }}</p>
       </div>
-    </div>
-    
-
       
+      -->
+      
+    </div>
+       
   </div>
 
 </footer>
