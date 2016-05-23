@@ -1,3 +1,6 @@
+var pi = 3.14159265358979;
+var e = 2.718281828459045;
+
 /*
 
 Functions class. Implements basic functions as well as some lesser known ones
