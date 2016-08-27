@@ -115,7 +115,7 @@ function draw() {
   pic.fillStyle = "#FF0000";
   var center_x = eval(document.getElementById("center_x").value);
   var center_y = eval(document.getElementById("center_y").value);
-  var zoom = eval(document.getElementById("zoom").value);
+  var zoom = eval(document.getElementById("zoom").value) / 2;
   var pic_z = [center_x - 1 / (2 * zoom), center_y + 1 / (2 * zoom)];
   var add_to_x = 1 / (800 * zoom);
   var add_to_y = 1 / (800 * zoom);
