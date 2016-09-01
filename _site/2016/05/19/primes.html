@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>All about primes</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+			<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<h1><a href="/index.html">ChemicalDevelopment</a> by Cade Brown</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="/index.html">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<!--<li>
+					<a href="" class="icon fa-angle-down">Layouts</a>
+					<ul>
+						<li><a href="#">Generic</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Elements</a></li>
+						<li>
+							<a href="">Submenu</a>
+							<ul>
+								<li><a href="#">Option One</a></li>
+								<li><a href="#">Option Two</a></li>
+								<li><a href="#">Option Three</a></li>
+								<li><a href="#">Option Four</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#" class="button">Sign Up</a></li>
+				-->
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>All about primes</title>
+  <meta name="description" content="First post on this blog, so I thought we would start it out with something interesting, like primes.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://chemicaldevelopment.us/2016/05/19/primes.html">
+  <link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
+  
+
+  
+  
+      <!--
+      
+      Math Highlighting
+      
+      -->
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+	<section class="box special">
+		<h3>All about primes</h3>
+		<span class="date">19 May 2016</span>
+		<p>First post on this blog, so I thought we would start it out with something interesting, like primes.</p>
+
+<p>We include some JSFiddles so you can see all the code available with it!</p>
+
+<p>So, lets start out with what they are.</p>
+
+<h1 id="what-are-primes">What are primes?</h1>
+
+<p>Most of the time, you might get something like</p>
+
+<blockquote>
+  <p>A prime is any positive integer greater than one whose only postive divisors are 1 and itself</p>
+</blockquote>
+
+<p>but I prefer to say that a prime is any integer that you can’t make by multiplying two other integers.</p>
+
+<p>For example, 2 is the first prime, 3 is the next. 4 isn’t a prime, though, because 4 = 2 * 2, which means it has other divisors (2), and thus can be made my multiplying two other integers.</p>
+
+<p>I’ve written a little JSFiddle so that you can see if a number is prime. This is a <em>very</em> unoptimized version of primality testing (testing if a number is prime), but you can see how a basic version works.</p>
+
+<p>Full version at <a href="https://jsfiddle.net/CadeBrown/x9h5buwa/2/" target="_blank">https://jsfiddle.net/CadeBrown/x9h5buwa/2/</a></p>
+
+<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/x9h5buwa/2/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>This program takes the remainder dividing your input by all numbers less than it (actually, the square root of it, but that is a simple optimization), and if it is zero, that means the number is divisible by some other number, and is therefore not prime.</p>
+
+<p>One common question is</p>
+
+<blockquote>
+  <p>Why isn’t 1 or 0 prime?</p>
+</blockquote>
+
+<p>And this was a large argument for years. 1 and 0 are not considered prime for a few reasons. The first is the nice property that is called unique factorization, which states that any given integer has exactly one way to factor into primes. For example, 12 = 2 * 2 * 3, and you can’t get 12 from any other primes than 2, 2, and 3. If we said that 1 is a prime, we could have 12 = 2 * 2 * 3 and 12 = 2 * 2 * 3 * 1 . We have agreed that this is a nice property to have. 1 is what is called a unit. As is negative one, which brings us to our next question:</p>
+
+<blockquote>
+  <p>If 2 is a prime, then isn’t -2 ?</p>
+</blockquote>
+
+<p>And the answer is: Sort of.</p>
+
+<p>This is because -2 is similar to +2, one is multiplied by the unit 1, while the other is multiplied by the unit -1 . We only consider a number prime if it is positive, though.</p>
+
+<blockquote>
+  <p>Are there infinitely many primes?</p>
+</blockquote>
+
+<p>Yes, there are. Primes get very far apart (however, there are infinitely many primes <em>exactly</em> 246 apart (<a href="https://www.quantamagazine.org/20141210-prime-gap-grows-after-decades-long-lull/" target="_blank">https://www.quantamagazine.org/20141210-prime-gap-grows-after-decades-long-lull/</a>))</p>
+
+<p>I’ve written a little fiddle to graph how quickly the number of primes grows, and a few approximations to the actual line</p>
+
+<p>Full version at <a href="https://jsfiddle.net/CadeBrown/cfg8bgLt/" target="_blank">https://jsfiddle.net/CadeBrown/cfg8bgLt/</a></p>
+
+<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/cfg8bgLt/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="history-of-primes">History of Primes</h1>
+
+<p>Primes have been in people’s thoughts ever since hunter-gatherer days (They thought about dividing food up. How do you give out 13 orange to 3 people?).</p>
+
+<p>Primes are something that are so tangible, like rearranging fruits to divvy up, but yet so mysterious, we don’t even know if there are infinitely many primes that differ by 2!</p>
+
+<p>People have studied primes initially for dividing up resources, which is still useful today, but primes are also used in cutting edge technologies, such as cryptography. While I won’t get into cryptography in this post, suffice it to say that bigger primes are more secure to encrypt data and then decrypt it because the hacker in between doesn’t have the computing power to factor out large primes (which is a very computation-heavy task).</p>
+
+<p>Currently, the largest known prime is $ 2^{74,207,281}-1 $ which is more than 22 million digits long!</p>
+
+<p>The largest prime found by hand was $ 2^{127} - 1 $, or $ 170,141,183,460,469,231,731,687,303,715,884,105,727 $ Imagine doing that by hand!</p>
+
+<p>Just think about that for a second. No two integers can be multiplied to get $ 2^{127} - 1 $, but $ 2^{127} $ is just 2 multiplied by itself 126 times!</p>
+
+<p>Another reason I like that number is the fact that $ 2^{127} - 1  = 2^{2^{7} - 1} - 1 = 2^{2^{2^{3} - 1} - 1} - 1 = 2^{2^{2^{2^{2} - 1} - 1} - 1} - 1 $</p>
+
+<p>Math is magic!</p>
+
+	</section>
+  <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//chemicaldevelopment.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+  </div>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/dev_ceb" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/CadeBrown/" class="icon fa-github"><span class="label">Personal Github</span></a></li>
+					<li><a href="https://github.com/ChemicalDevelopment/" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://plus.google.com/u/0/+CadeBrownPublicEnemy" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; ChemicalDevelopment. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li> Main Site: <a href="http://chemicaldevelopment.us">ChemicalDevelopment</a></li>
+				</ul>
+			</footer>
+	</body>
+</html>

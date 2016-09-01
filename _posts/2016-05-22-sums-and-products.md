@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Sums and products
+description: Some interesting infinite sums, and products 
+image: sums.png
 ---
 
 Have you ever seen a really awesome sum? Like this one here:
@@ -99,7 +101,7 @@ $$\frac{\sqrt[1]{e}\sqrt[3]{e}\sqrt[5]{e}\sqrt[7]{e}\sqrt[9]{e}\cdots\sqrt[{2n+1
 
 and, I showed an example of a seemingly unrelated sum:
 
-$$ \sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = -\ln{2} $$
+$$ \sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = \ln{2} $$
 
 But, these two are saying the same thing! I'll show you how.
 

@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sums and products</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+			<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<h1><a href="/index.html">ChemicalDevelopment</a> by Cade Brown</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="/index.html">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<!--<li>
+					<a href="" class="icon fa-angle-down">Layouts</a>
+					<ul>
+						<li><a href="#">Generic</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Elements</a></li>
+						<li>
+							<a href="">Submenu</a>
+							<ul>
+								<li><a href="#">Option One</a></li>
+								<li><a href="#">Option Two</a></li>
+								<li><a href="#">Option Three</a></li>
+								<li><a href="#">Option Four</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#" class="button">Sign Up</a></li>
+				-->
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sums and products</title>
+  <meta name="description" content="Have you ever seen a really awesome sum? Like this one here:">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://chemicaldevelopment.us/2016/05/22/sums-and-products.html">
+  <link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
+  
+
+  
+  
+      <!--
+      
+      Math Highlighting
+      
+      -->
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+	<section class="box special">
+		<h3>Sums and products</h3>
+		<span class="date">22 May 2016</span>
+		<p>Have you ever seen a really awesome sum? Like this one here:</p>
+
+<script type="math/tex; mode=display">\sum_{i=0}^\infty \frac{1}{k^2} = \frac{1}{1} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} + \cdots = \frac{\pi^2}{6}</script>
+
+<p>Or</p>
+
+<script type="math/tex; mode=display">\sum_{i=0}^\infty \frac{1}{k^4} = \frac{1}{1} + \frac{1}{2^4} + \frac{1}{3^4} + \cdots + \frac{1}{n^4} + \cdots = \frac{\pi^4}{90}</script>
+
+<p>Or even</p>
+
+<script type="math/tex; mode=display">\sum_{i=0}^\infty \frac{1}{k^{14}} = \frac{1}{1} + \frac{1}{2^{14}} + \frac{1}{3^{14}} + \cdots + \frac{1}{n^{14}} + \cdots = \frac{2\pi^{14}}{18243224}</script>
+
+<p>Or maybe an awesome product, such as:</p>
+
+<script type="math/tex; mode=display">\frac{\sqrt[1]{e}\sqrt[3]{e}\sqrt[5]{e}\sqrt[7]{e}\sqrt[9]{e}\cdots\sqrt[{2n+1}]{e}\cdots}{\sqrt[2]{e}\sqrt[4]{e}\sqrt[8]{e}\sqrt[10]{e}\sqrt[12]{e}\cdots\sqrt[{2n}]{e}\cdots} = 2</script>
+
+<p>The first two are examples of infinite sums, and the third is an infinite product. Sum means adding, product means multiply. In all of these examples, we take them out to infinity (theoretically), and this is the answer we would get. In fact, as we go farther, they get very close to these values.</p>
+
+<p>Before I show you these examples, we are going to look at sums a little bit more generally.</p>
+
+<p>I’ve written a JSFiddle so you can enter your own series and watch the value it converges to.</p>
+
+<p>Full version at <a href="https://jsfiddle.net/CadeBrown/tdxofngq/" target="_blank">https://jsfiddle.net/CadeBrown/tdxofngq/</a></p>
+
+<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/tdxofngq/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>You can just type in “n”, and it will show you the sum of 1 + 2 + 3 + 4 + … + n (which happens to be $ \frac{n(n+1)}{2} $)</p>
+
+<p>A few cool sums to try in it:</p>
+
+<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = -\ln{2} \approx -.693</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
+ max = 1000
+ series = pow(-1, n) / n
+</code></pre>
+</div>
+
+<script type="math/tex; mode=display">\sum_{n=0}^{\infty}\frac{ {(-1)}^n}{2n + 1} = \frac{\pi}{4} \approx .785</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
+ max = 1000
+ series = pow(-1, n) / (2 * n + 1)
+</code></pre>
+</div>
+
+<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6} \approx 1.645</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
+ max = 1000
+ series = 1 / (n * n)
+</code></pre>
+</div>
+
+<script type="math/tex; mode=display">\sum_{n=0}^{\infty}{\frac{e}{\pi^{e^{n}}} - \frac{21(e^n + \pi^n)}{10(e^{\pi^n} + \pi^{e^n})}} \approx -0.001</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
+ max = 100
+ series = e / pow(pi, pow(e, n)) - (21 * (pow(e, n) + pow(pi, n))) / (10 * (pow(e, pow(pi, n)) + pow(pi, pow(e, n))))
+</code></pre>
+</div>
+
+<p>The last one is a bit crazy, and has no practical meaning (yet!), but it shows how you can enter terms into the web page.</p>
+
+<p>Those 4 above are what are called convergent series. Convergent means that if you keep evaluating more and more terms, it tends towards a limit.</p>
+
+<p>Like $ \ln{2} $, or $ \frac{\pi}{4} $ were the limits of the first and second sum.</p>
+
+<p>The first 3 sums converge quite slowly, and to get $d$ digits of precision to the “actual value” (if we could take it to infinity), we would need roughly $10^d$ terms. So, to get one more digit of precision, we would need 10 times as many terms to sum! That is why the first 3 are not good ways to calculate their sum ($\pi$, $\ln{2}$, etc)</p>
+
+<p>The fourth, however, takes roughly $\log\log{d}$ terms to get to $d$ digits, which is very fast.</p>
+
+<p>There exists formulas for $\pi$ that require only $\frac{d}{14}$ terms to get $d$ digits, such as this one:</p>
+
+<script type="math/tex; mode=display">\frac{1}{\pi} = 12\sum_{n=0}^{\infty}\frac{(-1)^n(6n)!(13591409+545140134n)}{(3n)!(n)!^3(640320)^{3n+\frac{3}{2}}} \approx 0.318</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
+ max = 10
+ series = 12 * (pow(-1, n) * fac(6 * n) * (13591409 + 545140134 * n)) / (fac(3 * n) * pow(fac(n), 3) * pow(640320, 3 * n + 1.5))
+</code></pre>
+</div>
+
+<p>Viola! You have $\frac{1}{\pi}$ pretty easily.</p>
+
+<p>In fact, that series (with a few optimizations) is how record number of digits of $\pi$ are computed! (http://www.numberworld.org/digits/Pi/ we are currently at $13,300,000,000,000$ digits).</p>
+
+<p>Lets take a little break, and talk about products. I showed you:</p>
+
+<script type="math/tex; mode=display">\frac{\sqrt[1]{e}\sqrt[3]{e}\sqrt[5]{e}\sqrt[7]{e}\sqrt[9]{e}\cdots\sqrt[{2n+1}]{e}\cdots}{\sqrt[2]{e}\sqrt[4]{e}\sqrt[8]{e}\sqrt[10]{e}\sqrt[12]{e}\cdots\sqrt[{2n}]{e}\cdots} = 2</script>
+
+<p>and, I showed an example of a seemingly unrelated sum:</p>
+
+<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = \ln{2}</script>
+
+<p>But, these two are saying the same thing! I’ll show you how.</p>
+
+<p>Lets get some notation here. Analogous to summing over n using $\Sigma$, we will show a product using capital pi ($\Pi$, <em>not</em> $\pi$).</p>
+
+<p>For example:</p>
+
+<script type="math/tex; mode=display">\prod_{n=1}^{m}{n} = 1 * 2 * 3 * \cdots * (n - 1) * n = n! = \Gamma(n + 1)</script>
+
+<p>where the $!$ means factorial (<a href="https://en.wikipedia.org/wiki/Factorial" target="_blank">https://en.wikipedia.org/wiki/Factorial</a>), and $\Gamma$ is the Gamma function (<a href="https://en.wikipedia.org/wiki/Gamma_function" target="_blank">https://en.wikipedia.org/wiki/Gamma_function</a>)</p>
+
+<p>I’ve written another fiddle for products instead of summation:</p>
+
+<p>Full version at <a href="https://jsfiddle.net/CadeBrown/smnohszh/1/" target="_blank">https://jsfiddle.net/CadeBrown/smnohszh/1/</a></p>
+
+<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/smnohszh/1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>The default product approaches $\frac{\pi}{2}$, but I have a few examples for these as well:</p>
+
+<script type="math/tex; mode=display">\prod_{n=1}^{\infty}\left ( {1 + \frac{1}{9n^2}} \right ) = \frac{3\sqrt{3}}{2\pi} \approx 0.827</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
+ max = 100
+ series = (1 - 1 / (9 * n * n))
+</code></pre>
+</div>
+
+<script type="math/tex; mode=display">\prod_{n=1}^{\infty}\left ( 1 + \frac{1}{(2n+1)^2} \right ) = \frac{\pi}{4} \approx 0.785</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
+ max = 100
+ series = (1 - 1 / ((2 * n + 1) * (2 * n + 1)))
+</code></pre>
+</div>
+
+<p>Throughout history, sums have been studied more for two major reasons:</p>
+
+<ul>
+  <li>Sums often converge quicker</li>
+  <li>It is easier to add than multiply</li>
+</ul>
+
+<p>My favorite sum, personally, would have to be the chudnovsky formula, from above:</p>
+
+<script type="math/tex; mode=display">\frac{1}{\pi} = 12\sum_{n=0}^{\infty}\frac{(-1)^n(6n)!(13591409+545140134n)}{(3n)!(n)!^3(640320)^{3n+\frac{3}{2}}} \approx 0.318</script>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
+ max = 10
+ series = 12 * (pow(-1, n) * fac(6 * n) * (13591409 + 545140134 * n)) / (fac(3 * n) * pow(fac(n), 3) * pow(640320, 3 * n + 1.5))
+</code></pre>
+</div>
+
+<p>So beautiful!</p>
+
+	</section>
+  <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//chemicaldevelopment.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+  </div>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/dev_ceb" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/CadeBrown/" class="icon fa-github"><span class="label">Personal Github</span></a></li>
+					<li><a href="https://github.com/ChemicalDevelopment/" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://plus.google.com/u/0/+CadeBrownPublicEnemy" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; ChemicalDevelopment. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li> Main Site: <a href="http://chemicaldevelopment.us">ChemicalDevelopment</a></li>
+				</ul>
+			</footer>
+	</body>
+</html>
