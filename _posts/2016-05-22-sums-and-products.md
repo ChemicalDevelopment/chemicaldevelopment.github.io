@@ -2,6 +2,7 @@
 layout: post
 title: Sums and products
 description: Some interesting infinite sums, and products 
+tag: math
 image: sums.png
 ---
 

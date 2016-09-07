@@ -54,11 +54,12 @@ layout: default
 
 <div class="row">
 	<div class="6u">
-		<ul>
-  			{% for post in site.posts %}
-			  	{% assign loopindex = forloop.index | modulo: 2 %}
-			  	{% if loopindex == 0 %}
-   					<section class="box special">
+		{% for post in site.posts %}
+			{% assign loopindex = forloop.index | modulo: 2 %}
+			{% if loopindex == 0 %}
+			{% if post.tag != "school" %}
+				<ul>
+					<section class="box special">
 						<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
 						<h3>{{ post.title }}</h3>
 						<p>{{ post.description }}</p>
@@ -66,16 +67,17 @@ layout: default
 							<li><a href="{{ post.url }}" class="button alt">Read Article</a></li>
 						</ul>
 					</section>
-				{% endif %}
-			{% endfor %}							
-		</ul>
+			{% endif %}
+			{% endif %}
+		{% endfor %}							
 	</div>
 	<div class="6u">
-		<ul>
-  			{% for post in site.posts %}
-			  	{% assign loopindex = forloop.index | modulo: 2 %}
-			  	{% if loopindex == 1 %}
-   					<section class="box special">
+		{% for post in site.posts %}
+			{% assign loopindex = forloop.index | modulo: 2 %}
+			{% if loopindex == 1 %}
+			{% if post.tag != "school" %}
+				<ul>
+					<section class="box special">
 						<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
 						<h3>{{ post.title }}</h3>
 						<p>{{ post.description }}</p>
@@ -83,8 +85,8 @@ layout: default
 							<li><a href="{{ post.url }}" class="button alt">Read Article</a></li>
 						</ul>
 					</section>
-				{% endif %}
-			{% endfor %}							
-		</ul>
+			{% endif %}
+			{% endif %}
+		{% endfor %}							
 	</div>
 </div>
