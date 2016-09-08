@@ -7,4 +7,4 @@ image: milerun.png
 ---
 
 
-Test123
+![Mile Run Info](/assets/images/milerun.png)
