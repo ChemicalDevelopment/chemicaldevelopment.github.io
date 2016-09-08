@@ -12,13 +12,13 @@ We were given info collected about PE (Physical Education) students at L&N, incl
 
 ## Responses
 
-![Class Periods](/assets/images/classes.png)
+![Class Periods](/assets/images/APSTATS/PECLASS/classes.png)
 
 Although some classes had very few responses, $ L $ day and $ N $ day both made up around $ 50\% $ of the total responses, which is what you would expect.
 
 Some classes did not have all members ($ N4 $ only had 1 response), a good number of people from all made up a large database that accurately respresents mosts of the population.
 
-![Genders](/assets/images/gender.png)
+![Genders](/assets/images/APSTATS/PECLASS/gender.png)
 
 Most of the responses were from males, though it wasn't too horribly biased. There were still $ > 40\% $ females, so it is still quite reliable.
 
@@ -28,7 +28,7 @@ Some explanations might be: females choose not to take PE as much as boys do, or
 ## Mile Run
 *All values are in minutes. So, 2.5 is 2m30s*
 
-![Mile Run Info Graph](/assets/images/milerun.png)
+![Mile Run Info Graph](/assets/images/APSTATS/PECLASS/milerun.png)
 
 | Mean (Average) | Median (Middle Value) | Standard Deviation (How dense is the set?) |
 | 12.3 | 12.1 | 3.4 |
@@ -46,7 +46,7 @@ This makes sense due to the way students flock together when running or jogging.
 ## Push Ups Per Minute
 *These values are in pushups per 1 minute*
 
-![Push Up Info Graph](/assets/images/pushups.png)
+![Push Up Info Graph](/assets/images/APSTATS/PECLASS/pushups.png)
 
 | Mean (Average) | Median (Middle Value) | Standard Deviation (How dense is the set?) |
 | 12.2 | 12 | 8.1 |
@@ -59,7 +59,7 @@ We can say that about $ 68\% $ of students do between $ 4 $ and $ 20 $ pushups i
 ## Curl Ups Per 2 minutes
 *These values are in curlups per 2 minutes*
 
-![Curl Up Info Graph](/assets/images/curlups.png)
+![Curl Up Info Graph](/assets/images/APSTATS/PECLASS/curlups.png)
 
 | Mean (Average) | Median (Middle Value) | Standard Deviation (How dense is the set?) |
 | 34.4 | 30 | 17.3 |
