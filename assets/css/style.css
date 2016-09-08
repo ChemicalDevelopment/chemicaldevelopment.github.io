@@ -485,8 +485,11 @@
 				}
 
 		.box.special {
-			text-align: left;
+			text-align: center;
 		}
+		.box.post {
+			text-align: left;
+		}	
 
 		.box .image.featured {
 			border-radius: 0;
