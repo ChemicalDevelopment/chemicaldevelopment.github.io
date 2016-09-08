@@ -6,9 +6,6 @@ tag: school
 image: milerun.png
 ---
 
-By Cade Brown and Gregory Croisdale
---------------------------------------
-
 
 Our assignment was to look at data from PE (Physical Education) Classes from our School, L&N STEM Academy.
 
