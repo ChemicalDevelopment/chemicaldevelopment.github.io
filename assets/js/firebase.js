@@ -21,8 +21,7 @@ function createaccount(email, password) {
         // ...
     });
     signin(email, password);
-    database.ref("user_data/" + usr.uid + "/name").set(usr.email);
-    usr.sendVerificationEmail();
+    usr.sendEmailVerification();
 }
 
 function signin(email, password) {
@@ -71,19 +70,20 @@ function makeTable(container, data) {
 }
 
 function updateuserdata(id, da) {
-    var data_array = [["User", "Ranges", "Equation"]];
+    var data_array = [["User", "Consecutive", "Distinct", "equation"]];
     for (val in da.functions) {
         var cda = da.functions[val];
-        data_array.push([da.name, cda.ranges, "$ " + cda.equation + " $"]);
+        data_array.push([da.name, cda.consecutive, cda.distinct, "$ " + cda.equation + " $"]);
     }
     makeTable($("#" + id), data_array);
     MathJax.Hub.Queue(["Typeset",MathJax.Hub,id]);
 }
 
-function createref(id, r, e) {
+function createref(id, dist, cons, equa) {
     var x = { 
-        ranges: r, 
-        equation: e
+        consecutive: cons,
+        distinct: dist, 
+        equation: equa
     };
     database.ref("user_data/" + id + "/functions").push(x);
 }
@@ -100,6 +100,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         $("#actiondiv").show();
         $("#userdata_section").hide();
     }
+    database.ref("user_data/" + usr.uid + "/name").set(usr.email);
+    updateuserdata();
 });
 
 
