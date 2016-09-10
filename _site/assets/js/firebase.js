@@ -33,10 +33,15 @@ function signin(email, password) {
     });
 }
 
+function resetpw(email) {
+    firebase.auth().sendPasswordResetEmail(email);
+}
+
 function signout() {
     firebase.auth().signOut().then(function () {
-    }, function (error) {
 
+    }, function (error) {
+        
     });
     $("#actioninfo").show();
     $("#actiondiv").show();
