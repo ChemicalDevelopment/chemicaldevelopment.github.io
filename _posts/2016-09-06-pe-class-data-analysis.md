@@ -11,15 +11,12 @@ image: milerun.png
 We were given info collected about PE (Physical Education) students at L&N, including mile run times, number of push ups in a minute, and curl ups in 2 minutes.
 
 ## Responses
-
-![Class Periods](/assets/images/APSTATS/PECLASS/classes.png)
-
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/pubchart?oid=37325881&amp;format=interactive"></iframe>
 Although some classes had very few responses, $ L $ day and $ N $ day both made up around $ 50\% $ of the total responses, which is what you would expect.
 
 Some classes did not have all members ($ N4 $ only had 1 response), a good number of people from all made up a large database that accurately respresents mosts of the population.
 
-![Genders](/assets/images/APSTATS/PECLASS/gender.png)
-
+<iframe width="732.9126506024095" height="454.875" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/pubchart?oid=2114194783&amp;format=interactive"></iframe>
 Most of the responses were from males, though it wasn't too horribly biased. There were still $ > 40\% $ females, so it is still quite reliable.
 
 Some explanations might be: females choose not to take PE as much as boys do, or that boys responded at a higher rate than females.
@@ -27,9 +24,7 @@ Some explanations might be: females choose not to take PE as much as boys do, or
 
 ## Mile Run
 *All values are in minutes. So, 2.5 is 2m30s*
-
-![Mile Run Info Graph](/assets/images/APSTATS/PECLASS/milerun.png)
-
+<iframe width="1019" height="629.8978061224489" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/pubchart?oid=1875790007&amp;format=interactive"></iframe>
 | Mean (Average) | Median (Middle Value) | Standard Deviation (How dense is the set?) |
 | 12.3 | 12.1 | 3.4 |
 

@@ -224,7 +224,6 @@
 	}
 
 	input[type="text"],
-	input[type="password"],
 	input[type="email"],
 	select,
 	textarea {
@@ -245,7 +244,6 @@
 	}
 
 		input[type="text"]:invalid,
-		input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		select:invalid,
 		textarea:invalid {
@@ -253,7 +251,6 @@
 		}
 
 		input[type="text"]:focus,
-		input[type="password"]:focus,
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
@@ -295,7 +292,6 @@
 		}
 
 	input[type="text"],
-	input[type="password"],
 	input[type="email"],
 	select {
 		height: 3em;
@@ -779,6 +775,7 @@
 
 		table td {
 			padding: 0.75em 0.75em;
+			text-align: left;
 		}
 
 		table th {
@@ -1445,7 +1442,6 @@
 		}
 
 		#cta input[type="text"],
-		#cta input[type="password"],
 		#cta input[type="email"],
 		#cta select,
 		#cta textarea {
@@ -1455,7 +1451,6 @@
 		}
 
 			#cta input[type="text"]:focus,
-			#cta input[type="password"]:focus,
 			#cta input[type="email"]:focus,
 			#cta select:focus,
 			#cta textarea:focus {

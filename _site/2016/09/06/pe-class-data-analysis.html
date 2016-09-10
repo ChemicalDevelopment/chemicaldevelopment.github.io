@@ -17,12 +17,44 @@
 		<script src="/assets/js/skel-layers.min.js"></script>
 		<script src="/assets/js/jquery.scrollgress.min.js"></script>
 		<script src="/assets/js/init.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="/assets/css/skel.css" />
 			<link rel="stylesheet" href="/assets/css/style.css" />
 			<link rel="stylesheet" href="/assets/css/style-desktop.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>PE Class Data Analysis</title>
+		<meta name="description" content="Cade Brown &amp; Gregory Croisdale">
+
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="canonical" href="http://chemicaldevelopment.us/2016/09/06/pe-class-data-analysis.html">
+		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
+
+		
+		
+		<!--
+		
+		Math Highlighting
+		
+		-->
+	
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+			});
+		</script>
+		
+		<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
 	</head>
 	
 		<body>
@@ -61,38 +93,6 @@
 	<!-- Main -->
 	<section id="main" class="container">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>PE Class Data Analysis</title>
-  <meta name="description" content="Cade Brown &amp; Gregory Croisdale">
-
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://chemicaldevelopment.us/2016/09/06/pe-class-data-analysis.html">
-  <link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
-  
-
-  
-  
-      <!--
-      
-      Math Highlighting
-      
-      -->
-  
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-    });
-  </script>
-  
-  <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
-</head>
-
 	<section class="box post">
 		<h3>PE Class Data Analysis</h3>
 		<span class="date">06 Sep 2016</span>
@@ -101,38 +101,21 @@
 <p>We were given info collected about PE (Physical Education) students at L&amp;N, including mile run times, number of push ups in a minute, and curl ups in 2 minutes.</p>
 
 <h2 id="responses">Responses</h2>
-
-<p><img src="/assets/images/APSTATS/PECLASS/classes.png" alt="Class Periods" /></p>
-
+<iframe width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/pubchart?oid=37325881&amp;format=interactive"></iframe>
 <p>Although some classes had very few responses, $ L $ day and $ N $ day both made up around $ 50\% $ of the total responses, which is what you would expect.</p>
 
 <p>Some classes did not have all members ($ N4 $ only had 1 response), a good number of people from all made up a large database that accurately respresents mosts of the population.</p>
 
-<p><img src="/assets/images/APSTATS/PECLASS/gender.png" alt="Genders" /></p>
-
+<iframe width="732.9126506024095" height="454.875" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/pubchart?oid=2114194783&amp;format=interactive"></iframe>
 <p>Most of the responses were from males, though it wasn’t too horribly biased. There were still $ &gt; 40\% $ females, so it is still quite reliable.</p>
 
 <p>Some explanations might be: females choose not to take PE as much as boys do, or that boys responded at a higher rate than females.</p>
 
 <h2 id="mile-run">Mile Run</h2>
 <p><em>All values are in minutes. So, 2.5 is 2m30s</em></p>
-
-<p><img src="/assets/images/APSTATS/PECLASS/milerun.png" alt="Mile Run Info Graph" /></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Mean (Average)</td>
-      <td>Median (Middle Value)</td>
-      <td>Standard Deviation (How dense is the set?)</td>
-    </tr>
-    <tr>
-      <td>12.3</td>
-      <td>12.1</td>
-      <td>3.4</td>
-    </tr>
-  </tbody>
-</table>
+<iframe width="1019" height="629.8978061224489" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/pubchart?oid=1875790007&amp;format=interactive"></iframe>
+<p>| Mean (Average) | Median (Middle Value) | Standard Deviation (How dense is the set?) |
+| 12.3 | 12.1 | 3.4 |</p>
 
 <p>What this tells us is that on average, you will run around a $ 12.25 $ minute mile, and that $ 68\% $ of students run a mile between $ 8.88 $ minute and $ 15.62 $ minutes <em>(which is generated by $ mean \pm deviation $)</em></p>
 

@@ -1,0 +1,1 @@
+$('#logout').click( function(e) {e.preventDefault(); signout(); return false; } );
