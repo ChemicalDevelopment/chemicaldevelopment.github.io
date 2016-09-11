@@ -21,6 +21,13 @@ function createaccount(email, password) {
         // ...
     });
     signin(email, password);
+    verifyEmail();
+    setTimeout(function() {   
+        setuserdata("email", email);
+    }, 1000);
+}
+
+function verifyEmail() {
     usr.sendEmailVerification();
 }
 
@@ -33,7 +40,13 @@ function signin(email, password) {
     });
 }
 
-function resetpw(email) {
+function resetpw() {
+    var email;
+    if (usr == null || usr.email == null) {
+        email = $('#reset_email').val;
+    } else {
+        email = usr.email;
+    }
     firebase.auth().sendPasswordResetEmail(email);
 }
 
@@ -45,19 +58,6 @@ function signout() {
     });
     $("#actioninfo").show();
     $("#actiondiv").show();
-}
-
-var lv = "";
-
-function setbutton(v) {
-    if (lv == v) {
-        $('#actiondiv').toggle();
-        return;
-    }
-    lv = v;
-    $('#actiondiv').show();
-    $('#' + v).show();
-    $('#' + ((v == 'ib') ? ('ub') : ('ib'))).hide();
 }
 
 
@@ -78,19 +78,40 @@ function updateuserdata(id, da) {
     var data_array = [["User", "Consecutive", "Distinct", "equation"]];
     for (val in da.functions) {
         var cda = da.functions[val];
-        data_array.push([da.name, cda.consecutive, cda.distinct, "$ " + cda.equation + " $"]);
+        var eq = cda.equation;
+        for (var ii = 0; ii < eq.length; ++ii) {
+            eq[ii] = parseInt(eq[ii]);
+        }
+        data_array.push([da.name, cda.consecutive, cda.distinct, "$ " + print_quad(eq[0],eq[1],eq[2]) + " $"]);
     }
     makeTable($("#" + id), data_array);
     MathJax.Hub.Queue(["Typeset",MathJax.Hub,id]);
 }
 
+var lv = "";
+
+function setbutton(v) {
+    if (lv == v) {
+        $('#actiondiv').toggle();
+        return;
+    }
+    lv = v;
+    $('#actiondiv').show();
+    $('#' + v).show();
+    $('#' + ((v == 'ib') ? ('ub') : ('ib'))).hide();
+}
+
 function createref(id, dist, cons, equa) {
     var x = { 
         consecutive: cons,
-        distinct: dist, 
+        distinct: dist,
         equation: equa
     };
     database.ref("user_data/" + id + "/functions").push(x);
+}
+
+function setuserdata(name, value) {
+    database.ref('user_data/' + usr.uid + "/" + name).set(value);
 }
 
 firebase.auth().onAuthStateChanged(function (user) {
@@ -121,6 +142,42 @@ function init() {
         usr_data = snapshot.val();
         updateuserdata('userdata', usr_data);
     });
+}
+
+function print_quad(i, j, k) {
+    var res = "";
+    if (k != 0) {
+        if (k < 0) {
+            res += "-";
+        }
+        if (Math.abs(k) != 1) {
+            res += Math.abs(k);
+        }
+        res += "x^2";
+    }
+    if (j != 0) {
+        if (j < 0) {
+            res += "-";
+        } else {
+            res += "+";
+        }
+        if (Math.abs(j) != 1) {
+            res += Math.abs(j);
+        }
+        res += "x";
+
+    }
+     if (i != 0) {
+        if (i < 0) {
+            res += "-";
+        } else {
+            res += "+";
+        }
+        if (Math.abs(i) != 1) {
+            res += Math.abs(i);
+        }
+    }
+    return res;
 }
 setbutton('ib');
 

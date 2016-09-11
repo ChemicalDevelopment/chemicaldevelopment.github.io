@@ -8,11 +8,13 @@ title: PGS Client
 		<h2><b>{{ page.title }}</b></h2>
 	</header>
 	<div id="actioninfo" style="display:inline;">
-		<button onclick="setbutton('ib')" class="button special-blue">Sign In</a>
-		<button onclick="setbutton('ub')" class="button special-green">Sign Up</a>
+		<button onclick="setbutton('ub')" class="button special-green">Sign Up</button>
+		<button onclick="setbutton('ib')" class="button special-blue">Sign In</button>
 	</div>
-	<button onclick="signout()" class="button special-red">Log Out</a>
+	<button onclick="signout()" class="button special-red">Log Out</button><br/><br/>
+	<button onclick="location.href = './account';" class="button special-blue">Manage Account</button>
 </section>
+
 
 <section id="actiondiv" class="box special">    
     <label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>

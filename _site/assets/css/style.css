@@ -962,7 +962,7 @@
 		input[type="reset"].special-green,
 		input[type="button"].special-green,
 		.button.special-green {
-			background-color: #99e880;
+			background-color: #a0c092;
 			color: #ffffff !important;
 		}
 
@@ -970,7 +970,7 @@
 			input[type="reset"].special-green:hover,
 			input[type="button"].special-green:hover,
 			.button.special-green:hover {
-				background-color: #aaec96;
+				background-color: #93d092;
 			}
 
 			input[type="submit"].special-green:active,
