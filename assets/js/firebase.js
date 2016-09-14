@@ -117,8 +117,28 @@ function createref(id, dist, cons, equa) {
     database.ref("user_data/" + id + "/functions/" + nm).set(x);
 }
 
+function getWorkName(work) {
+    var nm = "(";
+    var i;
+    for (i = 0; i < work.ranges.length; ++i) {
+        nm += work.ranges[i];
+        if (i != work.ranges.length - 1) {
+            nm += "-";
+        }
+    }
+    nm += ")-(";
+    for (i = 0; i < work.offsets.length; ++i) {
+        nm += work.offsets[i];
+        if (i != work.offsets.length - 1) {
+            nm += "-";
+        }
+    }
+    nm += ")";
+    return nm;
+}
+
 function createworkload(work) {
-    database.ref("user_data/" + id + "/functions").push(work);
+    database.ref("/workloads/" + getWorkName(work)).set(work);
 }
 
 
