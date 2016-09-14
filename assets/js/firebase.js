@@ -102,13 +102,25 @@ function setbutton(v) {
 }
 
 function createref(id, dist, cons, equa) {
+    var nm = "";
+    for (var k = 0; k < func[i].equation.length; ++k) {
+        nm += "(" + func[i].equation[k] + ")";
+        if (k != func[i].equation.length - 1) {
+            nm += "-";
+        }
+    }
     var x = { 
         consecutive: cons,
         distinct: dist,
         equation: equa
     };
-    database.ref("user_data/" + id + "/functions").push(x);
+    database.ref("user_data/" + id + "/functions/" + nm).set(x);
 }
+
+function createworkload(work) {
+    database.ref("user_data/" + id + "/functions").push(work);
+}
+
 
 function setuserdata(name, value) {
     database.ref('user_data/' + usr.uid + "/" + name).set(value);
