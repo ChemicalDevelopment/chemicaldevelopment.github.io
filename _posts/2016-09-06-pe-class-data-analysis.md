@@ -10,7 +10,8 @@ image: milerun.png
 
 We were given info collected about PE (Physical Education) students at L&N, including mile run times, number of push ups in a minute, and curl ups in 2 minutes.
 
-*You can find all of our info here: https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/edit?usp=sharing*
+*You can find all of our info [here](https://docs.google.com/spreadsheets/d/1xCyK-8ZdUw0QHg36i6ofSmpou7FUmq571E9HOSaphbA/edit?usp=sharing)*
+
 *You can go to File>Make A Copy to view and edit*
 
 ## Responses
