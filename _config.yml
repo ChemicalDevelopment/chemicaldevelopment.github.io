@@ -22,6 +22,6 @@ github_org_username:  ChemicalDevelopment
 markdown: kramdown
 
 # Versions for PGS
-pgs_linux_ver: 1.2.0
+pgs_linux_ver: 2.0.0
 pgs_mac_ver: 1.5.0
 pgs_windows_ver: null
