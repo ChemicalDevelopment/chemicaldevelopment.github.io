@@ -100,6 +100,73 @@
 		<h2>Blog Posts</h2>
 	</header>
 		
+			<h3><a href="/2016/10/03/PGS.html">PGS (Prime Generator Search)</a></h3>
+			<span class="date">03 Oct 2016</span>
+			<section class="box special">
+				If you’ve ever read about primes, you have probably wondered how do we generate them? How do we find more?
+
+If you haven’t read my post on primes, it is a good prerequisite to this post, so I’d suggest trying that first.
+
+<h2 id="forms">Forms</h2>
+
+A form is a way to write something.
+
+You can write $ 6 $ as $ 2n $ because $ 6 = 2 * 3 $.
+Here, $ n = 3 $, so it has this form.
+
+$ 9 $ is part of a form: $ n^2 $ because $ 9 = 3^2 $.
+Here, $ n = 3 $
+
+<h1 id="prime-forms">Prime Forms</h1>
+
+Forms of primes are formulas, like $ 2n $ or $ n^2 $ which hold primes.
+
+For example, all primes except $2$ can be written as $2n+1$. If they were $2n$, then they would not be prime (except for $2$, of course)
+
+Currently, world records for sizes of primes are being broken by GIMPS - which searches for Mersenne primes.
+
+<a href="http://www.mersenne.org/">GIMPS</a> searches numbers that are of the form: $ 2^n-1 $, and tests them for primality
+
+<a href="http://www.primegrid.com/">Prime Grid</a> searches lots of forms, most notably $ a2^n\pm1 $
+
+They also search prime generators, which they broke a record for $an+b$ which is called <a href="https://www.primegrid.com/download/AP26.pdf">AP26</a>
+
+What they found was for $ n = 0 . . . 25 $, $a * n + b$ is prime for $a = 23681770*223092870$ and $b = 43142746595714191$
+
+Which broke the previous world record.
+
+<a href="http://chemicaldevelopment.us/pgs/">PGS</a> is my program, which searches for polynomials which generate primes for the first values.
+
+Currently, we are searching quadratics, which are of form: $an^2 + bn + c$. We haven’t broken any records yet, but we hope to soon.
+PGS is running on UTK’s (University of Tennessee Knoxville) super computer, Newton.
+
+Although it is much faster than any home computer, users can donate their CPU time to check a small block of coefficients.
+
+<h2 id="pgs">PGS</h2>
+
+PGS is a project I have worked on for 3 months now, and just recently added user support and online record keeping.
+
+Here’s how it works.
+
+When you download a release, that includes a few things. A <code class="highlighter-rouge">node</code> executable for your platform. Along with the programs:<code class="highlighter-rouge">PGS.js</code>, <code class="highlighter-rouge">lib.o</code>, <code class="highlighter-rouge">CPGS.o</code>.
+
+Note that PGS.js is just source, while the <code class="highlighter-rouge">.o</code> files are compiled files. The source for everything in PGS is on <a href="https://github.com/ChemicalDevelopment/pgs">Github</a>
+
+You enter in your email and password that you signed up with in <code class="highlighter-rouge">my.prefs</code>, and click run.sh. It logs you in, then starts gathering workloads from my server, and runs each using <code class="highlighter-rouge">CPGS.o</code>.
+Once these finish, PGS grabs another one, and starts it. It keeps going and going until it is killed, or your prefs specify to stop. It then gracefully shuts down, and marks all of your jobs as incomplete, so the server knows you didn’t finish them.
+
+You will notice a quite large file - <code class="highlighter-rouge">primes.dat</code> which is 250MB. This is not downloaded in the zip. If PGS determines that you don’t have a primes.dat file, it generates one with <code class="highlighter-rouge">lib.o</code>.
+This is a bitset - which I’ll explain later - which stores information so I know whether or not every number below $2,000,000,000$ is prime. This is used later to verify whether numbers are prime.
+
+I’ll go into specific parts down below.
+
+<h3 id="bitset">Bitset</h3>
+
+			<ul class="actions">
+				<li><a href="/2016/10/03/PGS.html" class="button alt">Read Article</a></li>
+			</ul>
+			</section>
+		
 			<h3><a href="/2016/09/06/pe-class-data-analysis.html">PE Class Data Analysis</a></h3>
 			<span class="date">06 Sep 2016</span>
 			<section class="box special">
