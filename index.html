@@ -97,7 +97,7 @@ layout: default
 	{% assign val = 0 %}
 				<div class="features-row">
 	{% for post in site.posts %}
-		{% if falsepost.tags contains "ignore" %}
+		{% if post.tags contains "ignore" %}
 		{% else %}
 			{% if val > 1 %}
 				</div>
