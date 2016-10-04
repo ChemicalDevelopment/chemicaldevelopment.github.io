@@ -51,13 +51,14 @@ layout: default
 		</section>
 	</div>
 </section>
-
+<!--
 <div class="row">
 	<div class="6u">
 		{% for post in site.posts %}
 			{% assign loopindex = forloop.index | modulo: 2 %}
 			{% if loopindex == 0 %}
-				{% if post.tag != "school" %}
+				{% if post.tags contains "ignore" %}
+				{% else %}
 					<section class="box special">
 						<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
 						<h3>{{ post.title }}</h3>
@@ -74,7 +75,8 @@ layout: default
 		{% for post in site.posts %}
 			{% assign loopindex = forloop.index | modulo: 2 %}
 			{% if loopindex == 1 %}
-				{% if post.tag != "school" %}
+				{% if post.tags contains "ignore" %}
+				{% else %}
 					<section class="box special">
 						<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
 						<h3>{{ post.title }}</h3>
@@ -88,3 +90,31 @@ layout: default
 		{% endfor %}							
 	</div>
 </div>
+-->
+
+
+<section class="box special features">
+	{% assign val = 0 %}
+				<div class="features-row">
+	{% for post in site.posts %}
+		{% if falsepost.tags contains "ignore" %}
+		{% else %}
+			{% if val > 1 %}
+				</div>
+				<div class="features-row">
+				{% assign val = 0 %}
+			{% endif %}
+			<section>
+				<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
+				<h3>{{ post.title }}</h3>
+				<p>{{ post.description }}</p>
+				<ul class="actions">
+					<li><a href="{{ post.url }}" class="button alt">Read Article</a></li>
+				</ul>
+			</section>
+			{% assign val = val | plus: 1 %}
+		{% endif %}
+	{% endfor %}
+</section>
+
+

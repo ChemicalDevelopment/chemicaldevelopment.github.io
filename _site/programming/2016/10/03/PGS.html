@@ -35,7 +35,7 @@
 		<meta name="description" content="If you’ve ever read about primes, you have probably wondered how do we generate them? How do we find more?">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/2016/10/03/PGS.html">
+		<link rel="canonical" href="http://chemicaldevelopment.us/programming/2016/10/03/PGS.html">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -210,20 +210,13 @@ This is a bitset - which I’ll explain later - which stores information so I kn
 
 <p>Then, it keeps evaluating until it finds a value which is not prime. Once it does, if the number of primes was greater than 60, or it has at least 40 distinct in a row, it prints the result out.</p>
 
-<p>It uses the file we created above to verify whether each number is prime, by checking the &lt;1&gt;
-    <an></an>
-    &lt;2&gt;&lt;/2&gt;
-    <bn></bn>
-    <!--  -->
-&lt;/1&gt;$th bit of the list of <code class="highlighter-rouge">1</code>s and <code class="highlighter-rouge">0</code>s</p>
+<p>It uses the file we created above to verify whether each number is prime, by checking the $(an^2+bn+c)$th bit of the list of <code class="highlighter-rouge">1</code>s and <code class="highlighter-rouge">0</code>s</p>
 
 <p>So, say we are testing $f(n) = an^2+bn+c$</p>
 
 <p>We first plug in n = 0, and we test whether $a0^2+b0^2+c$ is prime</p>
 
 <p>Then, n = 1, and so on until the function isnt prime.</p>
-
-<p>If it fits our criteria, we log it.</p>
 
 
 	</section>

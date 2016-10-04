@@ -100,7 +100,7 @@
 		<h2>Blog Posts</h2>
 	</header>
 		
-			<h3><a href="/2016/10/03/PGS.html">PGS (Prime Generator Search)</a></h3>
+			<h3><a href="/programming/2016/10/03/PGS.html">PGS (Prime Generator Search)</a></h3>
 			<span class="date">03 Oct 2016</span>
 			<section class="box special">
 				If you’ve ever read about primes, you have probably wondered how do we generate them? How do we find more?
@@ -216,12 +216,7 @@ This part is pretty straight forward. We run 3 for loops which check each possib
 
 Then, it keeps evaluating until it finds a value which is not prime. Once it does, if the number of primes was greater than 60, or it has at least 40 distinct in a row, it prints the result out.
 
-It uses the file we created above to verify whether each number is prime, by checking the &lt;1&gt;
-    <an></an>
-    &lt;2&gt;&lt;/2&gt;
-    <bn></bn>
-    <!--  -->
-&lt;/1&gt;$th bit of the list of <code class="highlighter-rouge">1</code>s and <code class="highlighter-rouge">0</code>s
+It uses the file we created above to verify whether each number is prime, by checking the $(an^2+bn+c)$th bit of the list of <code class="highlighter-rouge">1</code>s and <code class="highlighter-rouge">0</code>s
 
 So, say we are testing $f(n) = an^2+bn+c$
 
@@ -229,15 +224,13 @@ We first plug in n = 0, and we test whether $a0^2+b0^2+c$ is prime
 
 Then, n = 1, and so on until the function isnt prime.
 
-If it fits our criteria, we log it.
-
 
 			<ul class="actions">
-				<li><a href="/2016/10/03/PGS.html" class="button alt">Read Article</a></li>
+				<li><a href="/programming/2016/10/03/PGS.html" class="button alt">Read Article</a></li>
 			</ul>
 			</section>
 		
-			<h3><a href="/2016/09/06/pe-class-data-analysis.html">PE Class Data Analysis</a></h3>
+			<h3><a href="/ignore/2016/09/06/pe-class-data-analysis.html">PE Class Data Analysis</a></h3>
 			<span class="date">06 Sep 2016</span>
 			<section class="box special">
 				<h1 id="cade-brown--gregory-croisdale">Cade Brown &amp; Gregory Croisdale</h1>
@@ -321,166 +314,11 @@ The standard deviation is even larger for this dataset, which means the amounts 
 These few threw off the average and standard deviation quite a bit from what it would have been, and based on the evidence, it would seem that people, in general, find curlups much easier than pushups, and a small group finds them extremely easier than pushups.
 
 			<ul class="actions">
-				<li><a href="/2016/09/06/pe-class-data-analysis.html" class="button alt">Read Article</a></li>
+				<li><a href="/ignore/2016/09/06/pe-class-data-analysis.html" class="button alt">Read Article</a></li>
 			</ul>
 			</section>
 		
-			<h3><a href="/2016/05/22/sums-and-products.html">Sums and products</a></h3>
-			<span class="date">22 May 2016</span>
-			<section class="box special">
-				Have you ever seen a really awesome sum? Like this one here:
-
-<script type="math/tex; mode=display">\sum_{i=0}^\infty \frac{1}{k^2} = \frac{1}{1} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} + \cdots = \frac{\pi^2}{6}</script>
-
-Or
-
-<script type="math/tex; mode=display">\sum_{i=0}^\infty \frac{1}{k^4} = \frac{1}{1} + \frac{1}{2^4} + \frac{1}{3^4} + \cdots + \frac{1}{n^4} + \cdots = \frac{\pi^4}{90}</script>
-
-Or even
-
-<script type="math/tex; mode=display">\sum_{i=0}^\infty \frac{1}{k^{14}} = \frac{1}{1} + \frac{1}{2^{14}} + \frac{1}{3^{14}} + \cdots + \frac{1}{n^{14}} + \cdots = \frac{2\pi^{14}}{18243224}</script>
-
-Or maybe an awesome product, such as:
-
-<script type="math/tex; mode=display">\frac{\sqrt[1]{e}\sqrt[3]{e}\sqrt[5]{e}\sqrt[7]{e}\sqrt[9]{e}\cdots\sqrt[{2n+1}]{e}\cdots}{\sqrt[2]{e}\sqrt[4]{e}\sqrt[8]{e}\sqrt[10]{e}\sqrt[12]{e}\cdots\sqrt[{2n}]{e}\cdots} = 2</script>
-
-The first two are examples of infinite sums, and the third is an infinite product. Sum means adding, product means multiply. In all of these examples, we take them out to infinity (theoretically), and this is the answer we would get. In fact, as we go farther, they get very close to these values.
-
-Before I show you these examples, we are going to look at sums a little bit more generally.
-
-I’ve written a JSFiddle so you can enter your own series and watch the value it converges to.
-
-Full version at <a href="https://jsfiddle.net/CadeBrown/tdxofngq/" target="_blank">https://jsfiddle.net/CadeBrown/tdxofngq/</a>
-
-<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/tdxofngq/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-You can just type in “n”, and it will show you the sum of 1 + 2 + 3 + 4 + … + n (which happens to be $ \frac{n(n+1)}{2} $)
-
-A few cool sums to try in it:
-
-<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = -\ln{2} \approx -.693</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
- max = 1000
- series = pow(-1, n) / n
-</code></pre>
-</div>
-
-<script type="math/tex; mode=display">\sum_{n=0}^{\infty}\frac{ {(-1)}^n}{2n + 1} = \frac{\pi}{4} \approx .785</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
- max = 1000
- series = pow(-1, n) / (2 * n + 1)
-</code></pre>
-</div>
-
-<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6} \approx 1.645</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
- max = 1000
- series = 1 / (n * n)
-</code></pre>
-</div>
-
-<script type="math/tex; mode=display">\sum_{n=0}^{\infty}{\frac{e}{\pi^{e^{n}}} - \frac{21(e^n + \pi^n)}{10(e^{\pi^n} + \pi^{e^n})}} \approx -0.001</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
- max = 100
- series = e / pow(pi, pow(e, n)) - (21 * (pow(e, n) + pow(pi, n))) / (10 * (pow(e, pow(pi, n)) + pow(pi, pow(e, n))))
-</code></pre>
-</div>
-
-The last one is a bit crazy, and has no practical meaning (yet!), but it shows how you can enter terms into the web page.
-
-Those 4 above are what are called convergent series. Convergent means that if you keep evaluating more and more terms, it tends towards a limit.
-
-Like $ \ln{2} $, or $ \frac{\pi}{4} $ were the limits of the first and second sum.
-
-The first 3 sums converge quite slowly, and to get $d$ digits of precision to the “actual value” (if we could take it to infinity), we would need roughly $10^d$ terms. So, to get one more digit of precision, we would need 10 times as many terms to sum! That is why the first 3 are not good ways to calculate their sum ($\pi$, $\ln{2}$, etc)
-
-The fourth, however, takes roughly $\log\log{d}$ terms to get to $d$ digits, which is very fast.
-
-There exists formulas for $\pi$ that require only $\frac{d}{14}$ terms to get $d$ digits, such as this one:
-
-<script type="math/tex; mode=display">\frac{1}{\pi} = 12\sum_{n=0}^{\infty}\frac{(-1)^n(6n)!(13591409+545140134n)}{(3n)!(n)!^3(640320)^{3n+\frac{3}{2}}} \approx 0.318</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
- max = 10
- series = 12 * (pow(-1, n) * fac(6 * n) * (13591409 + 545140134 * n)) / (fac(3 * n) * pow(fac(n), 3) * pow(640320, 3 * n + 1.5))
-</code></pre>
-</div>
-
-Viola! You have $\frac{1}{\pi}$ pretty easily.
-
-In fact, that series (with a few optimizations) is how record number of digits of $\pi$ are computed! (http://www.numberworld.org/digits/Pi/ we are currently at $13,300,000,000,000$ digits).
-
-Lets take a little break, and talk about products. I showed you:
-
-<script type="math/tex; mode=display">\frac{\sqrt[1]{e}\sqrt[3]{e}\sqrt[5]{e}\sqrt[7]{e}\sqrt[9]{e}\cdots\sqrt[{2n+1}]{e}\cdots}{\sqrt[2]{e}\sqrt[4]{e}\sqrt[8]{e}\sqrt[10]{e}\sqrt[12]{e}\cdots\sqrt[{2n}]{e}\cdots} = 2</script>
-
-and, I showed an example of a seemingly unrelated sum:
-
-<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = \ln{2}</script>
-
-But, these two are saying the same thing! I’ll show you how.
-
-Lets get some notation here. Analogous to summing over n using $\Sigma$, we will show a product using capital pi ($\Pi$, <em>not</em> $\pi$).
-
-For example:
-
-<script type="math/tex; mode=display">\prod_{n=1}^{m}{n} = 1 * 2 * 3 * \cdots * (n - 1) * n = n! = \Gamma(n + 1)</script>
-
-where the $!$ means factorial (<a href="https://en.wikipedia.org/wiki/Factorial" target="_blank">https://en.wikipedia.org/wiki/Factorial</a>), and $\Gamma$ is the Gamma function (<a href="https://en.wikipedia.org/wiki/Gamma_function" target="_blank">https://en.wikipedia.org/wiki/Gamma_function</a>)
-
-I’ve written another fiddle for products instead of summation:
-
-Full version at <a href="https://jsfiddle.net/CadeBrown/smnohszh/1/" target="_blank">https://jsfiddle.net/CadeBrown/smnohszh/1/</a>
-
-<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/smnohszh/1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-The default product approaches $\frac{\pi}{2}$, but I have a few examples for these as well:
-
-<script type="math/tex; mode=display">\prod_{n=1}^{\infty}\left ( {1 + \frac{1}{9n^2}} \right ) = \frac{3\sqrt{3}}{2\pi} \approx 0.827</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
- max = 100
- series = (1 - 1 / (9 * n * n))
-</code></pre>
-</div>
-
-<script type="math/tex; mode=display">\prod_{n=1}^{\infty}\left ( 1 + \frac{1}{(2n+1)^2} \right ) = \frac{\pi}{4} \approx 0.785</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 1
- max = 100
- series = (1 - 1 / ((2 * n + 1) * (2 * n + 1)))
-</code></pre>
-</div>
-
-Throughout history, sums have been studied more for two major reasons:
-
-<ul>
-  <li>Sums often converge quicker</li>
-  <li>It is easier to add than multiply</li>
-</ul>
-
-My favorite sum, personally, would have to be the chudnovsky formula, from above:
-
-<script type="math/tex; mode=display">\frac{1}{\pi} = 12\sum_{n=0}^{\infty}\frac{(-1)^n(6n)!(13591409+545140134n)}{(3n)!(n)!^3(640320)^{3n+\frac{3}{2}}} \approx 0.318</script>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> min = 0
- max = 10
- series = 12 * (pow(-1, n) * fac(6 * n) * (13591409 + 545140134 * n)) / (fac(3 * n) * pow(fac(n), 3) * pow(640320, 3 * n + 1.5))
-</code></pre>
-</div>
-
-So beautiful!
-
-			<ul class="actions">
-				<li><a href="/2016/05/22/sums-and-products.html" class="button alt">Read Article</a></li>
-			</ul>
-			</section>
-		
-			<h3><a href="/2016/05/19/primes.html">All about primes</a></h3>
+			<h3><a href="/math/2016/05/19/primes.html">All about primes</a></h3>
 			<span class="date">19 May 2016</span>
 			<section class="box special">
 				First post on this blog, so I thought we would start it out with something interesting, like primes.
@@ -556,7 +394,7 @@ Another reason I like that number is the fact that $ 2^{127} - 1  = 2^{2^{7} - 1
 Math is magic!
 
 			<ul class="actions">
-				<li><a href="/2016/05/19/primes.html" class="button alt">Read Article</a></li>
+				<li><a href="/math/2016/05/19/primes.html" class="button alt">Read Article</a></li>
 			</ul>
 			</section>
 		

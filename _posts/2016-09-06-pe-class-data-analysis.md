@@ -2,7 +2,8 @@
 layout: post
 title: PE Class Data Analysis
 description: A school project
-tag: school
+tags: [school, ignore]
+category: ignore
 image: milerun.png
 ---
 
