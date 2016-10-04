@@ -162,6 +162,76 @@ I’ll go into specific parts down below.
 
 <h3 id="bitset">Bitset</h3>
 
+I’m going to assume you know the binary number system for this part. If not, just think of 1 as a “yes” and 0 as a “no”.
+
+So, there are plenty of algorithms to generate the first few primes. I use the Sieve of Eratosthenes to compute a list.
+
+But, if we stored the primes as an array, like [2, 3, 5, 7] this would take up too much space. How much space exactly?
+
+Well, 32 bit integers which can store up to 2^32 each take up 4 bytes because each byte is 8 bits, and 32 / 8 = 4
+
+If we wanted to store each prime under 2,000,000,000, we would have to store over 98,000,000,000. This takes up more space, and is slower at runtime than a bitset, which is explained below.
+
+This approach will take 98,000,000 integers of space (each is 32 bits, which is 4 bytes), and when we check at runtime, we will need to check every integer in the array until we find it, or we find a number that is greater than it.
+
+For example, say I give you a small list of primes: [2, 3, 5, 7, 11, 13, 17, 19]. I ask you if 15 is prime. How do you tell me?
+
+Well, you would go through the list and compare each to 15.
+
+Is 2 = 15?
+
+Is 3 = 15?
+
+. . .
+
+Is 17 = 15?
+
+At this point, you can stop because you have passed where 15 would be, so you know it isn’t prime.
+
+Now then, let’s say we use a list of bits to tell you if the number is prime. The list above would look like:
+
+<code class="highlighter-rouge">001101010001010001010</code>
+
+This starts at 0, and goes to 19
+
+The <code class="highlighter-rouge">1</code>s mean that the index is prime, so count from the left: <code class="highlighter-rouge">0</code>, <code class="highlighter-rouge">1</code>, <code class="highlighter-rouge">2</code>
+
+<span style="color: red; font-size: 2em;">001</span><span style="font-size: 2em;">101010001010001010</span>
+
+The last number in red is <code class="highlighter-rouge">1</code>, which indicates that <code class="highlighter-rouge">2</code> is prime.
+
+In this case, if I asked you to check if 15 is prime, you don’t need to go through all the numbers in the list; All you need to do is skip to 0 . . . 15, and check that single bit.
+
+And for memory usage, the first approach uses 98000000 integers, whereas this one can store 32 numbers in a single integer (using the list of <code class="highlighter-rouge">1</code>s and <code class="highlighter-rouge">0</code>s), so we would need $2000000000/32 = 62500000$ integers.
+
+So it uses about 60% as much memory as the first approach, and is much faster to use.
+
+We store the array of integers from the second approach in a file, then read it back when you run.
+
+So, it uses 250mb of ram per thread you run, which everyone should have.
+
+<h3 id="checking-a-polynomials">Checking a polynomials</h3>
+
+This part is pretty straight forward. We run 3 for loops which check each possibiliy of a, b, and c within certain ranges.
+
+Then, it keeps evaluating until it finds a value which is not prime. Once it does, if the number of primes was greater than 60, or it has at least 40 distinct in a row, it prints the result out.
+
+It uses the file we created above to verify whether each number is prime, by checking the &lt;1&gt;
+    <an></an>
+    &lt;2&gt;&lt;/2&gt;
+    <bn></bn>
+    <!--  -->
+&lt;/1&gt;$th bit of the list of <code class="highlighter-rouge">1</code>s and <code class="highlighter-rouge">0</code>s
+
+So, say we are testing $f(n) = an^2+bn+c$
+
+We first plug in n = 0, and we test whether $a0^2+b0^2+c$ is prime
+
+Then, n = 1, and so on until the function isnt prime.
+
+If it fits our criteria, we log it.
+
+
 			<ul class="actions">
 				<li><a href="/2016/10/03/PGS.html" class="button alt">Read Article</a></li>
 			</ul>
