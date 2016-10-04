@@ -1357,6 +1357,11 @@
 				margin: 1em 0 0 0;
 				padding: 1em 0 1.25em 0;
 			}
+	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+		body #main {
+			margin-top: -10em !important;
+		}
+	}
 	body #main {
 		margin-top: -28em;
 	}
