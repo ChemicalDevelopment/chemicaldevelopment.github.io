@@ -57,8 +57,7 @@ layout: default
 		{% for post in site.posts %}
 			{% assign loopindex = forloop.index | modulo: 2 %}
 			{% if loopindex == 0 %}
-			{% if post.tag != "school" %}
-				<ul>
+				{% if post.tag != "school" %}
 					<section class="box special">
 						<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
 						<h3>{{ post.title }}</h3>
@@ -67,7 +66,7 @@ layout: default
 							<li><a href="{{ post.url }}" class="button alt">Read Article</a></li>
 						</ul>
 					</section>
-			{% endif %}
+				{% endif %}
 			{% endif %}
 		{% endfor %}							
 	</div>
@@ -75,8 +74,7 @@ layout: default
 		{% for post in site.posts %}
 			{% assign loopindex = forloop.index | modulo: 2 %}
 			{% if loopindex == 1 %}
-			{% if post.tag != "school" %}
-				<ul>
+				{% if post.tag != "school" %}
 					<section class="box special">
 						<span class="image featured"><img src="{{ site.baseurl }}assets/images/{{ post.image }}" alt="" /></span>
 						<h3>{{ post.title }}</h3>
@@ -85,7 +83,7 @@ layout: default
 							<li><a href="{{ post.url }}" class="button alt">Read Article</a></li>
 						</ul>
 					</section>
-			{% endif %}
+				{% endif %}
 			{% endif %}
 		{% endfor %}							
 	</div>
