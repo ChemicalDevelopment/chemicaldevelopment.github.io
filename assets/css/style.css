@@ -569,12 +569,12 @@
 			}
 
 			.icon.major.accent3 {
-				background: #7fcdb8;
+				background: #70ad98;
 				color: #ffffff;
 			}
 
 			.icon.major.accent4 {
-				background: #90b0ba;
+				background: #80a5ba;
 				color: #ffffff;
 			}
 
@@ -582,6 +582,19 @@
 				background: #e5cb95;
 				color: #ffffff;
 			}
+			.icon.major.accent6 {
+				background: #e5cb95;
+				color: #444;
+			}			
+			.icon.major.accent7 {
+				background: #417645;
+				color: #fff;
+			}
+			.icon.major.accent8 {
+				background: #6092d0;
+				color: #fff;
+			}
+	
 
 /* Image */
 
