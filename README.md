@@ -1,4 +1,4 @@
-My website, (chemicaldevelopment.us)[chemicaldevelopment.us]
+My website, [chemicaldevelopment.us](chemicaldevelopment.us)
 
 See LICENSE.txt for info on what went into this.
 
