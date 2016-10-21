@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>EZC Functions</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Projects</title>
+		<title>EZC Functions</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/projects/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/functions/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -95,24 +95,36 @@
 	<!-- Main -->
 	<section id="main" class="container">
 
-<section class="box special">
-	<header class="major">
-		<h2><b>Projects</b></h2>
-	</header>
-</section>
-	<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-bar-chart accent3"></span>
-			<h3>PGS</h3>
-			<p>Distributed computing project</p>
-			<ul class="actions">
-				<li><a href="/programming/2016/10/03/PGS.html" class="button special-blue">Blog Post</a></li>
-				<li><a href="./pgs/" class="button special-red">Landing Page</a></li>
-			</ul>
-		</section>
-	</div>
-</section>
+	<section class="box post">
+		<h3>EZC Functions</h3><br/>
+		<p>In ezC, functions are not declared, but are a set of keywords that can be applied like:</p>
+
+<p><code class="highlighter-rouge">x = log y</code></p>
+
+<p>or</p>
+
+<p><code class="highlighter-rouge">echo Hello World</code></p>
+
+<p>Similar to <a href="/docs/ezc/operators/">operators</a>, functions take arguments, and store it in a variable, except for some functions like <code class="highlighter-rouge">echo</code>, <code class="highlighter-rouge">prec</code>, and <code class="highlighter-rouge">var</code></p>
+
+<p>In our examples, <code class="highlighter-rouge">x = log y</code>, it sets <code class="highlighter-rouge">x</code> to the natural logarithm (base e) of <code class="highlighter-rouge">y</code></p>
+
+<p><code class="highlighter-rouge">echo Hello World</code> prints out Hello World to the console</p>
+
+<p><code class="highlighter-rouge">var x</code> prints out the name of the variable, <code class="highlighter-rouge">x</code>, and it’s numerical value.</p>
+
+<p>In fact, all operators are mapped to a function.</p>
+
+<p><code class="highlighter-rouge">x = a + b</code> is the same as <code class="highlighter-rouge">x = add a b</code></p>
+
+<p><code class="highlighter-rouge">x = a ^ b</code> is the same as <code class="highlighter-rouge">x = pow a b</code></p>
+
+<p>etc.</p>
+
+<p>Here’s the global <a href="/docs/ezc/functions/list.html">list of functions</a></p>
+
+
+	</section>
 		</section>
 		<!-- Footer -->
 			<footer id="footer">

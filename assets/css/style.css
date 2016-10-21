@@ -31,7 +31,8 @@
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #e89980;
+		color: #0000ff;
+		font-weight: 600;
 		text-decoration: none;
 	}
 
@@ -53,7 +54,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #646464;
+		color: #111;
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 0.5em 0;
@@ -108,7 +109,7 @@
 
 	hr {
 		border: 0;
-		border-bottom: solid 2px #e5e5e5;
+		border-bottom: solid 2px #222;
 		margin: 2em 0;
 	}
 
@@ -117,7 +118,7 @@
 		}
 
 	blockquote {
-		border-left: solid 4px #e5e5e5;
+		border-left: solid 4px #222;
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
@@ -125,7 +126,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		background: #f8f8f8;
+		background: #ccc;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
 		font-family: monospace;
@@ -137,7 +138,7 @@
 	}
 
 	code {
-		background: #f8f8f8;
+		background: #ababab;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
 		font-family: monospace;

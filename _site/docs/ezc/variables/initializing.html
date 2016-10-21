@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>Variable Initialization</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Projects</title>
+		<title>Variable Initialization</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/projects/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/variables/initializing.html">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -95,24 +95,43 @@
 	<!-- Main -->
 	<section id="main" class="container">
 
-<section class="box special">
-	<header class="major">
-		<h2><b>Projects</b></h2>
-	</header>
-</section>
-	<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-bar-chart accent3"></span>
-			<h3>PGS</h3>
-			<p>Distributed computing project</p>
-			<ul class="actions">
-				<li><a href="/programming/2016/10/03/PGS.html" class="button special-blue">Blog Post</a></li>
-				<li><a href="./pgs/" class="button special-red">Landing Page</a></li>
-			</ul>
-		</section>
-	</div>
-</section>
+	<section class="box post">
+		<h3>Variable Initialization</h3><br/>
+		<h3 id="constant">Constant</h3>
+
+<p>To initialize a variable to a constant, simply type out the constant:</p>
+
+<p><code class="highlighter-rouge">x = 3.14159265358979</code></p>
+
+<h3 id="variable">Variable</h3>
+
+<p>You can also use another variable, such as:</p>
+
+<p><code class="highlighter-rouge">x = y</code></p>
+
+<h3 id="command-line-arguments">Command Line Arguments</h3>
+
+<p>Additionally, you can read in values from the commandline, using <code class="highlighter-rouge">$</code>. <code class="highlighter-rouge">$1</code> reads in the first argument, <code class="highlighter-rouge">$2</code> reads the second, and so one.</p>
+
+<p>If the user does not enter a value, it defaults to <code class="highlighter-rouge">0.0</code></p>
+
+<pre>
+# Prints sum of first two args
+a = $1; b = $2
+
+sum = a + b
+
+var sum
+</pre>
+
+<p>When compiled, as <code class="highlighter-rouge">sum.o</code>, you can use it like so:</p>
+
+<pre>
+&gt; ./sum.o 1.0 2.0
+&gt; sum : 3.00000000 . . .
+</pre>
+
+	</section>
 		</section>
 		<!-- Footer -->
 			<footer id="footer">
