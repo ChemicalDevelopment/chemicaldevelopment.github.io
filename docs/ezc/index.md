@@ -17,4 +17,6 @@ Some links:
 
 [Functions](./functions)
 
+[Operators](./operators)
+
 
