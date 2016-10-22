@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>EZC Documentation</title>
+		<title>EZC Examples</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>EZC Documentation</title>
+		<title>EZC Examples</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/examples/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -96,30 +96,35 @@
 	<section id="main" class="container">
 
 	<section class="box post">
-		<h3>EZC Documentation</h3><br/>
-		<p>EZC is easy C. It comes will all the power of large multiprecision arithmetic (like GMP, MPFR, or mpmath), in a very basic structure while retaining all the speed of C.</p>
+		<h3>EZC Examples</h3><br/>
+		<p>Here are some ezC examples.</p>
 
-<p>EZC does not require the user to know memory management, as that is taken into account.</p>
+<p>For a walkthrough, check out <a href="/docs/ezc/tutorials">Tutorials</a></p>
 
-<p>Some links:</p>
+<p>You can find even more on <a href="https://github.com/ChemicalDevelopment/ezc/tree/master/examples">Github</a></p>
 
-<ul>
-  <li><a href="https://github.com/ChemicalDevelopment/ezc">Github Repository</a></li>
-</ul>
+<h3 id="pi">Pi</h3>
 
-<h3 id="basics">Basics</h3>
+<p>Pi, or $\pi$, is a widely known constant, and any circle’s circumference divided by diameter.</p>
 
-<p><a href="./variables">Variables</a></p>
+<p>It’s numerical value is <code class="highlighter-rouge">3.14159265358979 . . .</code> In this example, we’ll show how to use ezC to compute pi to any accuracy.</p>
 
-<p><a href="./functions">Functions</a></p>
+<h4 id="basic-example">Basic Example</h4>
 
-<p><a href="./operators">Operators</a></p>
+<p>Here is a very basic, but slow method of calculating pi:</p>
 
-<h3 id="how-to">How to</h3>
+<pre>
+# examples/pi_basic.ezc
 
-<p><a href="./tutorials">Tutorials</a></p>
+setprec $1
 
-<p><a href="./examples">Examples</a></p>
+c_pi = -1.0
+pi = acos c_pi
+
+var pi
+</pre>
+
+<p>since <code class="highlighter-rouge">-1</code> is the $\cos(\pi)$, $\cos^{-1}(-1)$ should be $\pi$</p>
 
 	</section>
 		</section>

@@ -19,4 +19,8 @@ Some links:
 
 [Operators](./operators)
 
+### How to
 
+[Tutorials](./tutorials)
+
+[Examples](./examples)
