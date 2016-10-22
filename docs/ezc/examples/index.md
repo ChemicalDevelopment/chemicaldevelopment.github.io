@@ -31,3 +31,5 @@ var pi
 </pre>
 
 since `-1` is the $\cos(\pi)$, $\cos^{-1}(-1)$ should be $\pi$
+
+### Video
