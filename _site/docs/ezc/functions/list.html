@@ -102,116 +102,154 @@
 <table>
   <tbody>
     <tr>
-      <td>Function Name</td>
-      <td>Usage</td>
-      <td>Operator</td>
-      <td>Explanation</td>
-      <td>Page</td>
+      <td><strong>Function</strong></td>
+      <td><strong>Operator</strong></td>
+      <td><strong>Explanation</strong></td>
     </tr>
     <tr>
-      <td>setprec</td>
+      <td><strong>Basic Functions</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">setprec 256</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>Sets global precision in bits</td>
-      <td><a href="/docs/ezc/functions/list.html">Prec</a></td>
     </tr>
     <tr>
-      <td>echo</td>
       <td><code class="highlighter-rouge">echo Hello World</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>Prints out all arguments</td>
-      <td><a href="/docs/ezc/functions/list.html">Echo</a></td>
     </tr>
     <tr>
-      <td>var</td>
       <td><code class="highlighter-rouge">var x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>Prints variable name, and value</td>
-      <td><a href="/docs/ezc/functions/list.html">Var</a></td>
     </tr>
     <tr>
-      <td>int</td>
-      <td><code class="highlighter-rouge">int x</code></td>
+      <td><code class="highlighter-rouge">file x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Truncates variable to nearest integer</td>
-      <td><a href="/docs/ezc/functions/list.html">Int</a></td>
+      <td>Saves the results of <code class="highlighter-rouge">var x</code> to file named <code class="highlighter-rouge">x.txt</code></td>
     </tr>
     <tr>
-      <td>add</td>
+      <td><strong>Arithmetic</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">z = add x y</code></td>
       <td><code class="highlighter-rouge">z = x + y</code></td>
       <td>Adds <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Add</a></td>
     </tr>
     <tr>
-      <td>sub</td>
       <td><code class="highlighter-rouge">z = sub x y</code></td>
       <td><code class="highlighter-rouge">z = x - y</code></td>
       <td>Subtracts <code class="highlighter-rouge">y</code> from <code class="highlighter-rouge">x</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Sub</a></td>
     </tr>
     <tr>
-      <td>mul</td>
       <td><code class="highlighter-rouge">z = mul x y</code></td>
       <td><code class="highlighter-rouge">z = x * y</code></td>
       <td>Multiplies <code class="highlighter-rouge">x</code> by <code class="highlighter-rouge">y</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Mul</a></td>
     </tr>
     <tr>
-      <td>div</td>
       <td><code class="highlighter-rouge">z = div x y</code></td>
       <td><code class="highlighter-rouge">z = x / y</code></td>
       <td>Divides <code class="highlighter-rouge">x</code> by <code class="highlighter-rouge">y</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Div</a></td>
     </tr>
     <tr>
-      <td>pow</td>
       <td><code class="highlighter-rouge">z = pow x y</code></td>
       <td><code class="highlighter-rouge">z = x ^ y</code></td>
       <td>Returns <code class="highlighter-rouge">x</code> to the power of <code class="highlighter-rouge">y</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Pow</a></td>
     </tr>
     <tr>
-      <td>sqrt</td>
+      <td><strong>Rounding</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">int x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Truncates variable to an integer</td>
+    </tr>
+    <tr>
+      <td><strong>Math Functions</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">z = sqrt x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>Returns the square root of <code class="highlighter-rouge">x</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Sqrt</a></td>
     </tr>
     <tr>
-      <td>exp</td>
-      <td><code class="highlighter-rouge">z = exp x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Returns euler’s number raised to <code class="highlighter-rouge">x</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Exp</a></td>
-    </tr>
-    <tr>
-      <td>log</td>
-      <td><code class="highlighter-rouge">z = log x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Returns natural log of <code class="highlighter-rouge">x</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Log</a></td>
-    </tr>
-    <tr>
-      <td>logb</td>
-      <td><code class="highlighter-rouge">z = logb x y</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Returns the log base <code class="highlighter-rouge">x</code> of <code class="highlighter-rouge">y</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Log</a></td>
-    </tr>
-    <tr>
-      <td>sin</td>
       <td><code class="highlighter-rouge">z = sin x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>Returns the sine of <code class="highlighter-rouge">x</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Sin</a></td>
     </tr>
     <tr>
-      <td>cos</td>
+      <td><code class="highlighter-rouge">z = asin x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Returns the arcsine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">z = cos x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>Returns the cosine of <code class="highlighter-rouge">x</code></td>
-      <td><a href="/docs/ezc/functions/list.html">Cos</a></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acos x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Returns the arcosine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = exp x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Returns euler’s number raised to <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = log x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Returns natural log of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = logb x y</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Returns the log base <code class="highlighter-rouge">x</code> of <code class="highlighter-rouge">y</code></td>
+    </tr>
+    <tr>
+      <td><strong>Flow Blocks</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">label z</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Creates a backup point <code class="highlighter-rouge">z</code> that you can return to from <code class="highlighter-rouge">goto z</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">goto z</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Starts executing code right after <code class="highlighter-rouge">label z</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">if z &gt; x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Conditional block that can use <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">==</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">fi</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Ends <code class="highlighter-rouge">if</code> block</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">for i 0 10 2.5</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Starts <code class="highlighter-rouge">i</code> at <code class="highlighter-rouge">0</code>, keeps adding <code class="highlighter-rouge">2.5</code> until <code class="highlighter-rouge">i</code> &gt;= <code class="highlighter-rouge">10</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">rof</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Ends <code class="highlighter-rouge">for</code> block</td>
     </tr>
   </tbody>
 </table>

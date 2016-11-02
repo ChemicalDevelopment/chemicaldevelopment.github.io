@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>OpenCL</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Projects</title>
+		<title>OpenCL</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/projects/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/fractalrender/opencl/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -95,45 +95,49 @@
 	<!-- Main -->
 	<section id="main" class="container">
 
-<section class="box special">
-	<header class="major">
-		<h2><b>Projects</b></h2>
-	</header>
-</section>
-	<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-file-text accent1"></span>
-			<h3>Docs</h3>
-			<p>Documentation for all my projects</p>
-			<ul class="actions">
-				<li><a href="/docs/" class="button special-blue">Docs</a></li>
-			</ul>
-		</section>		
-		<section>
-			<span class="icon major fa-file-code-o accent2"></span>
-			<h3>GitHub</h3>
-			<p>Code for all my projects</p>
-			<ul class="actions">
-				<li><a href="http://github.chemicaldevelopment.us/" class="button special-blue">GitHub</a></li>
-			</ul>
-		</section>
-	</div>
-</section>
+	<section class="box post">
+		<h3>OpenCL</h3><br/>
+		<h3 id="what-is-opencl">What is OpenCL?</h3>
 
-<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-bar-chart accent3"></span>
-			<h3>PGS</h3>
-			<p>Distributed computing project</p>
-			<ul class="actions">
-				<li><a href="/programming/2016/10/03/PGS.html" class="button special-blue">Blog Post</a></li>
-				<li><a href="./pgs/" class="button special-red">Landing Page</a></li>
-			</ul>
-		</section>
-	</div>
-</section>
+<p><a href="https://www.khronos.org/opencl/">Official Page</a></p>
+
+<p>Essentially, OpenCL allows programmers (me) to use a GPU to run some tasks, which runs at extremely fast speeds (up to 100x in FractalRender).</p>
+
+<p>If you are using integrated graphics, do not use this. Integrated GPUs are not meant to be pushed this far, and may crash your system.</p>
+
+<p>This will work fine with any dedicated card, and will give extreme speedups.</p>
+
+<p>Again, <strong>do not use opencl with integrated graphics</strong>.</p>
+
+<h3 id="installing">Installing</h3>
+
+<p>OpenCL installation per platform (AMD, Nvidia, etc), but you should be able to run releases from the github by default.</p>
+
+<p>Please use a precompiled binary in github releases found on the <a href="http://github.chemicaldevelopment.us/fractalrender/releases">Github</a> if you don’t want to install OpenCL (you probably don’t need to install it)</p>
+
+<p>Otherwise, here are links for SDKs per platform (you may have to google yours if not listed):</p>
+
+<ul>
+  <li>
+    <p><a href="http://developer.amd.com/tools-and-sdks/opencl-zone/amd-accelerated-parallel-processing-app-sdk/">AMD</a></p>
+  </li>
+  <li>
+    <p>Nvidia (Should work by default)</p>
+  </li>
+</ul>
+
+<p>The compiler is a C compiler which looks for the library <code class="highlighter-rouge">-lOpenCL</code>, so your <code class="highlighter-rouge">-I</code> flags to gcc and <code class="highlighter-rouge">-L</code> flags must include directories with <code class="highlighter-rouge">libOpenCL.so</code></p>
+
+<p>Once you have these, look up how to compile for your platform. Where do you need to include in your library path?</p>
+
+<p>Once you’ve found this, please copy <code class="highlighter-rouge">compileopencl.sh.example</code> to <code class="highlighter-rouge">compileopencl.sh</code> and change it appropriately.</p>
+
+<p>If you don’t know what I’m talking about, please just use the release with your default driver. It should support this.</p>
+
+<p>If not, please open a <a href="http://github.chemicaldevelopment.us/fractalrender/issues/new">Issue</a></p>
+
+
+	</section>
 		</section>
 		<!-- Footer -->
 			<footer id="footer">

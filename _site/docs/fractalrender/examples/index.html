@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>Examples</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Projects</title>
+		<title>Examples</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/projects/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/fractalrender/examples/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -95,45 +95,43 @@
 	<!-- Main -->
 	<section id="main" class="container">
 
-<section class="box special">
-	<header class="major">
-		<h2><b>Projects</b></h2>
-	</header>
-</section>
-	<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-file-text accent1"></span>
-			<h3>Docs</h3>
-			<p>Documentation for all my projects</p>
-			<ul class="actions">
-				<li><a href="/docs/" class="button special-blue">Docs</a></li>
-			</ul>
-		</section>		
-		<section>
-			<span class="icon major fa-file-code-o accent2"></span>
-			<h3>GitHub</h3>
-			<p>Code for all my projects</p>
-			<ul class="actions">
-				<li><a href="http://github.chemicaldevelopment.us/" class="button special-blue">GitHub</a></li>
-			</ul>
-		</section>
-	</div>
-</section>
+	<section class="box post">
+		<h3>Examples</h3><br/>
+		<p><a href="./tutorial">Tutorial</a></p>
 
-<section class="box special features">
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-bar-chart accent3"></span>
-			<h3>PGS</h3>
-			<p>Distributed computing project</p>
-			<ul class="actions">
-				<li><a href="/programming/2016/10/03/PGS.html" class="button special-blue">Blog Post</a></li>
-				<li><a href="./pgs/" class="button special-red">Landing Page</a></li>
-			</ul>
-		</section>
-	</div>
-</section>
+<p>Zoomed Out</p>
+
+<p><code class="highlighter-rouge">./run.py -d 800 800 -i 32 -z .6 -c -.75 0</code></p>
+
+<p>Desktop Background</p>
+
+<p><code class="highlighter-rouge">./run.py -d 1920 1080 -i 800 -z 1000 -c .2821 .01</code></p>
+
+<p>4K Desktop Background edition</p>
+
+<p><code class="highlighter-rouge">./run.py -d 3840 2160 -i 800 -z 1000 -c .2821 .01</code></p>
+
+<p>Basic gif</p>
+
+<p><code class="highlighter-rouge">./run.py -a -d 400 400 -i 60 -z .4 -zps 2.3 -c .2821 .01 -o out.gif</code></p>
+
+<p>Full video (without opencl) (takes about 3 days on my comp)</p>
+
+<p><code class="highlighter-rouge">./run.py -a -d 1280 720 -i 200 -z .4 -fps 16 -s 30 -zps 1.95 -c .2821 .01 -o out.mp4</code></p>
+
+<p>Full Video (with opencl) (takes less than 30 seconds)</p>
+
+<p><code class="highlighter-rouge">./run.py -a -cl -d 1280 720 -i 200 -z .4 -fps 16 -s 30 -zps 1.95 -c .2821 .01 -o out.mp4</code></p>
+
+<p>4K “Beautiful” (with opencl) (takes less than 10 minutes on my comp)</p>
+
+<p><code class="highlighter-rouge">./run.py -a -cl -d 3840 2160 -i 500 -z .4 -fps 24 -s 60 -zps 1.65 -c .2821 .01 -o out.mp4</code></p>
+
+<p>Some of the higher resolution and length videos essentially require OpenCL to be used..</p>
+
+<p>The last one takes less than 10 minutes on my desktop computer’s GPU, but it would take weeks using only Python</p>
+
+	</section>
 		</section>
 		<!-- Footer -->
 			<footer id="footer">
