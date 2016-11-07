@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Infinite Sums</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+			<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Infinite Sums</title>
+		<meta name="description" content="What are sums?">
+
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="canonical" href="http://chemicaldevelopment.us/2016/05/22/infinite-sums.html">
+		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
+
+		
+		
+		<!--
+		
+		Math Highlighting
+		
+		-->
+	
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+			});
+		</script>
+		
+		<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<h1><a href="/index.html">ChemicalDevelopment</a> by Cade Brown</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="/index.html">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/projects/">Projects</a></li>
+				<!--<li>
+					<a href="" class="icon fa-angle-down">Layouts</a>
+					<ul>
+						<li><a href="#">Generic</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Elements</a></li>
+						<li>
+							<a href="">Submenu</a>
+							<ul>
+								<li><a href="#">Option One</a></li>
+								<li><a href="#">Option Two</a></li>
+								<li><a href="#">Option Three</a></li>
+								<li><a href="#">Option Four</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#" class="button">Sign Up</a></li>
+				-->
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<section class="box post">
+		<h3>Infinite Sums</h3>
+		<span class="date">22 May 2016</span>
+		<h3 id="what-are-sums">What are sums?</h3>
+
+<p>A sum is addition of a sequence of numbers.</p>
+
+<p>The sum of $1, 2, 3, 4$ is $1+2+3+4$, which is $10$</p>
+
+<h3 id="what-are-infinite-sums">What are infinite sums?</h3>
+
+<p>Essentially, infinite sums are the limit when you add an infinitely long sequence of numbers.</p>
+
+<p>For example, if we add $ 1/n $ for n = $1, 2, 3, 4 . . . \infty$, the limit does not exist; it keeps getting larger and larger.</p>
+
+<p>But, if we add $ 1 / (n^2) $ for n = $1, 2, 3, 4 . . .\infty$, the limit does exist. It is roughly $1.645$ (we’ll look at this one a bit lower)</p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Here are some more famous examples of infinite sums (they are values of the riemann zeta function)</p>
+
+<script type="math/tex; mode=display">\sum_{n=0}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} + \cdots = \frac{\pi^2}{6}</script>
+
+<p>Or</p>
+
+<script type="math/tex; mode=display">\sum_{n=0}^\infty \frac{1}{n^4} = \frac{1}{1} + \frac{1}{2^4} + \frac{1}{3^4} + \cdots + \frac{1}{n^4} + \cdots = \frac{\pi^4}{90}</script>
+
+<p>Or even</p>
+
+<script type="math/tex; mode=display">\sum_{n=0}^\infty \frac{1}{n^{14}} = \frac{1}{1} + \frac{1}{2^{14}} + \frac{1}{3^{14}} + \cdots + \frac{1}{n^{14}} + \cdots = \frac{2\pi^{14}}{18243224}</script>
+
+<p>The first two are examples of infinite sums, and the third is an infinite product. Sum means adding, product means multiply. In all of these examples, we take them out to infinity (theoretically), and this is the answer we would get. In fact, as we go farther, they get very close to these values.</p>
+
+<p>Before I show you these examples, we are going to look at sums a little bit more generally.</p>
+
+<p>I’ve written a JSFiddle so you can enter your own series and watch the value it converges to.</p>
+
+<p>Full version at <a href="https://jsfiddle.net/CadeBrown/tdxofngq/" target="_blank">https://jsfiddle.net/CadeBrown/tdxofngq/</a></p>
+
+<iframe width="100%" height="775" src="//jsfiddle.net/CadeBrown/tdxofngq/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>You can just type in “n”, and it will show you the sum of 1 + 2 + 3 + 4 + … + n (which happens to be $ \frac{n(n+1)}{2} $)</p>
+
+<p>A few cool sums to try in it: (copy the shaded part into the “series definition” box)</p>
+
+<script type="math/tex; mode=display">\sum_{n=1}^{\infty}\frac{ {(-1)}^n}{n} = -\ln{2} \approx -.693</script>
+
+<pre> pow(-1, n) / n </pre>
+
+<script type="math/tex; mode=display">\sum_{n=0}^{\infty}\frac{ {(-1)}^n}{2n + 1} = \frac{\pi}{4} \approx .785</script>
+
+<pre> pow(-1, n) / (2 * n + 1) </pre>
+
+<script type="math/tex; mode=display">\sum_{n=0}^{\infty}\frac{1}{(n+1)^2} = \frac{\pi^2}{6} \approx 1.645</script>
+
+<pre> pow(n+1, -2) </pre>
+
+<p>Those 3 series above are what are called convergent series. Convergent means that if you keep evaluating more and more terms, it tends towards a limit.</p>
+
+<p>Like $ \ln{2} $, or $ \frac{\pi}{4} $ were the limits of the first and second sum.</p>
+
+<p>The first 3 sums converge quite slowly, and to get $d$ digits of precision to the “actual value” (if we could take it to infinity), we would need roughly $10^d$ terms. So, to get one more digit of precision, we would need 10 times as many terms to sum! That is why the first 3 are not good ways to calculate their sum ($\pi$, $\ln{2}$, etc)</p>
+
+<p>There exists formulas for $\pi$ that require only $\frac{d}{14}$ terms to get $d$ digits, such as this one:</p>
+
+<script type="math/tex; mode=display">\frac{1}{\pi} = 12\sum_{n=0}^{\infty}\frac{(-1)^n(6n)!(13591409+545140134n)}{(3n)!(n)!^3(640320)^{3n+\frac{3}{2}}} \approx 0.318</script>
+
+<pre> 12 * (pow(-1, n) * fac(6 * n) * (13591409 + 545140134 * n)) / (fac(3 * n) * pow(fac(n), 3) * pow(640320, 3 * n + 1.5)) </pre>
+
+<p>With this, we have $\frac{1}{\pi}$ in an efficient series</p>
+
+<p>In fact, that series (with a few optimizations) is how record number of digits of $\pi$ are computed: <a href="http://www.numberworld.org/digits/Pi/ we are currently at $13,300,000,000,000$ digits">Numberworld</a>.</p>
+
+	</section>
+  <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//chemicaldevelopment.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+  </div>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/dev_ceb" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/CadeBrown/" class="icon fa-github"><span class="label">Personal Github</span></a></li>
+					<li><a href="https://github.com/ChemicalDevelopment/" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://plus.google.com/u/0/+CadeBrownPublicEnemy" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>ChemicalDevelopment.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li> Main Site: <a href="http://chemicaldevelopment.us">ChemicalDevelopment</a></li>
+				</ul>
+			</footer>
+	</body>
+</html>
