@@ -27,5 +27,5 @@ In fact, all operators are mapped to a function.
 
 etc.
 
-Here's the global [list of functions]({{site.ezc_docs}}/functions/list.html)
+Here's the global [list of functions](all/)
 
