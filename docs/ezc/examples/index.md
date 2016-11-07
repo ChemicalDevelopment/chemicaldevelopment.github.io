@@ -33,3 +33,5 @@ var pi
 since `-1` is the $\cos(\pi)$, $\cos^{-1}(-1)$ should be $\pi$
 
 ### Video
+
+[Video Tutorial](https://www.youtube.com/watch?v=V1UOOp4Cqqc)
