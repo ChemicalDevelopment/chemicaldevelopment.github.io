@@ -2,7 +2,7 @@
 layout: post
 title: Infinite Sums
 description: Some interesting infinite sums, and products 
-tags: [math, sums, products, ignore]
+tags: [math, sums, products]
 image: sums.png
 ---
 
