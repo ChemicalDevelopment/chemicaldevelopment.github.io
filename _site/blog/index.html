@@ -105,6 +105,133 @@
 		<h2>Blog Posts</h2>
 	</header>
 		
+			<h3><a href="/2016/11/14/arithmetic-optimizations.html">Arithmetic Optimizations</a></h3>
+			<span class="date">14 Nov 2016</span>
+			<section class="box post">
+				We’re always doing math, whether we realize it or not. Whenever you need to know how much tax is on something, or if you can evenly split pizza between people, you are using arithmetic.
+
+Arithmetic is essentially all your number manipulations, adding, subtracting, multiplying and dividing. There are quite a few tricks we can use to speed up doing this in your head.
+
+I’ll present the first part of this article in base 10, but later I’ll go into other bases as well.
+
+<h2 id="base-10">Base 10</h2>
+
+<h3 id="adding">Adding</h3>
+
+Here is what is called grade school addition:
+
+<pre>
+   ( 1 )
+    248
++   543
+_______
+    791
+</pre>
+
+the <code class="highlighter-rouge">1</code> on top is because <code class="highlighter-rouge">8+3=11</code> is greater than <code class="highlighter-rouge">10</code>, so we write the first digit lower, and the 10s place above the next.
+
+The reason for this is quite simple: we can’t have a digit greater than or equal to the base. if we have a digit of (10) in one place, we know that is invalid, so we seperate it into <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">0</code>. The same applies here.
+
+There aren’t really any improvements to this, because of how simple it is.
+
+<h3 id="subtracting">Subtracting</h3>
+
+This is grade school subtraction:
+
+<pre>
+   (4 13 13)
+    5  4  3
+-   2  4  8
+___________
+    2  9  5
+</pre>
+
+The numbers on top are because <code class="highlighter-rouge">3&lt;8</code>, so we must “borrow” from the next place value.
+
+Essentially, we are saying that because digits have to be between <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">9</code>, we will have a negative if we subtract 8 from 3, so we add on 10 knowing that 13 overflows, but that (13-8) will not.
+
+The only real speedup here is that you could start by borrowing from the start, then carry digits later (so you won’t have to stop in the middle)
+
+All in all, however, addition and subtraction do not have many speedups because of their linear nature.
+
+<h3 id="multiplying">Multiplying</h3>
+
+This is grade school multiplication:
+
+<pre>
+  (12 )
+    23
+*   17
+______
+   161
++  230
+______
+   391
+
+</pre>
+
+We take it digit-wise multiplication, 7*3, which is equal to 21. This is greater than 10, so we carry the <code class="highlighter-rouge">2</code> above to the next column.
+
+Then, we compute <code class="highlighter-rouge">7*2=14</code>, and add the <code class="highlighter-rouge">2</code> which was our carry from last time, giving us <code class="highlighter-rouge">16</code>. our carry is now <code class="highlighter-rouge">1</code>
+
+Since there is no other digit, simply tack on our <code class="highlighter-rouge">1</code> and recieve the first product, <code class="highlighter-rouge">7*23=161</code>.
+
+We move on to the next digit on the bottom number, <code class="highlighter-rouge">1</code>, and begin by adding a <code class="highlighter-rouge">0</code> under our <code class="highlighter-rouge">161</code>.
+
+We move column to column just like last time to end up with <code class="highlighter-rouge">230</code> written. We then sum these two numbers to recieve <code class="highlighter-rouge">391</code>
+
+Pretty straight forward, but we can speed things up quickly.
+
+Here are a few things to know:
+
+Obviously, memorizing your multiplication tables for single digits speeds things up a lot for all of this.
+
+<h4 id="digit-times-2-digit">2 Digit times 2 Digit</h4>
+
+say you have the number (ab)*(cd),
+
+Where (ab) and (cd) are the digits in base 10
+
+You can write these then as (10a+b)*(10c+d) (since each place value is multiplied by the base, 10)
+
+When you expand this, you get <code class="highlighter-rouge">100*a*c+10*(a*d+b*c)+b*d</code>
+
+So, the digits are: <code class="highlighter-rouge">(a*c)</code>, <code class="highlighter-rouge">(a*d+b*c)</code>, and <code class="highlighter-rouge">(b*d)</code>
+
+Applying this to our example, <code class="highlighter-rouge">23*17</code>, a=2, b=3, c=1, d=7
+
+Our new number is <code class="highlighter-rouge">(2*1)</code>, <code class="highlighter-rouge">(14+3)</code>, and <code class="highlighter-rouge">(3*7)</code>, or
+
+<code class="highlighter-rouge">(2)(17)(21)</code> Obviousy, we need to carry.
+
+By adding the carry from each:
+
+<pre>
+(2)(17)(21)
+(2)(17+2)(1)=(2)(19)(1)
+(2+1)(9)(1)=(3)(9)(1)
+23*17=391
+</pre>
+
+Once you get this down, multiplying two digit numbers can be faster, a quick example:
+
+<code class="highlighter-rouge">Compute 97*83</code>
+
+<pre>
+(9*8), (7*8+3*9), (7*3)
+(72)(56+27)(21) = (72)(83)(21)
+(72)(83+2)(1) = (72)(85)(1)
+(72+8)(5)(1) = (80)(5)(1)
+(8)(0)(5)(1)
+97*83 = 8051
+</pre>
+
+
+			<ul class="actions">
+				<li><a href="/2016/11/14/arithmetic-optimizations.html" class="button alt">Read Article</a></li>
+			</ul>
+			</section>
+		
 			<h3><a href="/2016/10/03/PGS.html">PGS (Prime Generator Search)</a></h3>
 			<span class="date">03 Oct 2016</span>
 			<section class="box post">
