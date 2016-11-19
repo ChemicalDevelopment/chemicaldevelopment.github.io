@@ -24,7 +24,7 @@ If the user does not enter a value, it defaults to `0.0`
 
 <pre>
 # Prints sum of first two args
-a = $1; b = $2
+a = $1 : b = $2
 
 sum = a + b
 

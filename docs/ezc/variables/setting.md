@@ -50,4 +50,14 @@ You can use operators in the middle of arguments.
 
 which assigns the result to variable
 
+Some operators can use only one, for example:
+
+`a = b !`
+
+for factorial
+
+And some can use either one or two, such as:
+
+`a = b _ ONE` is equivalent to `a = b _`
+
 To see a full list of functions, check the documentation on the [function list]({{site.ezc_docs}}/functions/list.html)
