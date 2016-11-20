@@ -20,8 +20,6 @@ You can also use another variable, such as:
 
 Additionally, you can read in values from the commandline, using `$`. `$1` reads in the first argument, `$2` reads the second, and so one. 
 
-If the user does not enter a value, it defaults to `0.0`
-
 <pre>
 # Prints sum of first two args
 a = $1 : b = $2

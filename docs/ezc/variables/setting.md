@@ -15,15 +15,15 @@ Additionally, you can use `$` to get command line arguments, like `x = $1`
 
 A [function]({{site.ezc_docs}}/functions/) can be used to assign a value.
 
-Unlike assignment using constants, functions **don't** take constants.
+Functions now allow constants
 
-This is invalid:
+This is valid:
 
 <pre>
 x = log 2.0
 </pre>
 
-This is valid:
+And this is valid:
 
 <pre>
 y = 2.0
@@ -31,6 +31,10 @@ x = log y
 </pre>
 
 Some functions take multiple variables, like `logb`
+
+<pre>
+x = logb 2.0 4.0
+</pre>
 
 <pre>
 a = 2.0
@@ -58,6 +62,6 @@ for factorial
 
 And some can use either one or two, such as:
 
-`a = b _ ONE` is equivalent to `a = b _`
+`a = b _ 1.0` is equivalent to `a = b _`
 
 To see a full list of functions, check the documentation on the [function list]({{site.ezc_docs}}/functions/list.html)

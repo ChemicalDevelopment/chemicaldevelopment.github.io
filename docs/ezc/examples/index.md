@@ -24,8 +24,7 @@ Here is a very basic, but slow method of calculating pi:
 
 setprec $1
 
-c_pi = -1.0
-pi = acos c_pi
+pi = acos -1.0
 
 var pi
 </pre>
