@@ -109,15 +109,15 @@
 
 <p>A <a href="/docs/ezc/functions/">function</a> can be used to assign a value.</p>
 
-<p>Unlike assignment using constants, functions <strong>don’t</strong> take constants.</p>
+<p>Functions now allow constants</p>
 
-<p>This is invalid:</p>
+<p>This is valid:</p>
 
 <pre>
 x = log 2.0
 </pre>
 
-<p>This is valid:</p>
+<p>And this is valid:</p>
 
 <pre>
 y = 2.0
@@ -125,6 +125,10 @@ x = log y
 </pre>
 
 <p>Some functions take multiple variables, like <code class="highlighter-rouge">logb</code></p>
+
+<pre>
+x = logb 2.0 4.0
+</pre>
 
 <pre>
 a = 2.0
@@ -152,7 +156,7 @@ x = logb a y
 
 <p>And some can use either one or two, such as:</p>
 
-<p><code class="highlighter-rouge">a = b _ ONE</code> is equivalent to <code class="highlighter-rouge">a = b _</code></p>
+<p><code class="highlighter-rouge">a = b _ 1.0</code> is equivalent to <code class="highlighter-rouge">a = b _</code></p>
 
 <p>To see a full list of functions, check the documentation on the <a href="/docs/ezc/functions/list.html">function list</a></p>
 

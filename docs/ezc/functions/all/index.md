@@ -16,7 +16,7 @@ Here is a full list of functions in ezC
 | `z = mul x y`      | `z = x * y` | Multiplies `x` by `y`           |
 | `z = div x y`      | `z = x / y` | Divides `x` by `y`              |
 | `z = mod x y`      | `z = x % y` | Returns x modulo y              |
-| `z = trunc x y`      | `z = x _ y` | largest multiple of `y` that is <= `x`             |
+| `z = trunc x y`      | `z = x ~ y` | largest multiple of `x` that is <= `y`             |
 | `z = pow x y`      | `z = x ^ y` | `x` to the power of `y` |
 | `z = min x y`      | ` ` | minimum of x or y |
 | `z = max x y`      | ` ` | maximum of x or y |

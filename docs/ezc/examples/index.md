@@ -22,7 +22,7 @@ Here is a very basic, but slow method of calculating pi:
 <pre>
 # examples/pi_basic.ezc
 
-setprec $1
+prec $1
 
 pi = acos -1.0
 

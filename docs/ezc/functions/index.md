@@ -15,7 +15,7 @@ Similar to [operators]({{site.ezc_docs}}/operators/), functions take arguments, 
 
 In our examples, `x = log y`, it sets `x` to the natural logarithm (base e) of `y`
 
-`echo "Hello World"` prints out Hello World to the console
+`echo Hello World` prints out Hello World to the console
 
 `var x` prints out the name of the variable, `x`, and it's numerical value.
 
