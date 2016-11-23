@@ -20,8 +20,6 @@ It's numerical value is `3.14159265358979 . . .` In this example, we'll show how
 Here is a very basic, but slow method of calculating pi:
 
 <pre>
-# examples/pi_basic.ezc
-
 prec $1
 
 pi = acos -1.0

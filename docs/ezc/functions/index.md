@@ -9,7 +9,11 @@ In ezC, functions are not declared, but are a set of keywords that can be applie
 
 or
 
-``echo "Hello World"``
+``echo Hello World``
+
+likewise:
+
+``"" Hello World``
 
 Similar to [operators]({{site.ezc_docs}}/operators/), functions take arguments, and store it in a variable, except for some functions like `echo`, `prec`, and `var`
 

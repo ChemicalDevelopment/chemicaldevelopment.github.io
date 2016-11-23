@@ -44,7 +44,7 @@ x = logb a y
 
 ### Operators
 
-[Operators]({{site.ezc_docs}}/operators/), like `+`, `-`, `*`, `/` and `^` can be used in shorthand.
+[Operators]({{site.ezc_docs}}/operators/), like `+`, `-`, `*`, `/`, `**` and `^` can be used in shorthand.
 
 Each Operator links to a function. The following two lines are equivalent: `z = x + y` and `z = add x y`
 
@@ -62,6 +62,6 @@ for factorial
 
 And some can use either one or two, such as:
 
-`a = b _ 1.0` is equivalent to `a = b _`
+`a = 1 ~ b` is equivalent to `a = ~ b`
 
 To see a full list of functions, check the documentation on the [function list]({{site.ezc_docs}}/functions/list.html)

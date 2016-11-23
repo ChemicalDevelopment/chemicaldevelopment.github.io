@@ -117,19 +117,24 @@
       <td>Sets global precision in bits</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">echo "Hello"</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints out all arguments</td>
+      <td><code class="highlighter-rouge">x = set y</code></td>
+      <td><code class="highlighter-rouge">x = y</code></td>
+      <td>sets x to y</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">var x</code></td>
+      <td><code class="highlighter-rouge">z = min x y</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints variable name, and value</td>
+      <td>minimum of x or y</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">file x</code></td>
+      <td><code class="highlighter-rouge">z = max x y</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints the value of <code class="highlighter-rouge">x</code> into <code class="highlighter-rouge">x.txt</code></td>
+      <td>maximum of x or y</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = trunc x y</code></td>
+      <td><code class="highlighter-rouge">z = x ~ y</code></td>
+      <td>largest multiple of <code class="highlighter-rouge">x</code> that is &lt;= <code class="highlighter-rouge">y</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">z = add x y</code></td>
@@ -157,29 +162,64 @@
       <td>Returns x modulo y</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">z = trunc x y</code></td>
-      <td><code class="highlighter-rouge">z = x ~ y</code></td>
-      <td>largest multiple of <code class="highlighter-rouge">x</code> that is &lt;= <code class="highlighter-rouge">y</code></td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">z = pow x y</code></td>
       <td><code class="highlighter-rouge">z = x ^ y</code></td>
       <td><code class="highlighter-rouge">x</code> to the power of <code class="highlighter-rouge">y</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">z = min x y</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>minimum of x or y</td>
+      <td><strong>Printing Functions (libPrint)</strong></td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">z = max x y</code></td>
+      <td><code class="highlighter-rouge">echo Hello</code></td>
+      <td><code class="highlighter-rouge">"" Hello</code></td>
+      <td>Prints out all arguments, then newline</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">echo_raw Hello</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>maximum of x or y</td>
+      <td>Prints out all arguments without newline</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">var x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Prints variable name, and value</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">var_raw x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Prints value without name or newline</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">int_var x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Prints out <code class="highlighter-rouge">x</code>, but truncated</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">int_var_raw x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Prints out <code class="highlighter-rouge">x</code>, but truncated, and without newline</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">file x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>Prints the value of <code class="highlighter-rouge">x</code> into <code class="highlighter-rouge">x.txt</code></td>
     </tr>
     <tr>
       <td><strong>Math Functions (libMath)</strong></td>
       <td> </td>
-      <td><strong>(All values are in radians)</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = rand x</code></td>
+      <td><code class="highlighter-rouge">z = ? x</code></td>
+      <td>uniform random number in $[0, x)$</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td><code class="highlighter-rouge">z = ??</code></td>
+      <td>random number in guassian distrobution</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">z = sqrt x</code></td>
@@ -188,38 +228,13 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">z = cbrt x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
+      <td><code class="highlighter-rouge">z = √√ x</code></td>
       <td>cube root of <code class="highlighter-rouge">x</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">z = sin x</code></td>
+      <td><code class="highlighter-rouge">z = hypot x y</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>sine of <code class="highlighter-rouge">x</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">z = cos x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>the cosine of <code class="highlighter-rouge">x</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">z = tan x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>the tangent of <code class="highlighter-rouge">x</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">z = asin x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>arcsine of <code class="highlighter-rouge">x</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">z = acos x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>the arcosine of <code class="highlighter-rouge">x</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">z = atan x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>the arctangent of <code class="highlighter-rouge">x</code></td>
+      <td>hypoteneuse of triangle with sides <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">z = exp x</code></td>
@@ -237,14 +252,149 @@
       <td>the log base <code class="highlighter-rouge">x</code> of <code class="highlighter-rouge">y</code></td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">z = agm x y</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arithmetic geometric mean</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">z = gamma x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
       <td>the gamma function at x</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">z = factorial x</code></td>
-      <td><code class="highlighter-rouge"> z = x !</code></td>
+      <td><code class="highlighter-rouge"> z = x ! </code></td>
       <td>factorial of x</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = zeta x</code></td>
+      <td><code class="highlighter-rouge"> z = ζ x </code></td>
+      <td>Riemann zeta function of x</td>
+    </tr>
+    <tr>
+      <td><strong>Trig Functions (libTrig)</strong></td>
+      <td> </td>
+      <td><strong>(All values are in radians)</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = sin x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>sine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = cos x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>cosine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = tan x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>the tangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = csc x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>cosecant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = sec x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>secant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = cot x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>cotangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = asin x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arcsine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acos x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arcosine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = atan x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arctangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acsc x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arccosecant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = asec x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arcsecant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acot x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>arccotangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = sinh x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic sine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = cosh x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic cosine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = tanh x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic the tangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = csch x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic cosecant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = sech x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic secant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = coth x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic cotangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = asinh x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic arcsine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acosh x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic arcosine of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = atanh x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic arctangent of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acsch x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic arccosecant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = asech x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic arcsecant of <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = acoth x</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
+      <td>hyperbolic arccotangent of <code class="highlighter-rouge">x</code></td>
     </tr>
     <tr>
       <td><strong>Flow Blocks (libLoops)</strong></td>
