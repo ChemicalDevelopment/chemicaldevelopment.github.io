@@ -24,6 +24,8 @@ github_org_username:  ChemicalDevelopment
 # Build settings
 markdown: kramdown
 
+ezc_ver: 2.6.0
+
 # Versions for PGS
 pgs_linux_ver: 2.5.0
 pgs_mac_ver: 2.5.0

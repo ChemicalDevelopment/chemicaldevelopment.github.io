@@ -19,9 +19,12 @@ Here is a full list of functions in ezC
 | `z = mod x y`      | `z = x % y` | Returns x modulo y              |
 | `z = pow x y`      | `z = x ^ y` | `x` to the power of `y` |
 | **Printing Functions (libPrint)**  | |  | 
+| `z = get_arg 1 16` | `z = $1`       | Gets an argument from commandline |
 | `echo Hello` | `"" Hello`       | Prints out all arguments, then newline |
 | `echo_raw Hello` | ` `       | Prints out all arguments without newline |
 | `var x`            | ` `       | Prints variable name, and value |
+| `varb x 10`            | ` `       | Prints variable name, and value in a base |
+| `varb_raw x 10`            | ` `       | Prints out without newline, or name |
 | `var_raw x`            | ` `       | Prints value without name or newline |
 | `int_var x`            | ` `       | Prints out `x`, but truncated |
 | `int_var_raw x`            | ` `       | Prints out `x`, but truncated, and without newline |
