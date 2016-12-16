@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>EZC Documentation</title>
+		<title>EZC Syntax</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>EZC Documentation</title>
+		<title>EZC Syntax</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/syntax/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -96,30 +96,29 @@
 	<section id="main" class="container">
 
 	<section class="box post">
-		<h3>EZC Documentation</h3><br/>
-		<p>EZC is easy C. It comes will all the power of large multiprecision arithmetic (like GMP, MPFR, or mpmath), in a very basic structure while retaining most of the speed of C.</p>
+		<h3>EZC Syntax</h3><br/>
+		<h1 id="nesting">Nesting</h1>
 
-<p>EZC does not require the user to know memory management, as that is taken into account.</p>
+<p>You can nest everything in EZC, and it is expanded.</p>
 
-<p>Some links:</p>
+<p>For example, the following two programs are equivalent:</p>
 
-<ul>
-  <li><a href="https://github.com/ChemicalDevelopment/ezc">Github Repository</a></li>
-</ul>
+<pre>
+a = sqrt (2 + 3)
+</pre>
 
-<h3 id="basics">Basics</h3>
+<pre>
+b = 2 + 3
+a = sqrt b
+</pre>
 
-<p><a href="./variables">Variables</a></p>
+<p>However, you <strong>must</strong> use parentheses at all time.</p>
 
-<p><a href="./functions">Functions</a></p>
+<p>This is not correct: <code class="highlighter-rouge">a = sqrt 2 + 3</code>, nor is <code class="highlighter-rouge">a = 2 + 3 + 4</code></p>
 
-<p><a href="./operators">Operators</a></p>
+<p>You always wrap in parentheses:</p>
 
-<h3 id="how-to">How to</h3>
-
-<p><a href="./tutorials">Tutorials</a></p>
-
-<p><a href="./examples">Examples</a></p>
+<p><code class="highlighter-rouge">a = sqrt (2 + 3)</code>, and <code class="highlighter-rouge">a = (2 + 3) + 4</code></p>
 
 	</section>
 		</section>
