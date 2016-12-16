@@ -11,7 +11,8 @@ Here is a full list of functions in ezC
 | `x = set y`         | `x = y`       | sets x to y   |
 | `z = min x y`      | ` ` | minimum of x or y |
 | `z = max x y`      | ` ` | maximum of x or y |
-| `z = trunc x y`      | `z = x ~ y` | largest multiple of `x` that is <= `y`|
+| `z = near x y`      | `z = x ~ y` | nearest multiple of `x` to `y` |
+| `z = trunc x y`      | ` ` | largest multiple of `x` that is <= `y`|
 | `z = add x y`      | `z = x + y` | Adds `x` and `y` |
 | `z = sub x y`      | `z = x - y` | Subtracts `y` from `x`          |
 | `z = mul x y`      | `z = x * y` | Multiplies `x` by `y`           |
