@@ -11,9 +11,6 @@ or
 
 ``echo Hello World``
 
-likewise:
-
-``"" Hello World``
 
 Similar to [operators]({{site.ezc_docs}}/operators/), functions take arguments, and store it in a variable, except for some functions like `echo`, `prec`, and `var`
 
@@ -33,3 +30,4 @@ etc.
 
 Here's the global [list of functions](all/)
 
+You can also create your own functions, see [Custom Functions](custom/)

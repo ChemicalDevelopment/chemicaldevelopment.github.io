@@ -132,8 +132,13 @@
       <td>maximum of x or y</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">z = trunc x y</code></td>
+      <td><code class="highlighter-rouge">z = near x y</code></td>
       <td><code class="highlighter-rouge">z = x ~ y</code></td>
+      <td>nearest multiple of <code class="highlighter-rouge">x</code> to <code class="highlighter-rouge">y</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">z = trunc x y</code></td>
+      <td><code class="highlighter-rouge"> </code></td>
       <td>largest multiple of <code class="highlighter-rouge">x</code> that is &lt;= <code class="highlighter-rouge">y</code></td>
     </tr>
     <tr>
@@ -178,48 +183,23 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">echo Hello</code></td>
-      <td><code class="highlighter-rouge">"" Hello</code></td>
-      <td>Prints out all arguments, then newline</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">echo_raw Hello</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints out all arguments without newline</td>
+      <td>Prints out all arguments, then newline</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">var x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints variable name, and value</td>
+      <td>Prints variable value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">varb x 10</code></td>
+      <td><code class="highlighter-rouge">intvar x</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints variable name, and value in a base</td>
+      <td>Prints out <code class="highlighter-rouge">x</code>, but as an int</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">varb_raw x 10</code></td>
+      <td><code class="highlighter-rouge">file x a.txt</code></td>
       <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints out without newline, or name</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">var_raw x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints value without name or newline</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">int_var x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints out <code class="highlighter-rouge">x</code>, but truncated</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">int_var_raw x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints out <code class="highlighter-rouge">x</code>, but truncated, and without newline</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">file x</code></td>
-      <td><code class="highlighter-rouge"> </code></td>
-      <td>Prints the value of <code class="highlighter-rouge">x</code> into <code class="highlighter-rouge">x.txt</code></td>
+      <td>Prints the value of <code class="highlighter-rouge">x</code> into <code class="highlighter-rouge">a.txt</code></td>
     </tr>
     <tr>
       <td><strong>Math Functions (libMath)</strong></td>

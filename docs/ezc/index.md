@@ -13,6 +13,8 @@ Some links:
 
 ### Basics
 
+[Syntax](./syntax)
+
 [Variables](./variables)
 
 [Functions](./functions)

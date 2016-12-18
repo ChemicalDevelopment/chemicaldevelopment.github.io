@@ -21,15 +21,10 @@ Here is a full list of functions in ezC
 | `z = pow x y`      | `z = x ^ y` | `x` to the power of `y` |
 | **Printing Functions (libPrint)**  | |  | 
 | `z = get_arg 1 16` | `z = $1`       | Gets an argument from commandline |
-| `echo Hello` | `"" Hello`       | Prints out all arguments, then newline |
-| `echo_raw Hello` | ` `       | Prints out all arguments without newline |
-| `var x`            | ` `       | Prints variable name, and value |
-| `varb x 10`            | ` `       | Prints variable name, and value in a base |
-| `varb_raw x 10`            | ` `       | Prints out without newline, or name |
-| `var_raw x`            | ` `       | Prints value without name or newline |
-| `int_var x`            | ` `       | Prints out `x`, but truncated |
-| `int_var_raw x`            | ` `       | Prints out `x`, but truncated, and without newline |
-| `file x`            | ` `       | Prints the value of `x` into `x.txt` |
+| `echo Hello` | ` `       | Prints out all arguments, then newline |
+| `var x`            | ` `       | Prints variable value |
+| `intvar x`            | ` `       | Prints out `x`, but as an int |
+| `file x a.txt`            | ` `       | Prints the value of `x` into `a.txt` |
 | **Math Functions (libMath)**  | | | 
 | `z = rand x`       | `z = ? x` | uniform random number in $[0, x)$  |
 | ` `       | `z = ??`       | random number in guassian distrobution |

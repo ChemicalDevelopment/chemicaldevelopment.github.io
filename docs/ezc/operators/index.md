@@ -11,3 +11,4 @@ Essentially, each operator maps to a function, as `+` maps to `add`, `^` and `**
 
 You can now use literals, like ` a = 2.0 + 3.0 ` as of v2
 
+

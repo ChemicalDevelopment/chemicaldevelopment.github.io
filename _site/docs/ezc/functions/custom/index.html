@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>EZC Documentation</title>
+		<title>Custom Functions</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>EZC Documentation</title>
+		<title>Custom Functions</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/functions/custom/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -96,32 +96,35 @@
 	<section id="main" class="container">
 
 	<section class="box post">
-		<h3>EZC Documentation</h3><br/>
-		<p>EZC is easy C. It comes will all the power of large multiprecision arithmetic (like GMP, MPFR, or mpmath), in a very basic structure while retaining most of the speed of C.</p>
+		<h3>Custom Functions</h3><br/>
+		<p>In EZC, you can define your own functions:</p>
 
-<p>EZC does not require the user to know memory management, as that is taken into account.</p>
+<pre>
+[SQUARE] a
+    return (a^2)
+[/SQUARE]
 
-<p>Some links:</p>
+var (@SQUARE 2)
+</pre>
 
-<ul>
-  <li><a href="https://github.com/ChemicalDevelopment/ezc">Github Repository</a></li>
-</ul>
+<p>That code prints out <code class="highlighter-rouge">4.000...</code>.</p>
 
-<h3 id="basics">Basics</h3>
+<p>The format is:</p>
 
-<p><a href="./syntax">Syntax</a></p>
+<pre>
+[$NAME$] $PARAMS...$
+    # do stuff here
+    return (VALUE)
+[$NAME$]
+</pre>
 
-<p><a href="./variables">Variables</a></p>
+<p>The <code class="highlighter-rouge">$NAME$</code> is how you call it later, $PARAMS…$ can be a list of names. These are the values you pass it.</p>
 
-<p><a href="./functions">Functions</a></p>
+<p>You start it and end it with <code class="highlighter-rouge">[]</code> brackets with a name inside of it.</p>
 
-<p><a href="./operators">Operators</a></p>
+<p>Params can be anything, and when you pass values (such as <code class="highlighter-rouge">2</code> in our example), you can use those. They are ordered.</p>
 
-<h3 id="how-to">How to</h3>
-
-<p><a href="./tutorials">Tutorials</a></p>
-
-<p><a href="./examples">Examples</a></p>
+<p><code class="highlighter-rouge">return (value)</code> does what you’d expect. It yields the value inside the parenthesis.</p>
 
 	</section>
 		</section>
