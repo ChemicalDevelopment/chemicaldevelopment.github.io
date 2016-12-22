@@ -1,0 +1,14 @@
+---
+layout: docs
+title: Compiler
+---
+
+<a href="./usage">Usage</a><br/>
+
+<h3>Generated Python Docs</h3>
+
+{% for file in site.static_files %}
+    {% if file.path contains "ezc/compiler/py" %}
+		<a href="{{ site.baseurl }}{{ file.path }}">{{ file.path | split:"/" | last | replace:"html","" | split:"." | join:"."  }}</a><br/>
+    {% endif %}
+{% endfor %}

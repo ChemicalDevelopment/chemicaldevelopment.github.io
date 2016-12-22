@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>EZC Syntax</title>
+		<title>EZC Compiler Usage</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>EZC Syntax</title>
+		<title>EZC Compiler Usage</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/syntax/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/compiler/usage/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -96,56 +96,35 @@
 	<section id="main" class="container">
 
 	<section class="box post">
-		<h3>EZC Syntax</h3><br/>
-		<h1 id="nesting">Nesting</h1>
+		<h3>EZC Compiler Usage</h3><br/>
+		<p>To view help, run <code class="highlighter-rouge">python src/ezcc.py -h</code></p>
 
-<p>You can nest most everything in EZC, and it is expanded.</p>
-
-<p>For example, the following two programs are equivalent:</p>
+<p>That should print out something like:</p>
 
 <pre>
-a = sqrt (2 + 3)
+usage: ezcc.py [-h] [-o O] [-v V] [-tmp TMP] [-cc CC] [-ccargs CCARGS]
+               [-args ARGS] [-run] [-runfile] [-c C] [-e]
+               [files [files ...]]
+
+Compile EZC Language. vX.X.X http://github.chemicaldevelopment.us/ezc
+
+positional arguments:
+  files           files to compile
+
+optional arguments:
+ . . . 
 </pre>
 
-<pre>
-b = 2 + 3
-a = sqrt b
-</pre>
+<p>So, you can run <code class="highlighter-rouge">python src/ezcc.py file.ezc -o file.out -v5 -cc gcc -run -args 1 2 3</code> to:</p>
 
-<p>However, you should use parenthesis all the time.</p>
+<ul>
+  <li>Compile file.ezc to executable file.out, with verbosity level 5, using gcc</li>
+  <li>Run the executable file.out with args 1 2 3, like <code class="highlighter-rouge">./file.out 1 2 3</code></li>
+</ul>
 
-<p>This will print out the square root of 5: <code class="highlighter-rouge">a = sqrt 2 + 3</code></p>
+<p>Or, just compile without running: <code class="highlighter-rouge">python src/ezcc.py file.ezc</code></p>
 
-<p>This will print out the square root of 5: <code class="highlighter-rouge">a = sqrt 2 + 3</code></p>
-
-<h1 id="calling-functions">Calling functions</h1>
-
-<p>Calling functions can be done.</p>
-
-<p>Specifically, this is evaluated after parenthesis and operators.</p>
-
-<p>Say, the <code class="highlighter-rouge">rand</code> function:</p>
-
-<p><code class="highlighter-rouge">a = rand 0 100</code></p>
-
-<p><code class="highlighter-rouge">a = (rand 0,100)</code></p>
-
-<p>are both equivalent</p>
-
-<p>However, do not do:</p>
-
-<p><code class="highlighter-rouge">a = rand (0, 100)</code></p>
-
-<p>Instead, wrap this:</p>
-
-<p><code class="highlighter-rouge">a = (rand 0, 100)</code></p>
-
-<p>This is a design choice in EZC, that a function is not invoked by <code class="highlighter-rouge">name(args)</code>, but rather it is implied by <code class="highlighter-rouge">name args</code>, and can be wrapped for execution like <code class="highlighter-rouge">(name args)</code></p>
-
-<p>So, if you want to multiple two random numbers:</p>
-
-<p><code class="highlighter-rouge">a = (rand 0, 100) * (rand 0, 100)</code></p>
-
+<p>If you run into any difficulties, open an <a href="https://github.com/ChemicalDevelopment/ezc/issues">issue</a> on github so that I can respond</p>
 
 	</section>
 		</section>

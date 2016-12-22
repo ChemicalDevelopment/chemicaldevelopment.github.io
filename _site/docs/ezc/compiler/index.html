@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>EZC Syntax</title>
+		<title>Compiler</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -31,12 +31,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>EZC Syntax</title>
+		<title>Compiler</title>
 		<meta name="description" content="Math U Programming
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/syntax/">
+		<link rel="canonical" href="http://chemicaldevelopment.us/docs/ezc/compiler/">
 		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
 
 		
@@ -96,56 +96,175 @@
 	<section id="main" class="container">
 
 	<section class="box post">
-		<h3>EZC Syntax</h3><br/>
-		<h1 id="nesting">Nesting</h1>
+		<h3>Compiler</h3><br/>
+		<a href="./usage">Usage</a><br/>
 
-<p>You can nest most everything in EZC, and it is expanded.</p>
+<h3>Generated Python Docs</h3>
 
-<p>For example, the following two programs are equivalent:</p>
 
-<pre>
-a = sqrt (2 + 3)
-</pre>
+    
 
-<pre>
-b = 2 + 3
-a = sqrt b
-</pre>
+    
 
-<p>However, you should use parenthesis all the time.</p>
+    
 
-<p>This will print out the square root of 5: <code class="highlighter-rouge">a = sqrt 2 + 3</code></p>
+    
 
-<p>This will print out the square root of 5: <code class="highlighter-rouge">a = sqrt 2 + 3</code></p>
+    
 
-<h1 id="calling-functions">Calling functions</h1>
+    
 
-<p>Calling functions can be done.</p>
+    
 
-<p>Specifically, this is evaluated after parenthesis and operators.</p>
+    
 
-<p>Say, the <code class="highlighter-rouge">rand</code> function:</p>
+    
 
-<p><code class="highlighter-rouge">a = rand 0 100</code></p>
+    
 
-<p><code class="highlighter-rouge">a = (rand 0,100)</code></p>
+    
 
-<p>are both equivalent</p>
+    
 
-<p>However, do not do:</p>
+    
 
-<p><code class="highlighter-rouge">a = rand (0, 100)</code></p>
+    
 
-<p>Instead, wrap this:</p>
+    
 
-<p><code class="highlighter-rouge">a = (rand 0, 100)</code></p>
+    
 
-<p>This is a design choice in EZC, that a function is not invoked by <code class="highlighter-rouge">name(args)</code>, but rather it is implied by <code class="highlighter-rouge">name args</code>, and can be wrapped for execution like <code class="highlighter-rouge">(name args)</code></p>
+    
 
-<p>So, if you want to multiple two random numbers:</p>
+    
 
-<p><code class="highlighter-rouge">a = (rand 0, 100) * (rand 0, 100)</code></p>
+    
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+		<a href="/docs/ezc/compiler/py/compiling.compiler.html">compiling.compiler</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/compiling.html">compiling</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/compiling.resolve.html">compiling.resolve</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/delegate.html">delegate</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/ezcc.html">ezcc</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/ezdata.html">ezdata</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/logging.html">logging</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/logging.log.html">logging.log</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/parsing.html">parsing</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/parsing.parser.html">parsing.parser</a><br/>
+    
+
+    
+		<a href="/docs/ezc/compiler/py/parsing.regexes.html">parsing.regexes</a><br/>
+    
+
+    
+
+    
 
 	</section>
 		</section>

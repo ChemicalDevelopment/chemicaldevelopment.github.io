@@ -13,15 +13,20 @@ Some links:
 
 ### Basics
 
-[Syntax](./syntax)
+[Understanding Syntax](./syntax)
 
-[Variables](./variables)
+[Understanding Variables](./variables)
 
-[Functions](./functions)
+[Understanding Functions](./functions)
 
-[Operators](./operators)
+[Understanding Operators](./operators)
+
 
 ### How to
+
+[Using the Compiler](./compiler)
+
+### Tutorials/Examples
 
 [Tutorials](./tutorials)
 
