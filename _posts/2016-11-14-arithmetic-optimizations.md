@@ -3,7 +3,6 @@ layout: post
 title: Arithmetic Optimizations
 description: Whats the fastest way to do math? (For computers and humans)
 tags: [math, programming, ignore]
-image: banner.png
 ---
 
 We're always doing math, whether we realize it or not. Whenever you need to know how much tax is on something, or if you can evenly split pizza between people, you are using arithmetic.

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PGS Client</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+			<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>PGS Client</title>
+		<meta name="description" content="Math U Programming
+">
+
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="canonical" href="http://chemicaldevelopment.us/software/pgs/client/">
+		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://chemicaldevelopment.us/feed.xml">
+
+		
+		
+		<!--
+		
+		Math Highlighting
+		
+		-->
+	
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+			});
+		</script>
+		
+		<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<h1><a href="/index.html">ChemicalDevelopment</a> by Cade Brown</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="/index.html">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/projects/">Projects</a></li>
+				<!--<li>
+					<a href="" class="icon fa-angle-down">Layouts</a>
+					<ul>
+						<li><a href="#">Generic</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Elements</a></li>
+						<li>
+							<a href="">Submenu</a>
+							<ul>
+								<li><a href="#">Option One</a></li>
+								<li><a href="#">Option Two</a></li>
+								<li><a href="#">Option Three</a></li>
+								<li><a href="#">Option Four</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#" class="button">Sign Up</a></li>
+				-->
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+<section class="box special">
+	<header class="major">
+		<h2><b>PGS Client</b></h2>
+		<h1><b></b></h1>
+	</header>
+</section>
+	<section class="box special">
+	<div id="actioninfo" style="display:inline;">
+		<button onclick="setbutton('ub')" class="button special-green">Sign Up</button>
+		<button onclick="setbutton('ib')" class="button special-blue">Sign In</button>
+	</div>
+	<button onclick="signout()" class="button special-red">Log Out</button><br/><br/>
+	<button onclick="location.href = './account';" class="button special-blue">Manage Account</button>
+</section>
+
+
+<section id="actiondiv" class="box special">    
+    <label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>
+	<button id="ib" class="button special-blue" onclick="signin($('#eml').val(), $('#psw').val())">Sign In</button>
+	<button id="ub" class="button special-green" onclick="createaccount($('#eml').val(), $('#psw').val())">Sign Up</button>
+</section>
+
+<section id="userdata_section" class="box special">
+	<header class="major">
+		<h2><b>Your Records</b></h2>
+	</header>
+	<div id="userdata">
+	</div>
+</section>
+
+<section id="public_section" class="box special">
+	<header class="major">
+		<h2><b>Public (Verified Records)</b></h2>
+	</header>
+	<div id="public">
+	</div>
+</section>
+
+<script src="/assets/js/firebase.js"></script>
+<script src="/assets/js/pgs.js"></script>
+
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/dev_ceb" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/ChemicalDevelopment/" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="/contact/" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>ChemicalDevelopment.</li>
+					<li><a href="/licensing/">Licensing</a></li>
+				</ul>
+			</footer>
+	</body>
+</html>

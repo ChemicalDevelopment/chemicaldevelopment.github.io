@@ -30,8 +30,8 @@
 		-o-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
-		color: #0000ff;
+		/*border-bottom: dotted 1px;*/
+		color: #1100b4;
 		font-weight: 600;
 		text-decoration: none;
 	}
@@ -598,6 +598,20 @@
 				color: #fff;
 			}
 	
+/* Header Link */
+	.headerlink {
+		position: relative;
+		right: -.5em;
+		top: -.1em;
+		font-size: 2em;
+	}
+
+/* Ridiculous, do not use */
+
+	.ridiculouslink {
+		font-size: 10em;
+	}
+
 
 /* Image */
 
@@ -1385,6 +1399,19 @@
 	body.landing #main {
 		margin-top: -14em;
 	}
+
+/*
+
+Custom things
+
+*/
+
+
+/* Used with text as a description */
+.features-row-text {
+	text-align: left;
+}
+
 
 /* Footer */
 

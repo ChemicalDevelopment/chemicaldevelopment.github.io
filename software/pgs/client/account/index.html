@@ -1,0 +1,29 @@
+---
+layout: default
+title: PGS Account Management
+---
+
+<section class="box special">
+	<div id="actioninfo" style="display:inline;">
+		<button onclick="setbutton('ub')" class="button special-green">Sign Up</button>
+		<button onclick="setbutton('ib')" class="button special-blue">Sign In</button>
+	</div>
+	<button onclick="signout()" class="button special-red">Log Out</button><br/><br/>
+	<button onclick="location.href = '../';" class="button special-blue">Return</button>
+</section>
+
+
+<section id="actiondiv" class="box special">    
+    <label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>
+	<button id="ib" class="button special-blue" onclick="signin($('#eml').val(), $('#psw').val())">Sign In</button>
+	<button id="ub" class="button special-green" onclick="createaccount($('#eml').val(), $('#psw').val())">Sign Up</button>
+</section>
+
+<section class="box special">
+    <button onclick="verifyEmail()" class="button special-green">Resend Verification Email</button><br/><br/><br/>
+    Email: <input id="reset_email"><br/><br/><button onclick="resetpw()" class="button special-red">Request Password Change Email</button><br/><br/>
+</section>
+
+<script src="{{ site.baseurl }}/assets/js/firebase.js"></script>
+<script src="{{ site.baseurl }}/assets/js/account.js"></script>
+<script src="{{ site.baseurl }}/assets/js/pgs.js"></script>
