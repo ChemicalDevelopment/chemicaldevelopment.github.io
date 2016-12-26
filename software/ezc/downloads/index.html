@@ -4,44 +4,41 @@ title: EZC Downloads
 ---
 
 <section class="box special">
-    <p>For instructions on building, see: <a href="https://github.com/ChemicalDevelopment/ezc#building">#Building</a> </p>
+	Once you've done this, run <b>cd ~/ezc/</b> to see all the installed programs. <br/>
+	Run them like <b>./ezc -h</b> to view help for the compiler. Run <b>./sqrt 2</b> to see the square root of 2
 </section>
+
+<script>
+  function copyToClipboard(text) {
+    window.prompt("1. Open Terminal \n2. Copy and paste this into terminal\n3. Hit `enter`: ", text);
+  }
+  function copyAutoinstall() {
+	  copyToClipboard("curl chemdev.space/ezc.sh -L | bash");
+  }
+  function copyAll() {
+	  copyToClipboard("curl chemdev.space/ezc-local.sh -L | bash");
+  }
+
+</script>
 
 <section class="box special features">
 	<div class="features-row">
 		<section>
-			<span class="icon major fa-linux accent5"></span>
-			<h3>Linux/Unix</h3>
-			<p>All distros & Most popular flavors</p>
-			<ul class="actions">
-				<li><a href="https://github.com/ChemicalDevelopment/ezc/archive/{{site.ezc_ver}}.zip" class="button special-red">Development Build</a></li>
-			</ul>
+			<span class="icon major fa-desktop accent3"></span>
+			<a href="javascript:copyAll();" class="headerlink">All</a>
+			<div class="features-row-text">
+				Anything with a c compiler, python, and curl <br/>
+				<a href="javascript:copyAll();">Click Here</a>
+			</div>
 		</section>
 		<section>
-			<span class="icon major fa-linux accent4"></span>
-			<h3>Linux (Debian based)</h3>
-			<p>Includes Debian, Ubuntu, Raspbian, and others</p>
-			<ul class="actions">
-				<li><a href="https://github.com/ChemicalDevelopment/ezc/releases/download/{{site.ezc_ver}}/ezcc.deb" class="button special-red">v{{site.ezc_ver}}</a></li>
-			</ul>
-		</section>
-	</div>
-	<div class="features-row">
-		<section>
-			<span class="icon major fa-apple accent1"></span>
-			<h3>MacOS</h3>
-			<p>N/A</p>
-			<ul class="actions">
-			</ul>
-		</section>
-		<section>
-			<span class="icon major fa-github accent4"></span>
-			<h3>GitHub</h3>
-			<p>All versions</p>
-			<ul class="actions">
-				<li><a href="https://github.com/ChemicalDevelopment/PGS/" class="button special-blue">Source Code</a></li>
-				<li><a href="https://github.com/ChemicalDevelopment/PGS/releases/latest/" class="button special-red">Released Versions</a></li>
-			</ul>
+			<span class="icon major fa-desktop accent5"></span>
+			<a href="javascript:copyAutoinstall();" class="headerlink">Package Manager</a>
+			<div class="features-row-text">
+				Works with: macOS, Debian, Fedora, FreeBSD<br/>
+				(these must have their packaging system, like brew, apt, dnf, pkg, etc...) <br/>
+				<a href="javascript:copyAutoinstall();">Click Here</a>
+			<div>
 		</section>
 	</div>
 </section>
