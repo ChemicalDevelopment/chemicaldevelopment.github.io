@@ -19,13 +19,9 @@ It's numerical value is `3.14159265358979 . . .` In this example, we'll show how
 
 Here is a very basic, but slow method of calculating pi:
 
-<pre>
-prec $1
-
-pi = acos -1.0
-
-var pi
-</pre>
+``` c
+return (2 + (long)3);
+```
 
 since `-1` is the $\cos(\pi)$, $\cos^{-1}(-1)$ should be $\pi$
 

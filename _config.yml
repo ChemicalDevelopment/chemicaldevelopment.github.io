@@ -8,6 +8,21 @@
 gems:
   - jekyll-redirect-from
 
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+
+ezc_ver: 2.6.0
+# Versions for PGS
+pgs_linux_ver: 2.5.0
+pgs_mac_ver: 2.5.0
+pgs_windows_ver: null
+ezc_docs: /docs/ezc
 # Site settings
 title: Chemical Development
 personal_email: brown.cade@gmail.com
@@ -20,15 +35,3 @@ twitter_username: dev_ceb
 twitter_bot_username: CloudComputeBot
 github_username:  CadeBrown 
 github_org_username:  ChemicalDevelopment
-
-# Build settings
-markdown: kramdown
-
-ezc_ver: 2.6.0
-
-# Versions for PGS
-pgs_linux_ver: 2.5.0
-pgs_mac_ver: 2.5.0
-pgs_windows_ver: null
-
-ezc_docs: /docs/ezc

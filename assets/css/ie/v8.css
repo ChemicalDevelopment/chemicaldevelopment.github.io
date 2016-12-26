@@ -6,10 +6,6 @@
 
 /* Basic */
 
-	pre, code {
-		position: relative;
-		-ms-behavior: url("css/ie/PIE.htc");
-	}
 
 /* Form */
 
