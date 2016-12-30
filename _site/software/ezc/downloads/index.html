@@ -36,8 +36,8 @@
 ">
 
 		<link rel="stylesheet" href="/css/main.css">
-		<link rel="canonical" href="http://localhost:4001/software/ezc/downloads/">
-		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://localhost:4001/feed.xml">
+		<link rel="canonical" href="http://localhost:4000/software/ezc/downloads/">
+		<link rel="alternate" type="application/rss+xml" title="Chemical Development" href="http://localhost:4000/feed.xml">
 
 		
 		
@@ -111,32 +111,33 @@
   function copyToClipboard(text) {
     window.prompt("1. Open Terminal \n2. Copy and paste this into terminal\n3. Hit `enter`: ", text);
   }
-  function copyAutoinstall() {
-	  copyToClipboard("curl chemdev.space/ezc.sh -L | bash");
+  function copyRelease() {
+	  copyToClipboard("cd ~; curl chemdev.space/ezc.sh -L | bash; cd ezc");
   }
-  function copyAll() {
-	  copyToClipboard("curl chemdev.space/ezc-local.sh -L | bash");
+  function copyBuild() {
+	  copyToClipboard("cd ~; curl chemdev.space/build-ezc.sh -L | bash; cd ezc");
   }
-
 </script>
 
 <section class="box special features">
 	<div class="features-row">
 		<section>
 			<span class="icon major fa-desktop accent3"></span>
-			<a href="javascript:copyAll();" class="headerlink">All</a>
+			<a href="javascript:copyRelease();" class="headerlink">Release</a>
 			<div class="features-row-text">
-				Anything with a c compiler, python, and curl <br/>
-				<a href="javascript:copyAll();">Click Here</a>
+				Works with linux distros, macOS <br/>
+				This is the 'release' package, so it is stable and somewhat tested.<br/>
+				<a href="javascript:copyRelease();">Click Here</a>
 			</div>
 		</section>
 		<section>
 			<span class="icon major fa-desktop accent5"></span>
-			<a href="javascript:copyAutoinstall();" class="headerlink">Package Manager</a>
+			<a href="javascript:copyBuild();" class="headerlink">Build</a>
 			<div class="features-row-text">
-				Works with: macOS, Debian, Fedora, FreeBSD<br/>
-				(these must have their packaging system, like brew, apt, dnf, pkg, etc...) <br/>
-				<a href="javascript:copyAutoinstall();">Click Here</a>
+				Works with all OSes with basic utilities <br/>
+				(python, c compiler, curl, make) <br/>
+				This is the 'master` branch build (very up-to-date). <br/>
+				<a href="javascript:copyBuild();">Click Here</a>
 			<div>
 		</section>
 	</div>
