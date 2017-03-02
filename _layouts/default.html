@@ -2,7 +2,7 @@
 <section class="box special">
 	<header class="major">
 		<h2><b>{{ page.title }}</b></h2>
-		<h1><b>{{ page.description }}</b></h1>
+		{% if page.description %}<h1><b><i>{{ page.description }}</b><i></h1>{% endif %}
 	</header>
 </section>
 	{{ content }}
