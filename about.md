@@ -6,14 +6,9 @@ permalink: /about/
 
 Welcome to ChemicalDevelopment.us
 
-We strive to provide quality free software.
+We strive to provide free software with documentation, and some basic updates on our team.
 
-### Who are we?
+This is NOT a real company, NOT a non-profit. It's nothing, except what you make of it. We write software, license it, and show examples of it in the real world.
 
-It's mainly me, Cade, although I have help from a few people on occasion.
-
-You can see my personal site at [cade.site](http://cade.site)
-
-
-Owner: Cade ([cade@cade.site](mailto:cade@cade.site))
+You can see contact info for our members at our [contact page](/contact/).
 

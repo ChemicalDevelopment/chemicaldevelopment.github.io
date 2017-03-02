@@ -9,4 +9,4 @@ This is the online documentation for ChemicalDevelopment's projects, such as:
 
   * [EZC (easy C)](./ezc)
 
-  * [FractalRender](./fractalrender)
+  * [PGS](./s/PGS)

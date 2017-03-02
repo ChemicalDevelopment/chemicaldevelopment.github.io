@@ -4,6 +4,7 @@ title: Licensing
 permalink: /licensing/
 ---
 
-Owner: Cade ([cade@cade.site](mailto:cade@cade.site))
-	For full details, see <a href="/LICENSE.txt">LICENSE.txt</a>
+Find our [contact info](/contact/)
+
+For full licensing details, see <a href="/LICENSE.txt">LICENSE.txt</a>
 

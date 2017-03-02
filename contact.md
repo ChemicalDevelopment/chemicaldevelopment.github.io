@@ -4,4 +4,9 @@ title: Contact
 permalink: /contact/
 ---
 
-Feel free to contact me
+Owner / CEL: [Cade Brown <cade@chemicaldevelopment.us>](mailto:cade@chemicaldevelopment.us)
+
+CFL: [Greg Croisdale <greg@chemicaldevelopment.us>](mailto:greg@chemicaldevelopment.us)
+
+Company Email: [<info@chemicaldevelopment.us>](mailto:info@chemicaldevelopment.us)
+
