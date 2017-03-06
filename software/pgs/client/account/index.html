@@ -3,27 +3,36 @@ layout: default
 title: PGS Account Management
 ---
 
-<section class="box special">
-	<div id="actioninfo" style="display:inline;">
-		<button onclick="setbutton('ub')" class="button special-green">Sign Up</button>
-		<button onclick="setbutton('ib')" class="button special-blue">Sign In</button>
-	</div>
-	<button onclick="signout()" class="button special-red">Log Out</button><br/><br/>
-	<button onclick="location.href = '../';" class="button special-blue">Return</button>
-</section>
 
+<div class="container mtb">
+    <div class="row">
+		<h4>PGS Account Management</h4>
+    </div>
+	<br/>
 
-<section id="actiondiv" class="box special">    
-    <label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>
-	<button id="ib" class="button special-blue" onclick="signin($('#eml').val(), $('#psw').val())">Sign In</button>
-	<button id="ub" class="button special-green" onclick="createaccount($('#eml').val(), $('#psw').val())">Sign Up</button>
-</section>
+    <div class="row">
+		<label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>
+		<br/>
+		<button id="ib" class="btn btn-theme" onclick="signin($('#eml').val(), $('#psw').val())">Sign In</button> 
+		<button onclick="verifyEmail(0)" class="btn btn-theme">Resend Verification Email</button><br/>
+		
+    </div>
+	<br/>
 
-<section class="box special">
-    <button onclick="verifyEmail()" class="button special-green">Resend Verification Email</button><br/><br/><br/>
-    Email: <input id="reset_email"><br/><br/><button onclick="resetpw()" class="button special-red">Request Password Change Email</button><br/><br/>
-</section>
+    <div class="row">
+		<label>Email &nbsp;&nbsp;<input id="reset_email"> </label>
+		<br/>
+		<button onclick="resetpw()" class="btn btn-theme">Request Password Change Email</button><br/><br/>
+    </div>		
+</div>
+
+<!-- Scripts for this page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
 
 <script src="{{ site.baseurl }}/assets/js/firebase.js"></script>
-<script src="{{ site.baseurl }}/assets/js/account.js"></script>
 <script src="{{ site.baseurl }}/assets/js/pgs.js"></script>
+

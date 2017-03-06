@@ -2,8 +2,8 @@
 layout: post
 title: PE Class Data Analysis
 description: A school project
-tags: [school, ignore]
-image: milerun.png
+categories:
+  - school
 ---
 
 # Cade Brown & Gregory Croisdale

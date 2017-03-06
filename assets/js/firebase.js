@@ -27,23 +27,38 @@ function createaccount(email, password) {
     }, 1000);
 }
 
-function verifyEmail() {
-    usr.sendEmailVerification();
+function verifyEmail(calls) {
+    if (calls != 0) {
+        return;
+    }
+    if (usr) {
+        usr.sendEmailVerification();
+    } else {
+        signin_cb($('#eml').val(), $('#psw').val(), verifyEmail);
+    }
 }
 
-function signin(email, password) {
+function signin_cb(email, password, cb) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
+        $('#eml').val('');
+        $('#pw').val('');
+        cb(1);
     });
+}
+
+function signin(email, password) {
+    signin_cb(email, password, function() {});
 }
 
 function resetpw() {
     var email;
     if (usr == null || usr.email == null) {
-        email = $('#reset_email').val;
+        email = $('#reset_email').val();
+        console.log(email);
     } else {
         email = usr.email;
     }
@@ -75,7 +90,7 @@ function makeTable(container, data) {
 }
 
 function updateuserdata(id, da) {
-    var data_array = [["User", "Consecutive", "Distinct", "equation"]];
+    var data_array = [["User", "Consecutive", "Distinct", "Equation"]];
     for (val in da.functions) {
         var cda = da.functions[val];
         var eq = cda.equation;
@@ -169,11 +184,13 @@ function init() {
         public_data = snapshot.val();
         updateuserdata('public', public_data);
     });
-    var myData = firebase.database().ref('user_data/' + usr.uid);
-    myData.on('value', function (snapshot) {
-        usr_data = snapshot.val();
-        updateuserdata('userdata', usr_data);
-    });
+    if (usr) {
+        var myData = firebase.database().ref('user_data/' + usr.uid);
+        myData.on('value', function (snapshot) {
+            usr_data = snapshot.val();
+            updateuserdata('userdata', usr_data);
+        });
+    }
 }
 
 function print_quad(i, j, k) {

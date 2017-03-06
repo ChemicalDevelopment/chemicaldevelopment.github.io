@@ -2,8 +2,10 @@
 layout: post
 title: Infinite Sums
 description: Some interesting infinite sums, and products 
-tags: [math, sums, products]
-image: sums.png
+categories:
+  - math
+img: sums.png
+thumb: sums.png
 ---
 
 ### What are sums?

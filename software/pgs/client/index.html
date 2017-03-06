@@ -6,37 +6,42 @@ layout: default
 title: PGS Client
 ---
 
-<section class="box special">
-	<div id="actioninfo" style="display:inline;">
-		<button onclick="setbutton('ub')" class="button special-green">Sign Up</button>
-		<button onclick="setbutton('ib')" class="button special-blue">Sign In</button>
-	</div>
-	<button onclick="signout()" class="button special-red">Log Out</button><br/><br/>
-	<button onclick="location.href = './account';" class="button special-blue">Manage Account</button>
-</section>
+<div class="container mtb">
+    <div class="row">
+		<h4>PGS Online Client</h4>
+    </div>
+	<br/>
 
+    <div class="row">
+		<div id="actioninfo" style="display:inline;">
+			<label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>
+			<button id="ib" class="btn btn-theme" onclick="signin($('#eml').val(), $('#psw').val())">Sign In</button>
+			<button id="ub" class="btn btn-theme" onclick="createaccount($('#eml').val(), $('#psw').val())">Sign Up</button>
+		</div>
+		<button onclick="signout()" class="btn btn-theme">Log Out</button><br/><br/>
+		<button onclick="location.href = './account';" class="btn btn-theme">Manage Account</button>
+    </div>
 
-<section id="actiondiv" class="box special">    
-    <label>Email &nbsp;&nbsp;<input id="eml">&nbsp;&nbsp;&nbsp;&nbsp;    Password &nbsp;&nbsp;<input type="password" id="psw"></label>
-	<button id="ib" class="button special-blue" onclick="signin($('#eml').val(), $('#psw').val())">Sign In</button>
-	<button id="ub" class="button special-green" onclick="createaccount($('#eml').val(), $('#psw').val())">Sign Up</button>
-</section>
-
-<section id="userdata_section" class="box special">
-	<header class="major">
+    <div class="row">
 		<h2><b>Your Records</b></h2>
-	</header>
-	<div id="userdata">
-	</div>
-</section>
+		<div id="userdata">
+		</div>
+    </div>
 
-<section id="public_section" class="box special">
-	<header class="major">
-		<h2><b>Public (Verified Records)</b></h2>
-	</header>
-	<div id="public">
-	</div>
-</section>
+	<div class="row">
+		<h2>Public Records</h2>
+		<div id="public">
+		</div>
+    </div>
+
+</div>
+
+<!-- Scripts for this page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
 
 <script src="{{ site.baseurl }}/assets/js/firebase.js"></script>
 <script src="{{ site.baseurl }}/assets/js/pgs.js"></script>

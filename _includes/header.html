@@ -1,75 +1,12 @@
-<!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>{{ page.title }}</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-			<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/css/ie/html5shiv.js"></script><![endif]-->
-		<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-		<script src="{{ site.baseurl }}/assets/js/jquery.dropotron.min.js"></script>
-		<script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
-		<script src="{{ site.baseurl }}/assets/js/skel-layers.min.js"></script>
-		<script src="{{ site.baseurl }}/assets/js/jquery.scrollgress.min.js"></script>
-		<script src="{{ site.baseurl }}/assets/js/init.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/skel.css" />
-			<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
-			<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style-desktop.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie/v8.css" /><![endif]-->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="headerwrap" class="background-images">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>A Real Company</h3>
+                <h1>Free As In Freedom</h1>
+                <h5>We strive to provide great products which respect freedom, and inspire innovation.</h5>
+            </div>
 
-		<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-		<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-		<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-		<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-		<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-
-		
-		
-		<!--
-		
-		Math Highlighting
-		
-		-->
-	
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({
-			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-			});
-		</script>
-		
-		<script type="text/javascript" async
-		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-		</script>
-	</head>
-	{% if page.url == "/index.html" %}
-		<!-- Banner -->
-		<body class="landing">
-			<section id="banner">
-				<h2>ChemicalDevelopment</h2>
-				<ul class="actions">
-					<li><a href="#" class="button special">Sign Up</a></li>
-					<li><a href="#" class="button">Learn More</a></li>
-				</ul>
-			</section>
-	{% else %}
-		<body>
-			<section id="banner"></section>
-	{% endif %}
-	{% include nav.html %}
-	<!-- Main -->
-	<section id="main" class="container">
+        </div>
+    </div>
+</div>

@@ -1,9 +1,14 @@
-{% include header.html %}
-<section class="box special">
-	<header class="major">
-		<h2><b>{{ page.title }}</b></h2>
-		{% if page.description %}<h1><b><i>{{ page.description }}</b></i></h1>{% endif %}
-	</header>
-</section>
-	{{ content }}
-{% include footer.html %}
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body>
+        {% include nav.html %}
+
+            {{ content }}
+
+        {% include footer.html %}
+        {% include js.html %}
+    </body>
+</html>
