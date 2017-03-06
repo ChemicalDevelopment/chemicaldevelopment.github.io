@@ -1,0 +1,24 @@
+/*
+
+My stuff
+
+*/
+
+@keyframes example {
+    from {background-position-y: 0px; background-position-x: 0px; }
+    to {background-position-y: 800px; background-position-x: 400px; }
+}
+
+.background-images {
+	animation-name: example;
+    animation-duration: 12s;
+	animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+	background-image: url(/assets/img/logo/400.png);
+	background-position-x: -68.5%;
+}
+table, th, td {
+	padding: 1em;
+	border: 1px solid black;
+}
