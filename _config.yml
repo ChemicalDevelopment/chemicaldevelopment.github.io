@@ -34,8 +34,8 @@ collections:
 
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
 social:
-  - title: twitter
-    url: http://twitter.com/dev_ceb
+  - title: github
+    url: http://github.com/ChemicalDevelopment
 
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
