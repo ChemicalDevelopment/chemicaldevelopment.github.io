@@ -21,4 +21,5 @@ Originally (and up to version 2.5.0), the bulk of PGS was written in JavaScript.
 
 Python requires a custom library ([called Pyrebase](https://github.com/thisbejim/Pyrebase)), which is unofficial and requires pycryptodome. 
 
+Still unclear, PGS only works in development mode now, and I will likely return to NodeJS, or use Python with better `--offline` support, or possibly switch to C (although this is very unlikely).
 
