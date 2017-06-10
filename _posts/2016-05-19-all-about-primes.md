@@ -4,7 +4,7 @@ title: All about primes
 description: What are primes, and how do we find them?
 categories:
   - math
-  - programming
+  - software
 img: primes.jpg
 thumb: primes.jpg
 ---
