@@ -1,0 +1,123 @@
+---
+layout: shop
+---
+
+
+<div class="container mtb">
+    <div class="row">
+
+<div class="col-lg-12">
+
+  <img src="{{ page.image }}" alt="{{ page.name }}" class="thumbnail" style="float: left; margin: 0em 3em 0em 0em;"/>
+  <div class="product-description">
+    <p>{{ page.name }}</p>
+
+    <p>
+      {{ page.content }}
+    </p>
+
+    <p>
+    ${{ page.price }} + {{page.shipping_price}} shipping (USD)
+    </p>
+
+{% if page.avail %}
+    {% if page.quant %}
+    <p>
+      {{page.quant}} left
+    </p>
+    {% endif %}
+
+    <p>
+    <input type="checkbox" id="in_person"> in-person pickup (<a href="/shop/inperson/">what is this?</a>)
+    </p>
+
+    <p>
+      Additional Notes: <input id="special_request">
+    </p>
+
+
+    <div id="payment_button"></div>
+
+<script>
+    // Render the button into the container element
+
+    paypal.Button.render({
+
+        // Pass the client ids to use to create your transaction on sandbox and production environments
+
+        client: {
+            sandbox:    'ATjW_7ERbKkadUa3ZU9vn7gj1fvGfyEjpK1Ol-OUNPEiDJ9L5eXgF1cTyzJ3qdCJ-eGNP_OSAUy08tbN', // from https://developer.paypal.com/developer/applications/
+            production: 'AYnEtQX00i95zTdOAyGS1PRLN_eS-ttFTcCrXJF9nkyK_IXNJboHCKPlqd9dlWTiDwmXkTaU4N1956_y'  // from https://developer.paypal.com/developer/applications/
+        },
+
+        // Pass the payment details for your transaction
+        // See https://developer.paypal.com/docs/api/payments/#payment_create for the expected json parameters
+
+
+        payment: function(data, actions) {
+            var x = document.getElementById("in_person");
+            tax_mult = 1;
+            extra_desc = "";
+            if (x.checked) {
+              extra_desc = ", in-person delivery";
+              tax_mult = 0;
+            }
+            if (typeof custom_addon === "function") {
+              extra_desc = extra_desc + ", " + custom_addon();
+            }
+            extra_desc = extra_desc + ", extra_note: " + document.getElementById("special_request").value;
+
+            paypal_json =  {
+                "intent": "sale",
+                "transactions": [{
+                    "amount": {
+                        "total":  "" + (parseFloat("{{page.price}}") + tax_mult * parseFloat("{{page.shipping_price}}")),
+                        "currency": "USD",
+                        "details": {
+                            "subtotal": "{{page.price}}",
+                            "tax": "" + (tax_mult * parseFloat("{{page.shipping_price}}")),
+                            "shipping": "0.0"
+                        }
+                    },
+                    "description": "For chemicaldevelopment.us/shop/{{page.slug}}/, SKU: {{page.sku}}" + extra_desc
+                }]
+            };
+            return actions.payment.create(paypal_json);
+        },
+
+        // Display a "Pay Now" button rather than a "Continue" button
+
+        commit: true,
+
+        // Pass a function to be called when the customer completes the payment
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(response) {
+                alert('The payment was completed!');
+            });
+        },
+
+        // Pass a function to be called when the customer cancels the payment
+
+        onCancel: function(data) {
+            alert('The payment was cancelled!');
+        }
+
+    }, '#payment_button');
+</script>
+{% else %}
+
+<div id="payment_button">
+
+<b> Product is unavailable! </b>
+
+</div>
+
+{% endif %}
+    
+  </div>
+</div>
+</div>
+</div>
+
+

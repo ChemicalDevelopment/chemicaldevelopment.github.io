@@ -1,0 +1,16 @@
+---
+layout: blog
+title: Shop
+permalink: /shop/
+---
+
+<div class="container mtb">
+    <div class="row">
+            {% for product in site.products %}
+              {% include product.html %}
+
+            {% endfor %}
+    </div>
+</div>
+
+
