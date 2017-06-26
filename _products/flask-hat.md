@@ -6,7 +6,7 @@ slug: flask-hat
 sku: CHDV_FLASKHAT_0
 image: /assets/img/shop/flask_hat.png
 layout: productdetails
-avail: true
+avail: false
 quant: 0
 ---
 

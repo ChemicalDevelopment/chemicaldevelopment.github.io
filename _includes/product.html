@@ -7,8 +7,17 @@
     <img src="{{ product.image }}" alt="{{ product.name }}" class="thumbnail"/>
     <p>{{ product.name }} (${{ product.price }})</p>
   </a>
-
     <p>SKU: {{product.sku}}</p>
+    
+      {% if product.avail %}
+
+      {% else %}
+      <p>
+        <b>OUT OF STOCK</b>
+      </p>
+      {% endif %}
+
+
 
 </div>
 </div>
