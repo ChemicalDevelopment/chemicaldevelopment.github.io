@@ -66,7 +66,7 @@ members:
   - name: Greg Croisdale
     position: CFL
     text: Greg handles finances, dealings with the school, and more.
-    img: 
+    img: greg.jpg
     social:
       - title: envelope #use for email address
         url: mailto:name@domain.com
