@@ -1,0 +1,134 @@
+
+/*
+
+author: Cade Brown
+
+*/
+
+.img-person {
+    height: 20em;
+    padding: 1em;
+}
+
+.img-float-left {
+    float: left;
+}
+
+.img-float-right {
+    float: right;
+}
+
+.music-category {
+    text-transform: capitalize;
+}
+
+.post-body {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.post-body p {
+    margin: 1em 0 !important;
+}
+.post-content {
+    padding: 1em;
+    min-height: 22vw;
+}
+
+.post-title-link {
+    color: #111;
+}
+
+
+.albumart {
+    width: 100%;
+    padding-right: 1vw;
+    float: left;
+}
+
+.embedded-item {
+    padding: 1em;
+    float: left;
+}
+
+.integrated-sc-player {
+    width: 100%;
+    min-height: 340px;
+    height: 26vw;
+    padding-top: 1em;
+
+}
+@media(min-width:768px) {
+    .albumart {
+        width: 28vw;
+    }
+    .integrated-sc-player {
+        width: 60vw;
+        padding-top: 0em;
+    }
+}
+
+
+.post-list-row {
+    /*
+    outline: 2px solid black;
+    */
+    margin: 1.5em;
+    min-height: 15em;
+}
+.post-list-thumb {
+    width: auto;
+    min-height: 150px;
+    max-height: 15em;
+
+
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+
+    max-width: 400px;
+
+
+}
+.post-list-thumb-col {
+    padding: 0px;
+    overflow: hidden;
+    min-height: 15em;
+
+    /* position: relative; */
+}
+.post-list-text-col {
+    padding: .6em;
+    position: relative;
+
+}
+.post-list-text {
+    padding-bottom: 1.6em;
+
+}
+
+.post-list-text-bottom {
+    color: #555;
+    position: absolute;
+    left: 1em;
+    bottom: .5em;
+    font-size: .9em;
+    padding-top: 1em;
+}
+
+
+.text-subtitle {
+    padding-left: 1em;
+    font-size: .9em;
+    color: #555;
+}
+
+.text-subtitle-artist {
+    font-size: .8em;
+    left: 1em;
+    color: violet;
+}
+
