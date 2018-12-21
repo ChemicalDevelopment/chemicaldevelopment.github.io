@@ -87,7 +87,7 @@ layout: default
             </a>
             <div class="portfolio-caption">
               <a class="post-title-link" href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
-              <p><i>by</i> <b>{{ post.artist }}</b></p>
+              <p><i>by</i> <b><a href="/artist/{{post.artist | remove: " " | slugify }}">{{ post.artist }}</a></b></p>
               <p class="text-muted">in{% for category in post.categories %}{% if tmp %}, {% else %}{% assign tmp = 1 %}{% endif %}
                   #{{category}}{% endfor %}
               </p>

@@ -100,6 +100,35 @@ author: Cade Brown
 
     /* position: relative; */
 }
+.artist-bio-row {
+    /*
+    outline: 2px solid black;
+    */
+    margin: 1.5em;
+    min-height: 20em;
+}
+.artist-img {
+    width: auto;
+    min-height: 200px;
+    max-height: 20em;
+
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+
+    max-width: 400px;
+
+}
+.artist-img-div {
+    padding: 8em;
+    min-width: 16em;
+
+    /* position: relative; */
+}
+
 .post-list-text-col {
     padding: .6em;
     position: relative;

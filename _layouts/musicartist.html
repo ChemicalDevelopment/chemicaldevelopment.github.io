@@ -22,6 +22,24 @@ to use this page
         <h1 class="music-category">Music Artist: {{page.artist}}</h1>
     </center>
 
+<div class="row artist-bio-row">
+        
+    {% if page.thumb %}
+    <div class="col-12 col-md-4 col-lg-3 post-list-thumb-col"><img class="artist-img img-circle" src="{{ assets_path }}{{ page.thumb }}"></div>
+    {% endif %}
+    <div class="col-12 col-md-8 col-lg-9 post-list-text-col">
+
+    {{content}}
+
+    </div>
+
+</div>
+
+
+    <center>
+        <h1 class="music-category">Releases by {{page.artist}}</h1>
+    </center>
+
     {%- for post in site.posts -%}
         {% if post.artist == page.artist %}
         {% include postrow.html post=post %}

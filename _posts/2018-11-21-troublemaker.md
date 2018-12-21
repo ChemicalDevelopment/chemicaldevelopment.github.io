@@ -19,10 +19,11 @@ artist: RUN! RUN! RUN!
 
 Leading up to the album, "A Modern Technological Romance", RUN! RUN! RUN! is releasing an A/B single entitled "Troublemaker". The single is comprised of two tracks, "Troublemaker" (3:19), and "Sober" (4:27), an EDM dance song and chillwave song respectively.
 
-Produced by Cade Brown, written by Brody Cox, recorded and released under ChemicalDevelopment &copy; 2018.
+Produced by [Cade Brown](/artist/cadebrown), written by Brody Cox, recorded and released under ChemicalDevelopment &copy; 2018.
 
 <!--more-->
 
+[<b>Spotify - RUN! RUN! RUN! - "Troublemaker"</b>](https://open.spotify.com/album/0O0BYxyq1pTTZnYtl3FfO2?si=q44pcfyKSX2QnbJAjyIX7w)
 
 [<b>YouTube Playlist - RUN! RUN! RUN! - "Troublemaker"</b>](https://www.youtube.com/watch?v=JubxvmetAn4&list=OLAK5uy_l3R9ny3D4ju3l9Uz2nV77NTAoA9W8Den8)
 
