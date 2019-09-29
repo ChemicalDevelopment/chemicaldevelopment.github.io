@@ -6,3 +6,5 @@ permalink: /:year/:month/:day/:title.html
 
 excerpt_separator: <!--more-->
 
+include: [".well-known"]
+
