@@ -2,6 +2,8 @@ title: ChemicalDevelopment
 description: 'A real company'
 author: 'Cade Brown'
 
+github: http://github.com/ChemicalDevelopment/
+
 permalink: /:year/:month/:day/:title.html
 
 excerpt_separator: <!--more-->
