@@ -113,6 +113,9 @@
     {%- endif -%}
     {% assign ws = '' %}
 
+    <!-- force https -->
+    <script> if (("chemicaldevelopment.us" == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https"; </script>
+
     <!-- Bootstrap core JavaScript -->
     <script src="{{ assets_path }}vendor/jquery/jquery.min.js"></script>
     <script src="{{ assets_path }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
