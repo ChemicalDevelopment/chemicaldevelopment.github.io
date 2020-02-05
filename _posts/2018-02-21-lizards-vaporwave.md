@@ -8,7 +8,6 @@ categories:
   - music
   - vaporwave
 thumb: img/albumart/thumbs/CadeBrown_LIZARDS_(Vaporwave).jpg
-artist: Cade Brown
 ---
 
 <img class="albumart" src="/assets/img/albumart/CadeBrown_LIZARDS_(Vaporwave).jpg">

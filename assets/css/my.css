@@ -18,13 +18,21 @@ author: Cade Brown
     float: right;
 }
 
-.music-category {
+.post-category {
     text-transform: capitalize;
 }
 
 .post-body {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    
+}
+
+@media(min-width:520px) {
+    .post-body {
+        margin-left: 10em;
+        margin-right: 10em;
+    }
 }
 
 .post-body p {
@@ -39,10 +47,10 @@ author: Cade Brown
     color: #111;
 }
 
-
 .albumart {
     width: 100%;
     padding-right: 1vw;
+    margin-right: 1vw;
     float: left;
 }
 
@@ -56,8 +64,8 @@ author: Cade Brown
     min-height: 340px;
     height: 26vw;
     padding-top: 1em;
-
 }
+
 @media(min-width:768px) {
     .albumart {
         width: 28vw;
@@ -100,14 +108,14 @@ author: Cade Brown
 
     /* position: relative; */
 }
-.artist-bio-row {
+.author-bio-row {
     /*
     outline: 2px solid black;
     */
     margin: 1.5em;
     min-height: 20em;
 }
-.artist-img {
+.author-img {
     width: auto;
     min-height: 200px;
     max-height: 20em;
@@ -122,7 +130,7 @@ author: Cade Brown
     max-width: 400px;
 
 }
-.artist-img-div {
+.author-img-div {
     padding: 8em;
     min-width: 16em;
 
@@ -155,7 +163,7 @@ author: Cade Brown
     color: #555;
 }
 
-.text-subtitle-artist {
+.text-subtitle-author {
     font-size: .8em;
     left: 1em;
     color: violet;

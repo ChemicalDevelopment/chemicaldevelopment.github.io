@@ -23,13 +23,13 @@ layout: default
         <div class="row text-center">
 
             <div class="col-md-4">
-              <a href="/music/">
+              <a href="/posts/">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-music fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-list fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 class="service-heading">Music Label</h4>
-              <p class="text-muted">Check out music we produce and release!</p></a>
+              <h4 class="service-heading">Posts</h4>
+              <p class="text-muted">Check out our posts!</p></a>
             </div>
 
             <div class="col-md-4">
@@ -65,8 +65,8 @@ layout: default
         <div class="row">
           <div class="col-lg-12 text-center">
             
-            <h2 class="section-heading text-uppercase"><a href="/music/">Music Label</a></h2>
-            <h3 class="section-subheading text-muted">See the releases by our signed artists!</h3>
+            <h2 class="section-heading text-uppercase"><a href="/posts/">Posts</a></h2>
+            <h3 class="section-subheading text-muted">See our recent posts!</h3>
           </div>
         </div>
         <div class="row">
@@ -87,7 +87,7 @@ layout: default
             </a>
             <div class="portfolio-caption">
               <a class="post-title-link" href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
-              <p><i>by</i> <b><a href="/artist/{{post.artist | remove: " " | slugify }}">{{ post.artist }}</a></b></p>
+              <p><i>by</i> <b><a href="/author/{{post.author | remove: " " | slugify }}">{{ post.author }}</a></b></p>
               <p class="text-muted">in{% for category in post.categories %}{% if tmp %}, {% else %}{% assign tmp = 1 %}{% endif %}
                   #{{category}}{% endfor %}
               </p>

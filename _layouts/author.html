@@ -3,11 +3,12 @@ layout: default
 ---
 
 {% include common.html %}
+
 <!--
     Use the front matter:
 
-layout: musicartist
-artist: artist
+layout: author
+name: name
 
 to use this page
 -->
@@ -19,13 +20,15 @@ to use this page
 
 <section class="post-body" id="body">
     <center>
-        <h1 class="music-category">Music Artist: {{page.artist}}</h1>
+        <h1 class="post-category">Author: {{ page.author }}</h1>
     </center>
 
-<div class="row artist-bio-row">
+<div class="row author-bio-row">
         
     {% if page.thumb %}
-    <div class="col-12 col-md-4 col-lg-3 post-list-thumb-col"><img class="artist-img img-circle" src="{{ assets_path }}{{ page.thumb }}"></div>
+    <div class="col-12 col-md-4 col-lg-3 post-list-thumb-col">
+        <img class="author-img img-circle" src="{{ assets_path }}{{ page.thumb }}">
+    </div>
     {% endif %}
     <div class="col-12 col-md-8 col-lg-9 post-list-text-col">
 
@@ -37,11 +40,11 @@ to use this page
 
 
     <center>
-        <h1 class="music-category">Releases by {{page.artist}}</h1>
+        <h1 class="post-category">Posts by {{page.author}}</h1>
     </center>
 
     {%- for post in site.posts -%}
-        {% if post.artist == page.artist %}
+        {% if post.author == page.author %}
         {% include postrow.html post=post %}
         {% endif %}
     {% endfor %}

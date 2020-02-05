@@ -6,8 +6,8 @@ layout: default
 <!--
     Use the front matter:
 
-layout: musiccategory
-category: music
+layout: postcategory
+category: category
 
 to use this page
 -->
@@ -19,7 +19,7 @@ to use this page
 
 <section class="post-body" id="body">
     <center>
-            <h1 class="music-category">Music Category: {{page.category}}</h1>
+            <h1 class="post-category">Post Category: {{page.category}}</h1>
         </center>
 
     {%- for post in site.posts -%}

@@ -1,11 +1,12 @@
 ---
-layout: musicartist
-artist: Cade Brown
+layout: author
+author: Cade Brown
 thumb: img/artists/cadebrown.jpg
 ---
 
 
-Cade Brown is a music artist and producer from Knoxville, TN. He has primarily produced for [himself](/artist/cadebrown) and [RUN! RUN! RUN!](/artist/run-run-run). Beginning his roots in classical piano lessons, he eventually also picked up saxaphone in school band, which he still plays.
+
+Cade Brown is a programmer, music artist, and producer from Knoxville, TN. He has primarily produced for [himself](/artist/cadebrown) and [RUN! RUN! RUN!](/artist/run-run-run). Beginning his roots in classical piano lessons, he eventually also picked up saxaphone in school band, which he still plays.
 
 He picked up digital production when he was 14, and since then has explored producing many genres, such as Indie, Hip Hop/Trap, Electronic, and others.
 

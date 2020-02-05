@@ -9,13 +9,14 @@
 
     <div class="col-12 col-md-8 col-lg-9 post-list-text-col">
             <a class="post-title-link" href="{{ post.url }}"><h5><b>{{post.title}}</b></h5></a>
-        <span class="text-subtitle"><i>by</i></span> <span class="text-subtitle-artist"><a href="/artist/{{post.artist | remove: " " | slugify }}"><b>{{post.artist}}</b></a></span>
+        <span class="text-subtitle"><i>by</i></span> <span class="text-subtitle-author"><a href="/author/{{post.author | remove: " " | slugify }}"><b>{{post.author}}</b></a></span>
         <div class="post-list-text">{{ post.excerpt | strip_html }}</div>
         
         <div class="post-list-text-bottom"><i>Posted on {{ post.date | date: "%-d %B %Y" }}</i> in 
             {% for category in post.categories %}
-                {% if site.data.music.categories contains category %}
-                    <a href="/music/{{category}}">#{{ category }}</a>
+            
+                {% if site.data.posts.categories contains category %}
+                    <a href="/posts/{{category}}">#{{ category }}</a>
                 {% endif %}
             {% endfor %}
         </div>

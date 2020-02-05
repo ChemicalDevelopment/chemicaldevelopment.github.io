@@ -2,24 +2,20 @@
 layout: post
 posttype: release
 title: Troublemaker
-author: Cade Brown
-description: ChemicalDevelopment's Official Anthem
+author: RUN! RUN! RUN!
 categories:
   - music
   - indie
 thumb: img/albumart/thumbs/RUNRUNRUN_Troublemaker.jpg
-artist: RUN! RUN! RUN!
 ---
 
 <img class="albumart" src="/assets/img/albumart/RUNRUNRUN_Troublemaker.jpg">
-
-<iframe class="integrated-sc-player" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/645548409&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
 <br/>
 
 Leading up to the album, "A Modern Technological Romance", RUN! RUN! RUN! is releasing an A/B single entitled "Troublemaker". The single is comprised of two tracks, "Troublemaker" (3:19), and "Sober" (4:27), an EDM dance song and chillwave song respectively.
 
-Produced by [Cade Brown](/artist/cadebrown), written by Brody Cox, recorded and released under ChemicalDevelopment &copy; 2018.
+Produced by [Cade Brown](/author/cadebrown), written by Brody Cox, recorded and released under ChemicalDevelopment &copy; 2018.
 
 <!--more-->
 
