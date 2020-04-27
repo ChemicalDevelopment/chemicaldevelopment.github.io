@@ -1,14 +1,21 @@
+# Site settings
 title: ChemicalDevelopment
-description: 'A real company'
-author: 'Cade Brown'
+email: info@chemicaldevelopment.us
+description: "Disruptive, innovative, and forward-thinking technology"
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site e.g. http://yvesespinosa.com
+download_button_url: ""
 
-github: http://github.com/ChemicalDevelopment/
+# Social settings
+500px_url:
+facebook_url:
+github_url: https://github.com/ChemicalDevelopment
+gitlab_url: 
+googleplus_url: 
+instagram_url: https://instagram.com/ChemDevCo
+linkedin_url: 
+pinterest_url:
+twitter_url: https://twitter.com/ChemDevCo
 
-permalink: /:year/:month/:day/:title.html
-
-excerpt_separator: <!--more-->
-
-include: [".well-known"]
-keep_files: ['.well-known/acme-challenge']
-
-
+# Build settings
+markdown: kramdown

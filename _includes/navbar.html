@@ -1,0 +1,17 @@
+
+
+<!-- navbar -->
+<div id="navbar" style="{{ include.style }}">
+    <a href="{{ '/' }}">Home</a>
+    <a href="{{ 'about' }}">About</a>
+    <a href="{{ 'contact' }}">Contact</a>
+
+    {% if include.logo %}
+    <img src="{{ 'assets/sleeklogo.svg' }}" style="
+        height: 3.6em;
+        margin: .4em;
+        margin-left: .5em;
+    "/>
+    {% endif %}
+</div> 
+

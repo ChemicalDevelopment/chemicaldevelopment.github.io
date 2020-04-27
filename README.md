@@ -5,7 +5,7 @@ This is the repository for the jekyll site for [chemicaldevelopment.us](http://c
 
 ## Misc
 
-Originally based on [https://startbootstrap.com/template-overviews/agency/](https://startbootstrap.com/template-overviews/agency/)
+Originally based on HTML5UP's 'Fractal' theme
 
 ## License
 

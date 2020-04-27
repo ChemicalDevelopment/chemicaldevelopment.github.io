@@ -1,2 +1,0 @@
-layout: none
-permalink: .well-known/acme-challenge/cdXtsnPliSsIcrq6nwmdrqiE1F2icLbejQIdEPB0rEU
